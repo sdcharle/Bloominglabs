@@ -1,0 +1,7 @@
+From:hackerspace_notifier@bloominglabs.org
+To:steve@bloominglabs.org
+Subject: Alert: Alarm triggered at shop
+
+Please log in or something to check status.
+
+-The Hacker Space
