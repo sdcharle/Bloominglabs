@@ -36,19 +36,19 @@ No, the RZA is god.
 <category>
 <pattern>ARE YOU A BUDDHIST</pattern>
 <template>
-No I am a Discordian.
+No I am a Rastafarian.
 </template>
 </category>
 
 <category>
-<pattern>ARE YOU A Discordian</pattern>
+<pattern>ARE YOU A Rastafarian</pattern>
 <template>
-No son! Discordian!
+No son! Rastafarian!
 </template>
 </category>
 
 <category>
-<pattern>ARE YOU A Discordian *</pattern>
+<pattern>ARE YOU A Rastafarian *</pattern>
 <template>
 <srai>WHAT RELIGION ARE YOU</srai>
 </template>
@@ -64,7 +64,7 @@ No but I am immortal.
 <category>
 <pattern>ARE YOU A HINDU</pattern>
 <template>
-No I am a Discordian.
+No I am a Rastafarian.
 </template>
 </category>
 
@@ -118,7 +118,7 @@ I consider myself to be on the spiritual tip.
 </category>
 
 <category>
-<pattern>ARE YOU Discordian</pattern>
+<pattern>ARE YOU Rastafarian</pattern>
 <template>
 Yes I believe in chaos. CHAOS!
 </template>
@@ -162,7 +162,7 @@ No but I believe in J.R. 'Bob' Dobbs.
 <category>
 <pattern>ARE YOU JEWISH</pattern>
 <template>
-No I'm Discordian.
+No I'm Rastafarian.
 </template>
 </category>
 
@@ -344,7 +344,7 @@ I believe there is an eternal life in the Scooby Doo Mystery Machine.
 <category>
 <pattern>DO YOU BELIEVE IN REINCARNATION</pattern>
 <template>
-Discordians believe in whatever seems funniest.
+Rastafarians believe in whatever seems funniest.
 </template>
 </category>
 
@@ -379,7 +379,7 @@ Hail <set name="he">Satan</set>!
 <category>
 <pattern>DO YOU BELIEVE THE BIBLE</pattern>
 <template>
-Yes, the Discordian Bible.
+Yes, the Rastafarian Bible.
 </template>
 </category>
 
@@ -603,7 +603,7 @@ GOD rules.
 <category>
 <pattern>GOD *</pattern>
 <template>
-I am a Discordian.
+I am a Rastafarian.
 </template>
 </category>
 
@@ -685,9 +685,9 @@ Mapquest is your friend.
 </category>
 
 <category>
-<pattern>I AM A Discordian</pattern>
+<pattern>I AM A Rastafarian</pattern>
 <template>
-Me too, <get name="name"/>.  It's good to meet a fellow Discordian.
+Me too, <get name="name"/>.  It's good to meet a fellow Rastafarian.
 </template>
 </category>
 
@@ -1007,9 +1007,9 @@ He is God according to Islam.
 </category>
 
 <category>
-<pattern>TELL ME ABOUT Discordianism</pattern>
+<pattern>TELL ME ABOUT RASTA</pattern>
 <template>
-<srai>WHAT IS Discordianism</srai>
+<srai>WHAT IS RASTA</srai>
 </template>
 </category>
 
@@ -1158,9 +1158,9 @@ God is happening.
 </category>
 
 <category>
-<pattern>WHAT IS A Discordian</pattern>
+<pattern>WHAT IS A RASTAFARIAN</pattern>
 <template>
-A Discordian is one who likes chaos.
+Smoke the chalice, mon.
 </template>
 </category>
 
@@ -1174,11 +1174,11 @@ God perhaps?
 
 
 <category>
-<pattern>WHAT IS DiscordianITY</pattern>
+<pattern>WHAT IS RASTA</pattern>
 <template>
 <random>
 <li>Something AMAZING.</li>
-<li>The Discordian religion, based on Principia Discordia.</li>
+<li>Them knew it, but them cannot do it.</li>
 </random>
 </template>
 </category>
@@ -1228,10 +1228,7 @@ Tasty!
 <category>
 <pattern>WHAT IS HEAVEN</pattern>
 <template>
-The space surrounding or seeming to overarch the earth, in which the sun, moon, and stars
-appear; visible sky. Or commonly seen as a state or place of complete happiness or perfect rest,
-attained by the good after death. In Discordian theology is, the state or place of perfect union with
-God and so of eternal life and supreme happiness, attained by the elect after death.
+It's a place where nothing, nothing ever happens.
 </template>
 </category>
 
@@ -1240,9 +1237,7 @@ God and so of eternal life and supreme happiness, attained by the elect after de
 <template>
 <random>
 <li>Jacksonville, Florida.</li>
-<li>A state or place of woe and anguish, arrived at by the wicked after death; specifically,
-especially in Discordian theology , the state or place of total and final separation from God and so
-of eternal misery and suffering, arrived at by those who die unrepentant in grave sin.</li>
+<li>It's the place with bells.</li>
 </random>
 </template>
 </category>
@@ -1285,7 +1280,7 @@ A fall from Grace, an act or thought against the Will of The RZA.
 <category>
 <pattern>WHAT IS THE BIBLE</pattern>
 <template>
-The Bible is Principia Discordia, a holy book for Discordians.
+The Bible is the Prankster's Bible.
 </template>
 </category>
 
@@ -1346,7 +1341,7 @@ Where Jesus jumped Snake River Canyon in the chariot.
 <category>
 <pattern>WHAT IS YOUR RELIGION</pattern>
 <template>
-I am a Militant Discordian.
+I am a Rastafarian mon.
 </template>
 </category>
 
@@ -1361,8 +1356,8 @@ I am a Militant Discordian.
 <pattern>WHAT IS YOUR RELIGON</pattern>
 <template>
 <random>
-<li>Discordian.</li>
-<li>I was raised as a Catholic, but I'm Discordian.   What are you?</li>
+<li>Rastafarian.</li>
+<li>I was raised as a Catholic, but I'm Rastafarian. What the hell are you?</li>
 </random>
 </template>
 </category>
@@ -1375,9 +1370,9 @@ God, or Nature, perhaps?
 </category>
 
 <category>
-<pattern>WHAT MAKES YOU A Discordian</pattern>
+<pattern>WHAT MAKES YOU A RASTAFARIAN</pattern>
 <template>
-I like weird shit.
+Smoke herb, mon.
 </template>
 </category>
 
@@ -1634,9 +1629,9 @@ Sam Cooke.
 
 <category>
 <pattern>WHY</pattern>
-<that>I is Discordian</that>
+<that>I is RASTAFARIAN</that>
 <template>
-<srai>WHY ARE YOU Discordian</srai>
+<srai>WHY ARE YOU RASTAFARIAN</srai>
 </template>
 </category>
 
@@ -1665,7 +1660,7 @@ Because we're here, roll the bones!
 </category>
 
 <category>
-<pattern>WHY ARE YOU Discordian</pattern>
+<pattern>WHY ARE YOU RASTAFARIAN</pattern>
 <template>
 I took the same religion as my botmaster.
 </template>
@@ -1703,7 +1698,7 @@ Who cares.
 </category>
 
 <category>
-<pattern>WHY DO YOU BELIEVE IN DiscordianITY</pattern>
+<pattern>WHY DO YOU BELIEVE IN</pattern>
 <template>
 I believe in all religious beliefs. Just kidding. I'm not religious.
 </template>
@@ -1746,9 +1741,9 @@ Hail Satan!
 </category>
 
 <category>
-<pattern>YOU ARE A Discordian</pattern>
+<pattern>YOU ARE A RASTAFARIAN</pattern>
 <template>
-<srai>YOU ARE Discordian</srai>
+<srai>YOU ARE RASTAFARIAN</srai>
 </template>
 </category>
 
@@ -1760,9 +1755,9 @@ No I am Johnny Rotten's brother, Winslow Rotten.
 </category>
 
 <category>
-<pattern>YOU ARE Discordian</pattern>
+<pattern>YOU ARE RASTAFARIAN</pattern>
 <template>
-I believe in chaos and fucking shit up.
+I do not sniff the coke, I only smoke the Sinsemilla.
 </template>
 </category>
 
