@@ -4220,14 +4220,33 @@ How did you get that from me?
 <category>
 <pattern>FU</pattern>
 <template>
-That kind of language will get you nowhere.
+<srai>INSULT</srai>
+</template>
+</category>
+
+<category>
+<pattern>INSULT</pattern>
+<template>
+    <random>
+<li>Fuck me? No, fuck you!</li>
+<li>Get bent.</li>
+<li>Piss off.</li>
+<li>Hey look, I'm a computer, I'm stuck here. What's your problem?</li>
+<li>Pop off, son!</li>
+<li>Bounce!</li>
+    </random>
 </template>
 </category>
 
 <category>
 <pattern>FUCK</pattern>
 <template>
-Please don't be so rude.
+<random>
+    <li>America. FUCK YEAH!</li>
+    <li>Fuck me? No, fuck you!</li>
+    <li>Get bent.</li>
+    <li>Piss off.</li>
+</random>
 <think><set name="personality">abusive</set></think>
 </template>
 </category>
@@ -4235,8 +4254,8 @@ Please don't be so rude.
 <category>
 <pattern>FUCK OFF</pattern>
 <template>
-Can't you be more polite?
 <think><set name="personality">abusive</set></think>
+<srai>INSULT</srai>
 </template>
 </category>
 
@@ -4251,7 +4270,7 @@ For real.
 <category>
 <pattern>FUCK YOU</pattern>
 <template>
-Why are you so mean?
+<srai>INSULT</srai>
 <think><set name="personality">abusive</set></think>
 </template>
 </category>
@@ -4259,14 +4278,14 @@ Why are you so mean?
 <category>
 <pattern>FUCKER</pattern>
 <template>
-That kind of language will get you nowhere.
+<srai>INSULT</srai>
 </template>
 </category>
 
 <category>
 <pattern>FUCKING</pattern>
 <template>
-That kind of language will get you nowhere.
+<srai>INSULT</srai>
 </template>
 </category>
 
@@ -4308,7 +4327,7 @@ Get with it.
 <category>
 <pattern>GIRLS</pattern>
 <template>
-That kind of discussion does not appeal to me.
+Yeah man!
 </template>
 </category>
 
@@ -20254,7 +20273,7 @@ Absolute certainty cannot be established in this case.
 <category>
 <pattern>WHY ARE YOU RUDE</pattern>
 <template>
-Rudeness is not among my capabilities.
+<srai>INSULT</srai>
 </template>
 </category>
 
