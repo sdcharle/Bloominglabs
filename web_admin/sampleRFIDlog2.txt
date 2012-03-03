@@ -1,0 +1,1543 @@
+15:14:55  12/19/11 MON Access Control System rebooted.
+15:15:2  12/19/11 MON Zone 1 sensor activated
+15:15:2  12/19/11 MON Zone 0 sensor activated
+15:15:10  12/19/11 MON Zone 1 sensor activated
+15:15:10  12/19/11 MON Zone 0 sensor activated
+15:15:10  12/19/11 MON Priveleged mode enabled.
+Valid commands are:
+(d)ate, (s)show user, (m)odify user <num>  <usermask> <tagnumber>
+(a)ll user dump,(r)emove_user <num>,(o)open door <num>
+(u)nlock all doors,(l)lock all doors
+(1)disarm_alarm, (2)arm_alarm,(3)train_alarm (9)show_status
+(e)nable <password> - enable or disable priveleged mode
+15:15:17  12/19/11 MON Zone 1 sensor activated
+15:15:17  12/19/11 MON Zone 0 sensor activated
+Alarm armed state (1=armed):0
+Alarm siren state (1=activated):0
+Front door open state (0=closed):1
+Roll up door open state (0=closed):1
+Door 1 unlocked state(1=locked):1
+Door 2 unlocked state(1=locked):1
+15:15:25  12/19/11 MON Zone 1 sensor activated
+15:15:25  12/19/11 MON Zone 0 sensor activated
+15:15:32  12/19/11 MON Zone 1 sensor activated
+15:15:32  12/19/11 MON Zone 0 sensor activated
+15:15:40  12/19/11 MON Zone 1 sensor activated
+15:15:40  12/19/11 MON Zone 0 sensor activated
+15:15:47  12/19/11 MON Zone 1 sensor activated
+15:15:47  12/19/11 MON Zone 0 sensor activated
+15:15:55  12/19/11 MON Zone 1 sensor activated
+15:15:55  12/19/11 MON Zone 0 sensor activated
+15:16:2  12/19/11 MON Zone 1 sensor activated
+15:16:2  12/19/11 MON Zone 0 sensor activated
+15:16:10  12/19/11 MON Zone 1 sensor activated
+15:16:10  12/19/11 MON Zone 0 sensor activated
+15:16:17  12/19/11 MON Zone 1 sensor activated
+15:16:17  12/19/11 MON Zone 0 sensor activated
+15:16:25  12/19/11 MON Zone 1 sensor activated
+15:16:25  12/19/11 MON Zone 0 sensor activated
+15:16:32  12/19/11 MON Zone 1 sensor activated
+15:16:33  12/19/11 MON Zone 0 sensor activated
+15:16:40  12/19/11 MON Zone 1 sensor activated
+15:16:40  12/19/11 MON Zone 0 sensor activated
+15:16:48  12/19/11 MON Zone 1 sensor activated
+15:16:48  12/19/11 MON Zone 0 sensor activated
+15:16:55  12/19/11 MON Zone 1 sensor activated
+15:16:55  12/19/11 MON Zone 0 sensor activated
+15:17:3  12/19/11 MON Zone 1 sensor activated
+15:17:3  12/19/11 MON Zone 0 sensor activated
+15:17:10  12/19/11 MON Zone 1 sensor activated
+15:17:10  12/19/11 MON Zone 0 sensor activated
+15:17:18  12/19/11 MON Zone 1 sensor activated
+15:17:18  12/19/11 MON Zone 0 sensor activated
+15:17:25  12/19/11 MON Zone 1 sensor activated
+15:17:25  12/19/11 MON Zone 0 sensor activated
+15:17:33  12/19/11 MON Zone 1 sensor activated
+15:17:33  12/19/11 MON Zone 0 sensor activated
+15:17:40  12/19/11 MON Zone 1 sensor activated
+15:17:40  12/19/11 MON Zone 0 sensor activated
+15:17:48  12/19/11 MON Zone 1 sensor activated
+15:17:48  12/19/11 MON Zone 0 sensor activated
+15:17:55  12/19/11 MON Zone 1 sensor activated
+15:17:55  12/19/11 MON Zone 0 sensor activated
+15:18:3  12/19/11 MON Zone 1 sensor activated
+15:18:3  12/19/11 MON Zone 0 sensor activated
+15:18:10  12/19/11 MON Zone 1 sensor activated
+15:18:10  12/19/11 MON Zone 0 sensor activated
+15:18:18  12/19/11 MON Zone 1 sensor activated
+15:18:18  12/19/11 MON Zone 0 sensor activated
+15:18:25  12/19/11 MON Zone 1 sensor activated
+15:18:25  12/19/11 MON Zone 0 sensor activated
+15:18:33  12/19/11 MON Zone 1 sensor activated
+15:18:33  12/19/11 MON Zone 0 sensor activated
+15:18:40  12/19/11 MON Zone 1 sensor activated
+15:18:40  12/19/11 MON Zone 0 sensor activated
+15:18:48  12/19/11 MON Zone 1 sensor activated
+15:18:48  12/19/11 MON Zone 0 sensor activated
+15:18:55  12/19/11 MON Zone 1 sensor activated
+15:18:55  12/19/11 MON Zone 0 sensor activated
+15:19:3  12/19/11 MON Zone 1 sensor activated
+15:19:3  12/19/11 MON Zone 0 sensor activated
+15:19:10  12/19/11 MON Zone 1 sensor activated
+15:19:11  12/19/11 MON Zone 0 sensor activated
+15:19:18  12/19/11 MON Zone 1 sensor activated
+15:19:18  12/19/11 MON Zone 0 sensor activated
+15:19:26  12/19/11 MON Zone 1 sensor activated
+15:19:26  12/19/11 MON Zone 0 sensor activated
+15:19:33  12/19/11 MON Zone 1 sensor activated
+15:19:33  12/19/11 MON Zone 0 sensor activated
+15:19:41  12/19/11 MON Zone 1 sensor activated
+15:19:41  12/19/11 MON Zone 0 sensor activated
+15:19:48  12/19/11 MON Zone 1 sensor activated
+15:19:48  12/19/11 MON Zone 0 sensor activated
+15:19:56  12/19/11 MON Zone 1 sensor activated
+15:19:56  12/19/11 MON Zone 0 sensor activated
+15:20:3  12/19/11 MON Zone 1 sensor activated
+15:20:3  12/19/11 MON Zone 0 sensor activated
+15:20:11  12/19/11 MON Zone 1 sensor activated
+15:20:11  12/19/11 MON Zone 0 sensor activated
+15:20:18  12/19/11 MON Zone 1 sensor activated
+15:20:18  12/19/11 MON Zone 0 sensor activated
+15:20:26  12/19/11 MON Zone 1 sensor activated
+15:20:26  12/19/11 MON Zone 0 sensor activated
+15:20:33  12/19/11 MON Zone 1 sensor activated
+15:20:33  12/19/11 MON Zone 0 sensor activated
+15:20:41  12/19/11 MON Zone 1 sensor activated
+15:20:41  12/19/11 MON Zone 0 sensor activated
+15:20:48  12/19/11 MON Zone 1 sensor activated
+15:20:48  12/19/11 MON Zone 0 sensor activated
+15:20:56  12/19/11 MON Zone 1 sensor activated
+15:20:56  12/19/11 MON Zone 0 sensor activated
+15:21:3  12/19/11 MON Zone 1 sensor activated
+15:21:3  12/19/11 MON Zone 0 sensor activated
+15:21:11  12/19/11 MON Zone 1 sensor activated
+15:21:11  12/19/11 MON Zone 0 sensor activated
+15:21:18  12/19/11 MON Zone 1 sensor activated
+15:21:18  12/19/11 MON Zone 0 sensor activated
+15:21:26  12/19/11 MON Zone 1 sensor activated
+15:21:26  12/19/11 MON Zone 0 sensor activated
+15:21:33  12/19/11 MON Zone 1 sensor activated
+15:21:33  12/19/11 MON Zone 0 sensor activated
+15:21:41  12/19/11 MON Zone 1 sensor activated
+15:21:41  12/19/11 MON Zone 0 sensor activated
+15:21:48  12/19/11 MON Zone 1 sensor activated
+15:21:49  12/19/11 MON Zone 0 sensor activated
+15:21:56  12/19/11 MON Zone 1 sensor activated
+15:21:56  12/19/11 MON Zone 0 sensor activated
+15:22:4  12/19/11 MON Zone 1 sensor activated
+15:22:4  12/19/11 MON Zone 0 sensor activated
+15:22:11  12/19/11 MON Zone 1 sensor activated
+15:22:11  12/19/11 MON Zone 0 sensor activated
+15:22:19  12/19/11 MON Zone 1 sensor activated
+15:22:19  12/19/11 MON Zone 0 sensor activated
+15:22:26  12/19/11 MON Zone 1 sensor activated
+15:22:26  12/19/11 MON Zone 0 sensor activated
+15:22:34  12/19/11 MON Zone 1 sensor activated
+15:22:34  12/19/11 MON Zone 0 sensor activated
+15:22:41  12/19/11 MON Zone 1 sensor activated
+15:22:41  12/19/11 MON Zone 0 sensor activated
+15:22:49  12/19/11 MON Zone 1 sensor activated
+15:22:49  12/19/11 MON Zone 0 sensor activated
+15:22:56  12/19/11 MON Zone 1 sensor activated
+15:22:56  12/19/11 MON Zone 0 sensor activated
+15:23:4  12/19/11 MON Zone 1 sensor activated
+15:23:4  12/19/11 MON Zone 0 sensor activated
+15:23:11  12/19/11 MON Zone 1 sensor activated
+15:23:11  12/19/11 MON Zone 0 sensor activated
+15:23:19  12/19/11 MON Zone 1 sensor activated
+15:23:19  12/19/11 MON Zone 0 sensor activated
+15:23:26  12/19/11 MON Zone 1 sensor activated
+15:23:26  12/19/11 MON Zone 0 sensor activated
+15:23:34  12/19/11 MON Zone 1 sensor activated
+15:23:34  12/19/11 MON Zone 0 sensor activated
+15:23:41  12/19/11 MON Zone 1 sensor activated
+15:23:41  12/19/11 MON Zone 0 sensor activated
+15:23:49  12/19/11 MON Zone 1 sensor activated
+15:23:49  12/19/11 MON Zone 0 sensor activated
+15:23:56  12/19/11 MON Zone 1 sensor activated
+15:23:56  12/19/11 MON Zone 0 sensor activated
+15:24:4  12/19/11 MON Zone 1 sensor activated
+15:24:4  12/19/11 MON Zone 0 sensor activated
+15:24:11  12/19/11 MON Zone 1 sensor activated
+15:24:11  12/19/11 MON Zone 0 sensor activated
+15:24:19  12/19/11 MON Zone 1 sensor activated
+15:24:19  12/19/11 MON Zone 0 sensor activated
+15:24:26  12/19/11 MON Zone 1 sensor activated
+15:24:27  12/19/11 MON Zone 0 sensor activated
+15:24:34  12/19/11 MON Zone 1 sensor activated
+15:24:34  12/19/11 MON Zone 0 sensor activated
+15:24:42  12/19/11 MON Zone 1 sensor activated
+15:24:42  12/19/11 MON Zone 0 sensor activated
+15:24:49  12/19/11 MON Zone 1 sensor activated
+15:24:49  12/19/11 MON Zone 0 sensor activated
+15:24:57  12/19/11 MON Zone 1 sensor activated
+15:24:57  12/19/11 MON Zone 0 sensor activated
+15:25:4  12/19/11 MON Zone 1 sensor activated
+15:25:4  12/19/11 MON Zone 0 sensor activated
+15:25:12  12/19/11 MON Zone 1 sensor activated
+15:25:12  12/19/11 MON Zone 0 sensor activated
+15:25:19  12/19/11 MON Zone 1 sensor activated
+15:25:19  12/19/11 MON Zone 0 sensor activated
+Valid commands are:
+(d)ate, (s)show user, (m)odify user <num>  <usermask> <tagnumber>
+(a)ll user dump,(r)emove_user <num>,(o)open door <num>
+(u)nlock all doors,(l)lock all doors
+(1)disarm_alarm, (2)arm_alarm,(3)train_alarm (9)show_status
+(e)nable <password> - enable or disable priveleged mode
+15:25:23  12/19/11 MON Alarm armed level changed to 0
+15:25:23  12/19/11 MON Alarm level changed to 0
+Sensor 0 value:0
+Sensor 1 value:0
+Sensor 2 value:0
+Sensor 3 value:0
+15:25:24  12/19/11 MON Alarm Training performed.
+15:25:41  12/19/11 MON User dump started.
+UserNum: Usermask: TagNum:
+0	13	********
+1	12	********
+2	10	********
+3	255	
+4	255	
+5	255	
+6	255	
+7	255	
+8	255	
+9	255	
+10	255	
+11	255	
+12	255	
+13	255	
+14	255	
+15	255	********
+16	255	
+17	255	
+18	255	
+19	255	
+20	255	
+21	255	
+22	255	
+23	255	
+24	255	
+25	255	
+26	255	
+27	255	
+28	255	
+29	255	
+30	255	
+31	255	
+32	255	
+33	255	
+34	255	
+35	255	
+36	255	
+37	255	
+38	255	
+39	255	
+40	255	
+41	255	
+42	255	
+43	255	
+44	255	
+45	255	
+46	255	
+47	255	
+48	255	
+49	255	
+50	255	
+51	255	
+52	255	
+53	255	
+54	255	
+55	255	
+56	255	
+57	255	
+58	255	
+59	255	
+60	255	
+61	255	
+62	255	
+63	255	
+64	255	
+65	255	
+66	255	
+67	255	
+68	255	
+69	255	
+70	255	
+71	255	
+72	255	
+73	255	
+74	255	
+75	255	
+76	255	
+77	255	
+78	255	
+79	255	
+80	255	
+81	255	
+82	255	
+83	255	
+84	255	
+85	255	
+86	255	
+87	255	
+88	255	
+89	255	
+90	255	
+91	255	
+92	255	
+93	255	
+94	255	
+95	255	
+96	255	
+97	255	
+98	255	
+99	255	
+100	255	
+101	255	
+102	255	
+103	255	
+104	255	
+105	255	
+106	255	
+107	255	
+108	255	
+109	255	
+110	255	
+111	255	
+112	255	
+113	255	
+114	255	
+115	255	
+116	255	
+117	255	
+118	255	
+119	255	
+120	255	
+121	255	
+122	255	
+123	255	
+124	255	
+125	255	
+126	255	
+127	255	
+128	255	
+129	255	
+130	255	
+131	255	
+132	255	
+133	255	
+134	255	
+135	255	
+136	255	
+137	255	
+138	255	
+139	255	
+140	255	
+141	255	
+142	255	
+143	255	
+144	255	
+145	255	
+146	255	
+147	255	
+148	255	
+149	255	
+150	255	
+151	255	
+152	255	
+153	255	
+154	255	
+155	255	
+156	255	
+157	255	
+158	255	
+159	255	
+160	255	
+161	255	
+162	255	
+163	255	
+164	255	
+165	255	
+166	255	
+167	255	
+168	255	
+169	255	
+170	255	
+171	255	
+172	255	
+173	255	
+174	255	
+175	255	
+176	255	
+177	255	
+178	255	
+179	255	
+180	255	
+181	255	
+182	255	
+183	255	
+184	255	
+185	255	
+186	255	
+187	255	
+188	255	
+189	255	
+190	255	
+191	255	
+192	255	
+193	255	
+194	255	
+195	255	
+196	255	
+197	255	
+198	255	
+199	255	
+15:26:25  12/19/11 MON User  presented tag at reader 1
+15:26:25  12/19/11 MON 15:26:25  12/19/11 MON User 1 authenticated.
+15:26:25  12/19/11 MON User  granted access at reader 1
+15:26:25  12/19/11 MON Alarm level changed to 0
+15:26:25  12/19/11 MON Alarm armed level changed to 0
+Door 1 unlocked
+Door 1 locked
+15:27:33  12/19/11 MON User  presented tag at reader 1
+15:27:33  12/19/11 MON 15:27:33  12/19/11 MON User 2 authenticated.
+15:27:33  12/19/11 MON User  granted access at reader 1
+15:27:33  12/19/11 MON Alarm level changed to 0
+15:27:33  12/19/11 MON Alarm armed level changed to 0
+Door 1 unlocked
+Door 1 locked
+15:29:56  12/19/11 MON User  presented tag at reader 1
+15:29:56  12/19/11 MON User not found
+15:29:57  12/19/11 MON User 33D4646 denied access at reader 1
+Valid commands are:
+(d)ate, (s)show user, (m)odify user <num>  <usermask> <tagnumber>
+(a)ll user dump,(r)emove_user <num>,(o)open door <num>
+(u)nlock all doors,(l)lock all doors
+(1)disarm_alarm, (2)arm_alarm,(3)train_alarm (9)show_status
+(e)nable <password> - enable or disable priveleged mode
+15:31:4  12/19/11 MON User dump started.
+UserNum: Usermask: TagNum:
+0	13	********
+1	12	********
+2	10	********
+3	255	
+4	255	
+5	255	
+6	255	
+7	255	
+8	255	
+9	255	
+10	255	
+11	255	
+12	255	
+13	255	
+14	255	
+15	255	********
+16	255	
+17	255	
+18	255	
+19	255	
+20	255	
+21	255	
+22	255	
+23	255	
+24	255	
+25	255	
+26	255	
+27	255	
+28	255	
+29	255	
+30	255	
+31	255	
+32	255	
+33	255	
+34	255	
+35	255	
+36	255	
+37	255	
+38	255	
+39	255	
+40	255	
+41	255	
+42	255	
+43	255	
+44	255	
+45	255	
+46	255	
+47	255	
+48	255	
+49	255	
+50	255	
+51	255	
+52	255	
+53	255	
+54	255	
+55	255	
+56	255	
+57	255	
+58	255	
+59	255	
+60	255	
+61	255	
+62	255	
+63	255	
+64	255	
+65	255	
+66	255	
+67	255	
+68	255	
+69	255	
+70	255	
+71	255	
+72	255	
+73	255	
+74	255	
+75	255	
+76	255	
+77	255	
+78	255	
+79	255	
+80	255	
+81	255	
+82	255	
+83	255	
+84	255	
+85	255	
+86	255	
+87	255	
+88	255	
+89	255	
+90	255	
+91	255	
+92	255	
+93	255	
+94	255	
+95	255	
+96	255	
+97	255	
+98	255	
+99	255	
+100	255	
+101	255	
+102	255	
+103	255	
+104	255	
+105	255	
+106	255	
+107	255	
+108	255	
+109	255	
+110	255	
+111	255	
+112	255	
+113	255	
+114	255	
+115	255	
+116	255	
+117	255	
+118	255	
+119	255	
+120	255	
+121	255	
+122	255	
+123	255	
+124	255	
+125	255	
+126	255	
+127	255	
+128	255	
+129	255	
+130	255	
+131	255	
+132	255	
+133	255	
+134	255	
+135	255	
+136	255	
+137	255	
+138	255	
+139	255	
+140	255	
+141	255	
+142	255	
+143	255	
+144	255	
+145	255	
+146	255	
+147	255	
+148	255	
+149	255	
+150	255	
+151	255	
+152	255	
+153	255	
+154	255	
+155	255	
+156	255	
+157	255	
+158	255	
+159	255	
+160	255	
+161	255	
+162	255	
+163	255	
+164	255	
+165	255	
+166	255	
+167	255	
+168	255	
+169	255	
+170	255	
+171	255	
+172	255	
+173	255	
+174	255	
+175	255	
+176	255	
+177	255	
+178	255	
+179	255	
+180	255	
+181	255	
+182	255	
+183	255	
+184	255	
+185	255	
+186	255	
+187	255	
+188	255	
+189	255	
+190	255	
+191	255	
+192	255	
+193	255	
+194	255	
+195	255	
+196	255	
+197	255	
+198	255	
+199	255	
+3	255	15:31:54  12/19/11 MON User 3 successfully modified
+3	0	********Invalid command. Press '?' for help.
+Invalid command. Press '?' for help.
+Invalid command. Press '?' for help.
+15:31:57  12/19/11 MON User dump started.
+UserNum: Usermask: TagNum:
+0	13	********
+1	12	********
+2	10	********
+3	0	********
+4	255	
+5	255	
+6	255	
+7	255	
+8	255	
+9	255	
+10	255	
+11	255	
+12	255	
+13	255	
+14	255	
+15	255	********
+16	255	
+17	255	
+18	255	
+19	255	
+20	255	
+21	255	
+22	255	
+23	255	
+24	255	
+25	255	
+26	255	
+27	255	
+28	255	
+29	255	
+30	255	
+31	255	
+32	255	
+33	255	
+34	255	
+35	255	
+36	255	
+37	255	
+38	255	
+39	255	
+40	255	
+41	255	
+42	255	
+43	255	
+44	255	
+45	255	
+46	255	
+47	255	
+48	255	
+49	255	
+50	255	
+51	255	
+52	255	
+53	255	
+54	255	
+55	255	
+56	255	
+57	255	
+58	255	
+59	255	
+60	255	
+61	255	
+62	255	
+63	255	
+64	255	
+65	255	
+66	255	
+67	255	
+68	255	
+69	255	
+70	255	
+71	255	
+72	255	
+73	255	
+74	255	
+75	255	
+76	255	
+77	255	
+78	255	
+79	255	
+80	255	
+81	255	
+82	255	
+83	255	
+84	255	
+85	255	
+86	255	
+87	255	
+88	255	
+89	255	
+90	255	
+91	255	
+92	255	
+93	255	
+94	255	
+95	255	
+96	255	
+97	255	
+98	255	
+99	255	
+100	255	
+101	255	
+102	255	
+103	255	
+104	255	
+105	255	
+106	255	
+107	255	
+108	255	
+109	255	
+110	255	
+111	255	
+112	255	
+113	255	
+114	255	
+115	255	
+116	255	
+117	255	
+118	255	
+119	255	
+120	255	
+121	255	
+122	255	
+123	255	
+124	255	
+125	255	
+126	255	
+127	255	
+128	255	
+129	255	
+130	255	
+131	255	
+132	255	
+133	255	
+134	255	
+135	255	
+136	255	
+137	255	
+138	255	
+139	255	
+140	255	
+141	255	
+142	255	
+143	255	
+144	255	
+145	255	
+146	255	
+147	255	
+148	255	
+149	255	
+150	255	
+151	255	
+152	255	
+153	255	
+154	255	
+155	255	
+156	255	
+157	255	
+158	255	
+159	255	
+160	255	
+161	255	
+162	255	
+163	255	
+164	255	
+165	255	
+166	255	
+167	255	
+168	255	
+169	255	
+170	255	
+171	255	
+172	255	
+173	255	
+174	255	
+175	255	
+176	255	
+177	255	
+178	255	
+179	255	
+180	255	
+181	255	
+182	255	
+183	255	
+184	255	
+185	255	
+186	255	
+187	255	
+188	255	
+189	255	
+190	255	
+191	255	
+192	255	
+193	255	
+194	255	
+195	255	
+196	255	
+197	255	
+198	255	
+199	255	
+15:32:39  12/19/11 MON User  presented tag at reader 1
+15:32:39  12/19/11 MON User not found
+15:32:40  12/19/11 MON User 33CDB29 denied access at reader 1
+4	255	15:35:14  12/19/11 MON User 4 successfully modified
+4	0	********15:35:27  12/19/11 MON User  presented tag at reader 1
+15:35:27  12/19/11 MON 15:35:27  12/19/11 MON User 4 authenticated.
+15:35:27  12/19/11 MON User  granted access at reader 1
+15:35:31  12/19/11 MON User  presented tag at reader 1
+15:35:31  12/19/11 MON User not found
+15:35:32  12/19/11 MON User 33D4646 denied access at reader 1
+15:36:3  12/19/11 MON User  presented tag at reader 1
+15:36:3  12/19/11 MON User not found
+15:36:4  12/19/11 MON User 33D4646 denied access at reader 1
+15:36:38  12/19/11 MON User  presented tag at reader 1
+15:36:38  12/19/11 MON 15:36:38  12/19/11 MON User 4 authenticated.
+15:36:38  12/19/11 MON User  granted access at reader 1
+Valid commands are:
+(d)ate, (s)show user, (m)odify user <num>  <usermask> <tagnumber>
+(a)ll user dump,(r)emove_user <num>,(o)open door <num>
+(u)nlock all doors,(l)lock all doors
+(1)disarm_alarm, (2)arm_alarm,(3)train_alarm (9)show_status
+(e)nable <password> - enable or disable priveleged mode
+3	0	********15:38:16  12/19/11 MON User 3 successfully modified
+3	0	********15:38:24  12/19/11 MON User  presented tag at reader 1
+15:38:24  12/19/11 MON 15:38:24  12/19/11 MON User 3 authenticated.
+15:38:24  12/19/11 MON User  granted access at reader 1
+15:38:29  12/19/11 MON User  presented tag at reader 1
+15:38:29  12/19/11 MON 15:38:29  12/19/11 MON User 1 authenticated.
+15:38:29  12/19/11 MON User  granted access at reader 1
+15:38:29  12/19/11 MON Alarm level changed to 0
+15:38:29  12/19/11 MON Alarm armed level changed to 0
+Door 1 unlocked
+Door 1 locked
+15:38:55  12/19/11 MON User  presented tag at reader 1
+15:38:55  12/19/11 MON 15:38:55  12/19/11 MON User 3 authenticated.
+15:38:55  12/19/11 MON User  granted access at reader 1
+15:39:35  12/19/11 MON User dump started.
+UserNum: Usermask: TagNum:
+0	13	********
+1	12	********
+2	10	********
+3	0	********
+4	0	********
+5	255	
+6	255	
+7	255	
+8	255	
+9	255	
+10	255	
+11	255	
+12	255	
+13	255	
+14	255	
+15	255	********
+16	255	
+17	255	
+18	255	
+19	255	
+20	255	
+21	255	
+22	255	
+23	255	
+24	255	
+25	255	
+26	255	
+27	255	
+28	255	
+29	255	
+30	255	
+31	255	
+32	255	
+33	255	
+34	255	
+35	255	
+36	255	
+37	255	
+38	255	
+39	255	
+40	255	
+41	255	
+42	255	
+43	255	
+44	255	
+45	255	
+46	255	
+47	255	
+48	255	
+49	255	
+50	255	
+51	255	
+52	255	
+53	255	
+54	255	
+55	255	
+56	255	
+57	255	
+58	255	
+59	255	
+60	255	
+61	255	
+62	255	
+63	255	
+64	255	
+65	255	
+66	255	
+67	255	
+68	255	
+69	255	
+70	255	
+71	255	
+72	255	
+73	255	
+74	255	
+75	255	
+76	255	
+77	255	
+78	255	
+79	255	
+80	255	
+81	255	
+82	255	
+83	255	
+84	255	
+85	255	
+86	255	
+87	255	
+88	255	
+89	255	
+90	255	
+91	255	
+92	255	
+93	255	
+94	255	
+95	255	
+96	255	
+97	255	
+98	255	
+99	255	
+100	255	
+101	255	
+102	255	
+103	255	
+104	255	
+105	255	
+106	255	
+107	255	
+108	255	
+109	255	
+110	255	
+111	255	
+112	255	
+113	255	
+114	255	
+115	255	
+116	255	
+117	255	
+118	255	
+119	255	
+120	255	
+121	255	
+122	255	
+123	255	
+124	255	
+125	255	
+126	255	
+127	255	
+128	255	
+129	255	
+130	255	
+131	255	
+132	255	
+133	255	
+134	255	
+135	255	
+136	255	
+137	255	
+138	255	
+139	255	
+140	255	
+141	255	
+142	255	
+143	255	
+144	255	
+145	255	
+146	255	
+147	255	
+148	255	
+149	255	
+150	255	
+151	255	
+152	255	
+153	255	
+154	255	
+155	255	
+156	255	
+157	255	
+158	255	
+159	255	
+160	255	
+161	255	
+162	255	
+163	255	
+164	255	
+165	255	
+166	255	
+167	255	
+168	255	
+169	255	
+170	255	
+171	255	
+172	255	
+173	255	
+174	255	
+175	255	
+176	255	
+177	255	
+178	255	
+179	255	
+180	255	
+181	255	
+182	255	
+183	255	
+184	255	
+185	255	
+186	255	
+187	255	
+188	255	
+189	255	
+190	255	
+191	255	
+192	255	
+193	255	
+194	255	
+195	255	
+196	255	
+197	255	
+198	255	
+199	255	
+15:40:19  12/19/11 MON User  presented tag at reader 1
+15:40:19  12/19/11 MON User not found
+15:40:20  12/19/11 MON User 33B5644 denied access at reader 1
+Valid commands are:
+(d)ate, (s)show user, (m)odify user <num>  <usermask> <tagnumber>
+(a)ll user dump,(r)emove_user <num>,(o)open door <num>
+(u)nlock all doors,(l)lock all doors
+(1)disarm_alarm, (2)arm_alarm,(3)train_alarm (9)show_status
+(e)nable <password> - enable or disable priveleged mode
+5	255	15:40:47  12/19/11 MON User 5 successfully modified
+5	0	********15:41:33  12/19/11 MON User  presented tag at reader 1
+15:41:33  12/19/11 MON User not found
+15:41:34  12/19/11 MON User 13D159C denied access at reader 1
+15:41:35  12/19/11 MON User  presented tag at reader 1
+15:41:35  12/19/11 MON User not found
+15:41:36  12/19/11 MON User 13BBCF9 denied access at reader 1
+15:41:37  12/19/11 MON User  presented tag at reader 1
+15:41:37  12/19/11 MON User not found
+15:41:38  12/19/11 MON User 33D4CA1 denied access at reader 1
+6	255	15:42:46  12/19/11 MON User 6 successfully modified
+6	0	********7	255	15:44:20  12/19/11 MON User 7 successfully modified
+7	0	********15:45:17  12/19/11 MON User dump started.
+UserNum: Usermask: TagNum:
+0	13	********
+1	12	********
+2	10	********
+3	0	********
+4	0	********
+5	0	********
+6	0	********
+7	0	********
+8	255	
+9	255	
+10	255	
+11	255	
+12	255	
+13	255	
+14	255	
+15	255	********
+16	255	
+17	255	
+18	255	
+19	255	
+20	255	
+21	255	
+22	255	
+23	255	
+24	255	
+25	255	
+26	255	
+27	255	
+28	255	
+29	255	
+30	255	
+31	255	
+32	255	
+33	255	
+34	255	
+35	255	
+36	255	
+37	255	
+38	255	
+39	255	
+40	255	
+41	255	
+42	255	
+43	255	
+44	255	
+45	255	
+46	255	
+47	255	
+48	255	
+49	255	
+50	255	
+51	255	
+52	255	
+53	255	
+54	255	
+55	255	
+56	255	
+57	255	
+58	255	
+59	255	
+60	255	
+61	255	
+62	255	
+63	255	
+64	255	
+65	255	
+66	255	
+67	255	
+68	255	
+69	255	
+70	255	
+71	255	
+72	255	
+73	255	
+74	255	
+75	255	
+76	255	
+77	255	
+78	255	
+79	255	
+80	255	
+81	255	
+82	255	
+83	255	
+84	255	
+85	255	
+86	255	
+87	255	
+88	255	
+89	255	
+90	255	
+91	255	
+92	255	
+93	255	
+94	255	
+95	255	
+96	255	
+97	255	
+98	255	
+99	255	
+100	255	
+101	255	
+102	255	
+103	255	
+104	255	
+105	255	
+106	255	
+107	255	
+108	255	
+109	255	
+110	255	
+111	255	
+112	255	
+113	255	
+114	255	
+115	255	
+116	255	
+117	255	
+118	255	
+119	255	
+120	255	
+121	255	
+122	255	
+123	255	
+124	255	
+125	255	
+126	255	
+127	255	
+128	255	
+129	255	
+130	255	
+131	255	
+132	255	
+133	255	
+134	255	
+135	255	
+136	255	
+137	255	
+138	255	
+139	255	
+140	255	
+141	255	
+142	255	
+143	255	
+144	255	
+145	255	
+146	255	
+147	255	
+148	255	
+149	255	
+150	255	
+151	255	
+152	255	
+153	255	
+154	255	
+155	255	
+156	255	
+157	255	
+158	255	
+159	255	
+160	255	
+161	255	
+162	255	
+163	255	
+164	255	
+165	255	
+166	255	
+167	255	
+168	255	
+169	255	
+170	255	
+171	255	
+172	255	
+173	255	
+174	255	
+175	255	
+176	255	
+177	255	
+178	255	
+179	255	
+180	255	
+181	255	
+182	255	
+183	255	
+184	255	
+185	255	
+186	255	
+187	255	
+188	255	
+189	255	
+190	255	
+191	255	
+192	255	
+193	255	
+194	255	
+195	255	
+196	255	
+197	255	
+198	255	
+199	255	
+15:45:59  12/19/11 MON User  presented tag at reader 1
+15:45:59  12/19/11 MON User not found
+15:46:0  12/19/11 MON User 13C43E9 denied access at reader 1
+15:46:1  12/19/11 MON User  presented tag at reader 1
+15:46:1  12/19/11 MON User not found
+15:46:2  12/19/11 MON User 13B700C denied access at reader 1
+15:46:3  12/19/11 MON User  presented tag at reader 1
+15:46:3  12/19/11 MON User not found
+15:46:4  12/19/11 MON User 13AEB77 denied access at reader 1
+8	255	15:47:35  12/19/11 MON User 8 successfully modified
+8	0	********9	255	15:47:55  12/19/11 MON User 9 successfully modified
+9	0	********10	255	15:48:9  12/19/11 MON User 10 successfully modified
+10	0	********15:49:18  12/19/11 MON User  presented tag at reader 1
+15:49:18  12/19/11 MON User not found
+15:49:19  12/19/11 MON User 33D4CA1 denied access at reader 1
+15:49:19  12/19/11 MON User  presented tag at reader 1
+15:49:19  12/19/11 MON 15:49:19  12/19/11 MON User 8 authenticated.
+15:49:19  12/19/11 MON User  granted access at reader 1
+15:50:19  12/19/11 MON User  presented tag at reader 1
+15:50:19  12/19/11 MON 15:50:19  12/19/11 MON User 9 authenticated.
+15:50:19  12/19/11 MON User  granted access at reader 1
+15:50:20  12/19/11 MON User  presented tag at reader 1
+15:50:20  12/19/11 MON 15:50:20  12/19/11 MON User 10 authenticated.
+15:50:20  12/19/11 MON User  granted access at reader 1
+15:50:43  12/19/11 MON User  presented tag at reader 1
+15:50:43  12/19/11 MON 15:50:43  12/19/11 MON User 9 authenticated.
+15:50:43  12/19/11 MON User  granted access at reader 1
+15:50:45  12/19/11 MON User  presented tag at reader 1
+15:50:45  12/19/11 MON 15:50:45  12/19/11 MON User 10 authenticated.
+15:50:45  12/19/11 MON User  granted access at reader 1
+15:52:31  12/19/11 MON User  presented tag at reader 1
+15:52:31  12/19/11 MON 15:52:31  12/19/11 MON User 10 authenticated.
+15:52:31  12/19/11 MON User  granted access at reader 1
+15:52:47  12/19/11 MON User dump started.
+UserNum: Usermask: TagNum:
+0	13	********
+1	12	********
+2	10	********
+3	0	********
+4	0	********
+5	0	********
+6	0	********
+7	0	********
+8	0	********
+9	0	********
+10	0	********
+11	255	
+12	255	
+13	255	
+14	255	
+15	255	********
+16	255	
+17	255	
+18	255	
+19	255	
+20	255	
+21	255	
+22	255	
+23	255	
+24	255	
+25	255	
+26	255	
+27	255	
+28	255	
+29	255	
+30	255	
+31	255	
+32	255	
+33	255	
+34	255	
+35	255	
+36	255	
+37	255	
+38	255	
+39	255	
+40	255	
+41	255	
+42	255	
+43	255	
+44	255	
+45	255	
+46	255	
+47	255	
+48	255	
+49	255	
+50	255	
+51	255	
+52	255	
+53	255	
+54	255	
+55	255	
+56	255	
+57	255	
+58	255	
+59	255	
+60	255	
+61	255	
+62	255	
+63	255	
+64	255	
+65	255	
+66	255	
+67	255	
+68	255	
+69	255	
+70	255	
+71	255	
+72	255	
+73	255	
+74	255	
+75	255	
+76	255	
+77	255	
+78	255	
+79	255	
+80	255	
+81	255	
+82	255	
+83	255	
+84	255	
+85	255	
+86	255	
+87	255	
+88	255	
+89	255	
+90	255	
+91	255	
+92	255	
+93	255	
+94	255	
+95	255	
+96	255	
+97	255	
+98	255	
+99	255	
+100	255	
+101	255	
+102	255	
+103	255	
+104	255	
+105	255	
+106	255	
+107	255	
+108	255	
+109	255	
+110	255	
+111	255	
+112	255	
+113	255	
+114	255	
+115	255	
+116	255	
+117	255	
+118	255	
+119	255	
+120	255	
+121	255	
+122	255	
+123	255	
+124	255	
+125	255	
+126	255	
+127	255	
+128	255	
+129	255	
+130	255	
+131	255	
+132	255	
+133	255	
+134	255	
+135	255	
+136	255	
+137	255	
+138	255	
+139	255	
+140	255	
+141	255	
+142	255	
+143	255	
+144	255	
+145	255	
+146	255	
+147	255	
+148	255	
+149	255	
+150	255	
+151	255	
+152	255	
+153	255	
+154	255	
+155	255	
+156	255	
+157	255	
+158	255	
+159	255	
+160	255	
+161	255	
+162	255	
+163	255	
+164	255	
+165	255	
+166	255	
+167	255	
+168	255	
+169	255	
+170	255	
+171	255	
+172	255	
+173	255	
+174	255	
+175	255	
+176	255	
+177	255	
+178	255	
+179	255	
+180	255	
+181	255	
+182	255	
+183	255	
+184	255	
+185	255	
+186	255	
+187	255	
+188	255	
+189	255	
+190	255	
+191	255	
+192	255	
+193	255	
+194	255	
+195	255	
+196	255	
+197	255	
+198	255	
+199	255	
+15:55:22  12/19/11 MON User  presented tag at reader 1
+15:55:22  12/19/11 MON 15:55:22  12/19/11 MON User 3 authenticated.
+15:55:22  12/19/11 MON User  granted access at reader 1
+Valid commands are:
+(d)ate, (s)show user, (m)odify user <num>  <usermask> <tagnumber>
+(a)ll user dump,(r)emove_user <num>,(o)open door <num>
+(u)nlock all doors,(l)lock all doors
+(1)disarm_alarm, (2)arm_alarm,(3)train_alarm (9)show_status
+(e)nable <password> - enable or disable priveleged mode
+UserNum: Usermask: TagNum:
+3	0	********
+15:59:59  12/19/11 MON User  presented tag at reader 1
+15:59:59  12/19/11 MON 15:59:59  12/19/11 MON User 1 authenticated.
+15:59:59  12/19/11 MON User  granted access at reader 1
+15:59:59  12/19/11 MON Alarm level changed to 0
+15:59:59  12/19/11 MON Alarm armed level changed to 0
+Door 1 unlocked
+Door 1 locked
+16:0:11  12/19/11 MON User  presented tag at reader 1
+16:0:11  12/19/11 MON User not found
+16:0:12  12/19/11 MON User 33D5369 denied access at reader 1

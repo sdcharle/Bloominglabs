@@ -35,6 +35,8 @@ try the test w/ a 'feeder
 3/1/2012 SDC
 Database!
 
+Note, depending where this 'lives', you will need to change DATABASE_NAME and ACCESS_LOG_FILE appropriately
+
 """
 
 import logging
@@ -43,18 +45,29 @@ import irclib, random
 import time, urllib, urllib2, simplejson
 import time
 from datetime import datetime
-import re, sys
-
-
+import re, sys, os
+# set DJANGO_SETTINGS_MODULE
+os.putenv('DJANGO_SETTINGS','web_admin.settings')
 from django.conf import settings
+
+
+ACCESS_LOG_FILE = '~/Bloominglabs/open_access_scripts/access_log.txt'
+
+
 settings.configure(
     DATABASE_ENGINE    = "sqlite3",
     DATABASE_NAME      = "/Users/scharlesworth/BloomingLabs/web_admin/BloomingLabs.db",
     INSTALLED_APPS     = ("doorman",)
 )
-
+# note, you need to setup the above before importing modules etc
 from django.db import models
+from doorman.models import UserProfile, AccessEvent, SensorEvent
 
+# roll call
+us = UserProfile.objects.all()
+
+for u in us:
+    print "%s" % u.user.username
 
 logger = logging.getLogger('rfid_logger')
 logger.setLevel(logging.INFO)
@@ -68,19 +81,6 @@ fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 logger.info("RFID logger bot started.")
-
-# this is a dumb temporary user number to user mapping
-# current as of 1/14/2012, but seriously, centralize this shit.
-db = {
-    '0':'dosman',
-    '1':'steve',
-    '14':'nick',
-    '13':'daniel',
-    '12':'david b.',
-    '4':'jay',
-    '2':'jenett',    
-}
-
 
 #IRC_SERVER =  'irc.bloominglabs.org' 
 #IRC_SERVER = 'stephen-charlesworths-macbook-pro.local'
@@ -104,6 +104,7 @@ random_sez = [
 ]
 
 authpat =  re.compile("User (\d+) authenticated.", re.M)
+# add sensor regexp
 
 # just look for access message, if so gimme the user
 def check_for_door(stuff):
@@ -161,7 +162,27 @@ def get_log_line(p):
         return p.stdout.readline()
     else:
         return None
-        
+
+def log_door_event(connection, user_id):
+    prof = None
+    try:
+        prof = UserProfile.objects.get(rfid_slot = user_id)
+    except:
+        logger.error("Strange: no username found in DB for user %s." % user_id)
+    username = 'UNKNOWN'
+    if prof:
+        # note can't log unknow this way, though
+        event = AccessEvent(user = prof.user)
+        event.save()
+        username = prof.user.username   
+    logger.info("we see: %s aka %s" % (user_id, username))
+    msg = random_sez[random.choice(range(len(random_sez)))] % username
+    connection.privmsg(IRC_CHANNEL,msg)
+    
+"""
+Main program, fields messages
+TO-DO: handle 'last visit' and 'last sensor' commands
+"""
 if __name__ == '__main__':
     irc = irclib.IRC()
     server = irc.server()
@@ -172,22 +193,22 @@ if __name__ == '__main__':
     ircConn.add_global_handler('pubmsg',handle_pubmsg, -1)
     ircConn.add_global_handler('action',handle_action, -1)
     ircConn.add_global_handler('join',handle_join, -1)
-    print "Shaolin runnin it son. I'm live."
+    
+    print "I'm live."
     logger.info("Started RFID logger.")
-    p = subprocess.Popen("tail -0f access_log.txt", shell=True, stdout=subprocess.PIPE)
+    p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
     stringy = ''
     while True:
+
         r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
         while r:
             charry = p.stdout.read(1)
             stringy = stringy + charry
             uid = check_for_door(stringy)
             if uid:
-                if db.has_key(uid):
-                    logger.info("we see: %s aka %s" % (uid, db[uid]))
-                    msg = random_sez[random.choice(range(len(random_sez)))] % db[uid]
-                    ircConn.privmsg(IRC_CHANNEL,msg)
-                    time.sleep(3)
+                log_door_event(ircConn, uid)
+                time.sleep(3)
                 stringy = ''
+                
             r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
         irc.process_once(5) # timeout is 5

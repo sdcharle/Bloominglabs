@@ -52,7 +52,7 @@ k.setPredicate("name","dude")
 k.learn("std-startup.xml")
 k.respond("load aiml b")
 
-
+ACCESS_LOG_FILE = 'access_log.txt'
 logger = logging.getLogger('mad_logger')
 logger.setLevel(logging.INFO)
 fh = logging.FileHandler('mad.log')
@@ -133,15 +133,15 @@ kind of a big deal. handler of all msgs!
 def handle_pubmsg(client, event):
     stuff = ','.join(event.arguments())
     said = event.arguments()[0]
-
+    sayit = ''
     (name,truename) = event.source().split('!')
 
     time.sleep(random.choice(range(max_sleep)))
     try:
         logger.info("%s: %s" % (name, stuff))
         if stuff[0] == "'":
-            #below not seeming to 'take'
-            k.setPredicate("name",name)
+            #specify session (third arg) or it does not take
+            k.setPredicate("name",name, name)
             sayit = k.respond(stuff[1:], name)
                 
         elif stuff.upper().find(IRC_NICK.upper()) >= 0:
@@ -150,9 +150,11 @@ def handle_pubmsg(client, event):
                 logger.info("Fuck it, I disconnected")
                 sys.exit(0)
             else:
-                sayit = 'Type a single quote at the beginning of your message to talk to me.'    
-        client.privmsg(IRC_CHANNEL,sayit)
-        logger.info("%s: %s" % IRC_NICK, sayit )
+                sayit = 'Type a single quote at the beginning of your message to talk to me.'
+        if sayit:
+            sayit = sayit[:400] # protect against the 'too long' thing
+            client.privmsg(IRC_CHANNEL,sayit)
+            logger.info("%s: %s" % (IRC_NICK, sayit) )
     except Exception, val:
         logger.error("fail in pubmsg handle: (%s) (%s)" % (Exception, val))
         
@@ -180,7 +182,7 @@ if __name__ == '__main__':
     ircConn.add_global_handler('join',handle_join, -1)
     print "Shaolin runnin it son. I'm live."
     logger.info("Started RFID logger.")
-    p = subprocess.Popen("tail -0f access_log.txt", shell=True, stdout=subprocess.PIPE)
+    p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
     stringy = ''
     while True:
         r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
