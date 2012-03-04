@@ -105,6 +105,9 @@ random_sez = [
 
 authpat =  re.compile("User (\d+) authenticated.", re.M)
 # add sensor regexp
+sensorpat = re.compile('Zone (\d+) sensor activated', re.M)
+# last command
+last_command_pat = re.compile('last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
 
 # just look for access message, if so gimme the user
 def check_for_door(stuff):
@@ -113,7 +116,46 @@ def check_for_door(stuff):
         return match.group(1)
     else:
         return None
+    
+def check_for_sensor(stuff):
+    match = sensorpat.search(stuff)
+    if match:
+        return match.group(1)
+    else:
+        return None    
 
+def check_for_last_command(stuff):
+    match = last_command_pat.search(stuff)
+    if match:
+        return match.groups()
+    else:
+        return None
+
+def last_command_responses(stuff):
+    matches = check_for_last_command(stuff)
+    num = 1
+    responses = []
+    if not matches:
+        return responses
+    try:
+        num = int(matches[0])
+        if num > 10:
+            num = 10 # don't flood the channel, son
+    except:
+        pass
+    if matches[1] == 'sensor':
+        qs = SensorEvent.objects.order_by('-event_date')[:num]
+        for q in qs:
+            responses.append('%s with value %s from sensor %s at %s' % (q.event_type, q.event_value, q.event_source, q.event_date))
+    elif matches[1] == 'access':
+        qs = AccessEvent.objects.order_by('-event_date')[:num]
+        for q in qs:
+            responses.append('%s at %s' % (q.user.username, q.event_date))
+    else:
+        responses = ('Command not understood. Types are ''sensor'' or ''access'', you asked for %s' % matches[1],)
+    return responses
+    
+    
 def handle_privmsg(client, event):
     stuff = ','.join(event.arguments())
     time.sleep(random.choice(range(max_sleep)))
@@ -146,10 +188,17 @@ def handle_pubmsg(client, event):
             if stuff.find('get lost')>=0:
                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
                 logger.info("Fuck it, I disconnected")
-            client.privmsg(IRC_CHANNEL,u'%s,%s.' % ('I''m not interactive. I just answer the door',name))
+            else:
+                client.privmsg(IRC_CHANNEL,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
+# handle last command (if anything came back)
+        else:
+            for r in last_command_responses(stuff):
+                client.privmsg(IRC_CHANNEL,u'%s' % r)
 
     except Exception, val:
         logger.error("fail in pubmsg handle: (%s) (%s)" % (Exception, val))
+
+
         
 def handle_join(client,event):
         (name,truename) = event.source().split('!')  
@@ -178,6 +227,13 @@ def log_door_event(connection, user_id):
     logger.info("we see: %s aka %s" % (user_id, username))
     msg = random_sez[random.choice(range(len(random_sez)))] % username
     connection.privmsg(IRC_CHANNEL,msg)
+    
+def log_sensor_event(connection, sensor_id):
+    event = SensorEvent(event_type = 'Motion', event_source = sensor_id, event_value = 1)
+    event.save()
+    # log?
+
+
     
 """
 Main program, fields messages
@@ -209,6 +265,9 @@ if __name__ == '__main__':
                 log_door_event(ircConn, uid)
                 time.sleep(3)
                 stringy = ''
-                
+            sid = check_for_sensor(stringy)
+            if sid:
+                log_sensor_event(ircConn, sid)
+                stringy = ''
             r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
         irc.process_once(5) # timeout is 5
