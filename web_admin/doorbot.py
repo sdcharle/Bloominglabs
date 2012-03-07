@@ -101,6 +101,9 @@ random_sez = [
     'hey there %s, let me get the door for you',
     'good day to you, %s',
     'great day for hacking there, %s',
+    '%s in the hizous!',
+    '%s has arrived',
+    'Never fear, %s is here',
 ]
 
 authpat =  re.compile("User (\d+) authenticated.", re.M)
