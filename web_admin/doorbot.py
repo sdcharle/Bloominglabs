@@ -1,41 +1,21 @@
-"""
-SDC 1/11/2012
-
-Bot that says 'hi' on IRC channel when people are authenticated by the RFID
-
-messages have the form:
-18:50:21  1/11/12 WED 18:50:21  1/11/12 WED User 14 authenticated.
-18:50:21  1/11/12 WED User  granted access at reader 1
-
-
-1/12/2012
-
-Note, this is fun, reads the msgs in a voice usin festival
-
-http://brainwagon.org/2011/01/30/my-speech-bot-using-irclib-py/
-he has some great Arduino/hacker stuff, too
-
-irclib code is here:
-
-http://forge.kasey.fr/projets/hashzor/irclib.py
-
-1/14/2012
-SDC
-Using 'select' so pings are handled.
-Note they say poll may be better here:
-http://docs.python.org/library/select.html
-
-for testing use 'UNREAL'
-sudo ./unreal in the Unreal dir
-wooty.
-
-note while testing if you add to the thing and save it goes back to the beginning of the file
-try the test w/ a 'feeder
 
 3/1/2012 SDC
 Database!
 
 Note, depending where this 'lives', you will need to change DATABASE_NAME and ACCESS_LOG_FILE appropriately
+
+to-do - don't get caught in a loop ('cool off')
+
+3/12/2012
+
+TO-DO
+
+Pushing box integration (table of notifications to send - notify the iPhone)
+Auto-start on boot up.
+remember the pogobox is now bloominglabs.no-ip.org
+
+3/15/2012 SDC
+PushingboxNotification up in here!
 
 """
 
@@ -50,6 +30,7 @@ import re, sys, os
 os.putenv('DJANGO_SETTINGS','web_admin.settings')
 from django.conf import settings
 
+from pushingbox import pushingbox
 
 ACCESS_LOG_FILE = '/home/access/scripts/access_log.txt'
 
@@ -60,13 +41,7 @@ settings.configure(
 )
 # note, you need to setup the above before importing modules etc
 from django.db import models
-from doorman.models import UserProfile, AccessEvent, SensorEvent
-
-# roll call
-us = UserProfile.objects.all()
-
-for u in us:
-    print "%s" % u.user.username
+from doorman.models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
 
 logger = logging.getLogger('rfid_logger')
 logger.setLevel(logging.INFO)
@@ -95,59 +70,6 @@ max_sleep = 3 # 'take a breath' after responding. prevent bots from making
 # you make a damn fool of yourself
 
 # %s - pass in name
-random_sez = [
-    'how about that local sports team, %s?',
-    'hey there %s, let me get the door for you',
-    'good day to you, %s',
-    'great day for hacking there, %s',
-    '%s in the hizous!',
-    '%s has arrived',
-    'Never fear, %s is here',
-]
-
-authpat =  re.compile("User (\d+) authenticated.", re.M)
-# add sensor regexp
-sensorpat = re.compile('Zone (\d+) sensor activated', re.M)
-# last command
-last_command_pat = re.compile('last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
-
-# just look for access message, if so gimme the user
-def check_for_door(stuff):
-    match = authpat.search(stuff)
-    if match:
-        return match.group(1)
-    else:
-        return None
-    
-def check_for_sensor(stuff):
-    match = sensorpat.search(stuff)
-    if match:
-        return match.group(1)
-    else:
-        return None    
-
-def check_for_last_command(stuff):
-    match = last_command_pat.search(stuff)
-    if match:
-        return match.groups()
-    else:
-        return None
-
-def last_command_responses(stuff):
-    matches = check_for_last_command(stuff)
-    num = 1
-    responses = []
-    if not matches:
-        return responses
-    try:
-        num = int(matches[0])
-        if num > 10:
-            num = 10 # don't flood the channel, son
-    except:
-        pass
-    if matches[1] == 'sensor':
-        qs = SensorEvent.objects.order_by('-event_date')[:num]
-        for q in qs:
             responses.append('%s with value %s from sensor %s at %s' % (q.event_type, q.event_value, q.event_source, q.event_date))
     elif matches[1] == 'access':
         qs = AccessEvent.objects.order_by('-event_date')[:num]
@@ -159,28 +81,11 @@ def last_command_responses(stuff):
 	responses = ('nothing to report',)
     return responses
     
-    
-def handle_privmsg(client, event):
-    stuff = ','.join(event.arguments())
-    time.sleep(random.choice(range(max_sleep)))
-# note but what is name
-    try:
-        (name,truename) = event.source().split('!')
-        client.privmsg(name,'I got no secrets')
-    except Exception, val:
-        logger.error("weird privmsg fail! (%s) : (%s)" % (Exception, val))
-    
-def handle_action(client, event):
-    client.privmsg(IRC_CHANNEL,'I see what you did there...')
-    stuff = ','.join(event.arguments())
-    (name,truename) = event.source().split('!')
-    print "%s: %s" % (name,stuff) 
 
-"""
-kind of a big deal. handler of all msgs!
-"""
+# like before but now both use these
 
-def handle_pubmsg(client, event):
+def handle_msg(client, event, target):
+
     stuff = ','.join(event.arguments())
     said = event.arguments()[0]
 
@@ -193,28 +98,31 @@ def handle_pubmsg(client, event):
                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
                 logger.info("Fuck it, I disconnected")
             else:
-                client.privmsg(IRC_CHANNEL,u'%s, %s' % ('Type \'last n access\' or \'last n sensor\' to see recent accesses or sensors',name))
+                client.privmsg(target,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
 # handle last command (if anything came back)
         else:
             for r in last_command_responses(stuff):
-                client.privmsg(IRC_CHANNEL,u'%s' % r)
+                client.privmsg(target,u'%s' % r)
 
     except Exception, val:
         logger.error("fail in pubmsg handle: (%s) (%s)" % (Exception, val))
+        
+def handle_privmsg(client, event):
+    handle_msg(client,event, (event.source().split('!'))[0])
 
+    
+"""
+kind of a big deal. handler of all msgs!
+"""
 
+def handle_pubmsg(client, event):
+    handle_msg(client, event, IRC_CHANNEL)
         
 def handle_join(client,event):
         (name,truename) = event.source().split('!')  
         client.privmsg(IRC_CHANNEL,'%s!!!' % name.upper())
 
 # only get stuff if there is in fact stuff to get
-def get_log_line(p):                                                                                                              
-    r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
-    if r:
-        return p.stdout.readline()
-    else:
-        return None
 
 def log_door_event(connection, user_id):
     prof = None
@@ -234,46 +142,34 @@ def log_door_event(connection, user_id):
 #    p = subprocess.Popen("echo  %s | festival --tts" % msg, shell=True)
 
     connection.privmsg(IRC_CHANNEL,msg)
+    pushingbox_notify(username)
+
+def pushingbox_notify(username):
+    pbns = PushingboxNotification.objects.filter(notification_type = 'Access')
+
+    for p in pbns:   
+        pushingbox(p.notification_devid, {'user':username})
     
 def log_sensor_event(connection, sensor_id):
     event = SensorEvent(event_type = 'Motion', event_source = sensor_id, event_value = 1)
     event.save()
-    # log?
-
 
     
 """
 Main program, fields messages
 TO-DO: handle 'last visit' and 'last sensor' commands
 """
-if __name__ == '__main__':
-    irc = irclib.IRC()
     server = irc.server()
     
     ircConn = server.connect(IRC_SERVER,IRC_PORT,IRC_NICK,ircname= IRC_NAME)
     ircConn.join(IRC_CHANNEL)
     ircConn.add_global_handler('privmsg',handle_privmsg, -1)
     ircConn.add_global_handler('pubmsg',handle_pubmsg, -1)
-    ircConn.add_global_handler('action',handle_action, -1)
-    ircConn.add_global_handler('join',handle_join, -1)    
+    ircConn.add_global_handler('join',handle_join, -1)
+    
     print "I'm live."
     logger.info("Started RFID logger.")
     p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
     stringy = ''
     while True:
 
-        r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
-        while r:
-            charry = p.stdout.read(1)
-            stringy = stringy + charry
-            uid = check_for_door(stringy)
-            if uid:
-                log_door_event(ircConn, uid)
-                time.sleep(3)
-                stringy = ''
-            sid = check_for_sensor(stringy)
-            if sid:
-                log_sensor_event(ircConn, sid)
-                stringy = ''
-            r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
-        irc.process_once(5) # timeout is 5

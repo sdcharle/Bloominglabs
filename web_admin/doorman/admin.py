@@ -31,7 +31,7 @@ From this guy
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from models import UserProfile, AccessEvent, SensorEvent
+from models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
 
 # also could try (no 'fk_name') http://stackoverflow.com/questions/4565814/django-user-userprofile-and-admin
 
@@ -71,3 +71,8 @@ class SensorEventAdmin(admin.ModelAdmin):
     list_display = ('event_type', 'event_source', 'event_date', 'event_value')
 
 admin.site.register(SensorEvent, SensorEventAdmin)
+
+class PushingboxNotificationAdmin(admin.ModelAdmin):
+    list_display = ('notification_user', 'notification_type', 'notification_devid',)
+
+admin.site.register(PushingboxNotification, PushingboxNotificationAdmin)
