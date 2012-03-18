@@ -51,12 +51,11 @@ os.putenv('DJANGO_SETTINGS','web_admin.settings')
 from django.conf import settings
 
 
-ACCESS_LOG_FILE = '~/Bloominglabs/open_access_scripts/access_log.txt'
-
+ACCESS_LOG_FILE = '/home/access/scripts/access_log.txt'
 
 settings.configure(
     DATABASE_ENGINE    = "sqlite3",
-    DATABASE_NAME      = "/Users/scharlesworth/BloomingLabs/web_admin/BloomingLabs.db",
+    DATABASE_NAME      = "/home/access/databases/BloomingLabs.db",
     INSTALLED_APPS     = ("doorman",)
 )
 # note, you need to setup the above before importing modules etc
@@ -71,7 +70,7 @@ for u in us:
 
 logger = logging.getLogger('rfid_logger')
 logger.setLevel(logging.INFO)
-fh = logging.FileHandler('rfid.log')
+fh = logging.FileHandler('/home/access/logs/rfid.log')
 fh.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger.addHandler(fh)
@@ -82,14 +81,14 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 logger.info("RFID logger bot started.")
 
-#IRC_SERVER =  'irc.bloominglabs.org' 
+IRC_SERVER =  'irc.bloominglabs.org' 
 #IRC_SERVER = 'stephen-charlesworths-macbook-pro.local'
-IRC_SERVER = '127.0.0.1'
+#IRC_SERVER = '127.0.0.1'
 
 IRC_PORT = 6667
-IRC_NICK = 'doorbot'
+IRC_NICK = 'doorbot_jr'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
-IRC_CHANNEL = "#hackerspace"
+IRC_CHANNEL = "#blabs-bots"
 
 random.seed()
 max_sleep = 3 # 'take a breath' after responding. prevent bots from making
@@ -155,7 +154,9 @@ def last_command_responses(stuff):
         for q in qs:
             responses.append('%s at %s' % (q.user.username, q.event_date))
     else:
-        responses = ('Command not understood. Types are ''sensor'' or ''access'', you asked for %s' % matches[1],)
+        responses = ('Command not understood. Types are \'sensor\' or \'access\', you asked for %s' % matches[1],)
+    if not responses:
+	responses = ('nothing to report',)
     return responses
     
     
@@ -192,7 +193,7 @@ def handle_pubmsg(client, event):
                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
                 logger.info("Fuck it, I disconnected")
             else:
-                client.privmsg(IRC_CHANNEL,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
+                client.privmsg(IRC_CHANNEL,u'%s, %s' % ('Type \'last n access\' or \'last n sensor\' to see recent accesses or sensors',name))
 # handle last command (if anything came back)
         else:
             for r in last_command_responses(stuff):
@@ -220,7 +221,7 @@ def log_door_event(connection, user_id):
     try:
         prof = UserProfile.objects.get(rfid_slot = user_id)
     except:
-        logger.error("Strange: no username found in DB for user %s." % user_id)
+        logger.error("Strange: no username found in DB for user >%s<." % user_id)
     username = 'UNKNOWN'
     if prof:
         # note can't log unknow this way, though
@@ -229,6 +230,9 @@ def log_door_event(connection, user_id):
         username = prof.user.username   
     logger.info("we see: %s aka %s" % (user_id, username))
     msg = random_sez[random.choice(range(len(random_sez)))] % username
+ 
+#    p = subprocess.Popen("echo  %s | festival --tts" % msg, shell=True)
+
     connection.privmsg(IRC_CHANNEL,msg)
     
 def log_sensor_event(connection, sensor_id):
@@ -251,8 +255,7 @@ if __name__ == '__main__':
     ircConn.add_global_handler('privmsg',handle_privmsg, -1)
     ircConn.add_global_handler('pubmsg',handle_pubmsg, -1)
     ircConn.add_global_handler('action',handle_action, -1)
-    ircConn.add_global_handler('join',handle_join, -1)
-    
+    ircConn.add_global_handler('join',handle_join, -1)    
     print "I'm live."
     logger.info("Started RFID logger.")
     p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
