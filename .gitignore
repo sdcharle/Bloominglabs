@@ -1,3 +1,7 @@
 web_admin/BloomingLabs.db
+web_admin/rfid.log
 open_access_scripts/other_install_notes.txt
+open_access_scripts/mad.log
+open_access_scripts/rfid.log
+open_access_scripts/access_log.txt
 git-remove-history

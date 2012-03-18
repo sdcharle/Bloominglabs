@@ -37,6 +37,19 @@ Database!
 
 Note, depending where this 'lives', you will need to change DATABASE_NAME and ACCESS_LOG_FILE appropriately
 
+to-do - don't get caught in a loop ('cool off')
+
+3/12/2012
+
+TO-DO
+
+Pushing box integration (table of notifications to send - notify the iPhone)
+Auto-start on boot up.
+remember the pogobox is now bloominglabs.no-ip.org
+
+3/15/2012 SDC
+PushingboxNotification up in here!
+
 """
 
 import logging
@@ -50,9 +63,9 @@ import re, sys, os
 os.putenv('DJANGO_SETTINGS','web_admin.settings')
 from django.conf import settings
 
+from pushingbox import pushingbox
 
 ACCESS_LOG_FILE = '~/Bloominglabs/open_access_scripts/access_log.txt'
-
 
 settings.configure(
     DATABASE_ENGINE    = "sqlite3",
@@ -61,13 +74,7 @@ settings.configure(
 )
 # note, you need to setup the above before importing modules etc
 from django.db import models
-from doorman.models import UserProfile, AccessEvent, SensorEvent
-
-# roll call
-us = UserProfile.objects.all()
-
-for u in us:
-    print "%s" % u.user.username
+from doorman.models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
 
 logger = logging.getLogger('rfid_logger')
 logger.setLevel(logging.INFO)
@@ -89,7 +96,7 @@ IRC_SERVER = '127.0.0.1'
 IRC_PORT = 6667
 IRC_NICK = 'doorbot'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
-IRC_CHANNEL = "#hackerspace"
+IRC_CHANNEL = "#blabs-bots"
 
 random.seed()
 max_sleep = 3 # 'take a breath' after responding. prevent bots from making
@@ -158,28 +165,11 @@ def last_command_responses(stuff):
         responses = ('Command not understood. Types are ''sensor'' or ''access'', you asked for %s' % matches[1],)
     return responses
     
-    
-def handle_privmsg(client, event):
-    stuff = ','.join(event.arguments())
-    time.sleep(random.choice(range(max_sleep)))
-# note but what is name
-    try:
-        (name,truename) = event.source().split('!')
-        client.privmsg(name,'I got no secrets')
-    except Exception, val:
-        logger.error("weird privmsg fail! (%s) : (%s)" % (Exception, val))
-    
-def handle_action(client, event):
-    client.privmsg(IRC_CHANNEL,'I see what you did there...')
-    stuff = ','.join(event.arguments())
-    (name,truename) = event.source().split('!')
-    print "%s: %s" % (name,stuff) 
 
-"""
-kind of a big deal. handler of all msgs!
-"""
+# like before but now both use these
 
-def handle_pubmsg(client, event):
+def handle_msg(client, event, target):
+
     stuff = ','.join(event.arguments())
     said = event.arguments()[0]
 
@@ -192,16 +182,25 @@ def handle_pubmsg(client, event):
                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
                 logger.info("Fuck it, I disconnected")
             else:
-                client.privmsg(IRC_CHANNEL,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
+                client.privmsg(target,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
 # handle last command (if anything came back)
         else:
             for r in last_command_responses(stuff):
-                client.privmsg(IRC_CHANNEL,u'%s' % r)
+                client.privmsg(target,u'%s' % r)
 
     except Exception, val:
         logger.error("fail in pubmsg handle: (%s) (%s)" % (Exception, val))
+        
+def handle_privmsg(client, event):
+    handle_msg(client,event, (event.source().split('!'))[0])
 
+    
+"""
+kind of a big deal. handler of all msgs!
+"""
 
+def handle_pubmsg(client, event):
+    handle_msg(client, event, IRC_CHANNEL)
         
 def handle_join(client,event):
         (name,truename) = event.source().split('!')  
@@ -230,12 +229,17 @@ def log_door_event(connection, user_id):
     logger.info("we see: %s aka %s" % (user_id, username))
     msg = random_sez[random.choice(range(len(random_sez)))] % username
     connection.privmsg(IRC_CHANNEL,msg)
+    pushingbox_notify(username)
+
+def pushingbox_notify(username):
+    pbns = PushingboxNotification.objects.filter(notification_type = 'Access')
+
+    for p in pbns:   
+        pushingbox(p.notification_devid, {'user':username})
     
 def log_sensor_event(connection, sensor_id):
     event = SensorEvent(event_type = 'Motion', event_source = sensor_id, event_value = 1)
     event.save()
-    # log?
-
 
     
 """
@@ -250,7 +254,6 @@ if __name__ == '__main__':
     ircConn.join(IRC_CHANNEL)
     ircConn.add_global_handler('privmsg',handle_privmsg, -1)
     ircConn.add_global_handler('pubmsg',handle_pubmsg, -1)
-    ircConn.add_global_handler('action',handle_action, -1)
     ircConn.add_global_handler('join',handle_join, -1)
     
     print "I'm live."
