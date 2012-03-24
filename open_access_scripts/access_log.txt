@@ -1,3 +1,0 @@
-User 6 authenticated.
-17:43:46  3/3/12 SAT Zone 1 sensor activated
-User 2 authenticated.d 
