@@ -5,3 +5,9 @@ open_access_scripts/mad.log
 open_access_scripts/rfid.log
 open_access_scripts/access_log.txt
 git-remove-history
+rfid_network_server/.DS_Store
+rfid_network_server/rfid_proxy.py
+rfid_network_server/rfidtwisted.log
+rfid_network_server/twistd.log
+rfid_network_server/twistd.pid
+rfid_network_server/twistd_example.tac
