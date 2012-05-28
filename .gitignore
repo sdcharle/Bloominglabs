@@ -11,3 +11,4 @@ rfid_network_server/rfidtwisted.log
 rfid_network_server/twistd.log
 rfid_network_server/twistd.pid
 rfid_network_server/twistd_example.tac
+*.pyc
