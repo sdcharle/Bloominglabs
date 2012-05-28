@@ -12,3 +12,6 @@ rfid_network_server/twistd.log
 rfid_network_server/twistd.pid
 rfid_network_server/twistd_example.tac
 *.pyc
+.DS_Store
+*.log
+rfid_network_server/savedjunk
