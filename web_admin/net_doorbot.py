@@ -53,6 +53,13 @@ PushingboxNotification up in here!
 5/27/2012 SDC
 RFID is now networked. Instead of reading a file, read a socket.
 
+7/15/2012 SDC
+Don't forget pachube yo
+
+TODO - net (IRC) connectivity.
+WTF w/ nohup?
+general error handlin
+
 """
 
 import logging
@@ -65,6 +72,9 @@ import re, sys, os
 
 # for network piece
 import socket
+from pachube_updater import *
+
+pac = Pachube('/v2/feeds/53278.xml')
 
 # set DJANGO_SETTINGS_MODULE
 #os.putenv('DJANGO_SETTINGS_MODULE','web_admin.settings')
@@ -104,12 +114,12 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 logger.info("RFID logger bot started.")
 
-#IRC_SERVER =  'irc.bloominglabs.org' 
+IRC_SERVER =  'irc.bloominglabs.org' 
 #IRC_SERVER = 'stephen-charlesworths-macbook-pro.local'
-IRC_SERVER = '127.0.0.1'
+#IRC_SERVER = '127.0.0.1'
 
 IRC_PORT = 6667
-IRC_NICK = 'doorbot'
+IRC_NICK = 'doorbot_net'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
 IRC_CHANNEL = "#blabs-bots"
 
@@ -273,7 +283,7 @@ if __name__ == '__main__':
     
     print "I'm live."
     logger.info("Started RFID logger.")
-    p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
+#    p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
 
     # connect up in this piece
     rfid_client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -281,7 +291,8 @@ if __name__ == '__main__':
 
     stringy = ''
     while True:
-
+	doorval = 0
+	officeval = 0
  # Wait for input from stdin & socket 1 is timeout
         input_ready, output_ready,except_ready = select.select([0, rfid_client], [],[],1)
         while input_ready:
@@ -292,13 +303,20 @@ if __name__ == '__main__':
                     stringy = stringy + charry
                     uid = check_for_door(stringy)
                     if uid:
+			doorval = 1
                         log_door_event(ircConn, uid)
                         time.sleep(3)
                         stringy = ''
                     sid = check_for_sensor(stringy)
                     if sid:
+			officeval = 1
                         log_sensor_event(ircConn, sid)
                         stringy = ''
             input_ready, output_ready,except_ready = select.select([0, rfid_client], [],[],1)
-#        print "wait and process"
+            try:
+                pac.log('Door', doorval)
+                ircConn.pong(IRC_CHANNEL)
+                pac.log('Office',officeval)
+            except Exception, val:
+                logger.error("Pachube update problems: %s:%s" % (Exception, val))
         irc.process_once(5) # timeout is 5
