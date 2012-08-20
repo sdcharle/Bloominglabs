@@ -294,7 +294,7 @@ if __name__ == '__main__':
 	doorval = 0
 	officeval = 0
  # Wait for input from stdin & socket 1 is timeout
-        input_ready, output_ready,except_ready = select.select([0, rfid_client], [],[],1)
+        input_ready, output_ready,except_ready = select.select([rfid_client], [],[],1)
         while input_ready:
         # you could have multiple
             for i in input_ready:
@@ -312,11 +312,14 @@ if __name__ == '__main__':
 			officeval = 1
                         log_sensor_event(ircConn, sid)
                         stringy = ''
-            input_ready, output_ready,except_ready = select.select([0, rfid_client], [],[],1)
-            try:
-                pac.log('Door', doorval)
-                ircConn.pong(IRC_CHANNEL)
-                pac.log('Office',officeval)
-            except Exception, val:
-                logger.error("Pachube update problems: %s:%s" % (Exception, val))
-        irc.process_once(5) # timeout is 5
+            input_ready, output_ready,except_ready = select.select([rfid_client], [],[],1)
+        print "woot"
+        try:
+            pac.log('Door', doorval)
+            ircConn.pong(IRC_CHANNEL)
+            pac.log('Office',officeval)
+	    print "doorlog be good"
+        except Exception, val:
+	    print "cosm probs: %s, %s" % (Exception, val)
+            logger.error("Pachube update problems: %s:%s" % (Exception, val))
+	irc.process_once(5) # timeout is 5
