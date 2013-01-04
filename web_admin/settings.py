@@ -13,6 +13,10 @@ ADMINS = (
 MANAGERS = ADMINS
 AUTH_PROFILE_MODULE = 'doorman.UserProfile'
 
+RFID_SERVER = "127.0.0.1"
+RFID_PORT = 6666
+RFID_PASSWORD = 'thisisntit'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

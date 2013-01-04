@@ -31,12 +31,13 @@ From this guy
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
+from models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification, Timespan, Calendar
 
 # also could try (no 'fk_name') http://stackoverflow.com/questions/4565814/django-user-userprofile-and-admin
 
 class UserProfileInline(admin.TabularInline):
     model = UserProfile
+    exclude = ('sync_date',)
     fk_name = 'user'
     max_num = 1
 
@@ -44,11 +45,8 @@ class UserProfileInline(admin.TabularInline):
 class CustomUserAdmin(UserAdmin):
     inlines = [UserProfileInline,]
     list_display = ('username', 'email', 'first_name', 'last_name',
-                    'user_rfid_access', 'user_rfid_slot', 'user_rfid_tag', 'user_rfid_label',
+                    'user_rfid_access',  'user_rfid_tag', 'user_rfid_label',
                     'is_staff', 'is_active')
-    
-    def user_rfid_slot(self, instance):
-        return instance.get_profile().rfid_slot
     
     def user_rfid_tag(self, instance):
         return instance.get_profile().rfid_tag
@@ -76,3 +74,15 @@ class PushingboxNotificationAdmin(admin.ModelAdmin):
     list_display = ('notification_user', 'notification_type', 'notification_devid',)
 
 admin.site.register(PushingboxNotification, PushingboxNotificationAdmin)
+
+
+class TimespanAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Timespan, TimespanAdmin)
+
+class CalendarAdmin(admin.ModelAdmin):
+    filter_horizontal = ('timespans', 'groups',)
+    
+
+admin.site.register(Calendar, CalendarAdmin)

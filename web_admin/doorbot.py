@@ -60,7 +60,7 @@ import time
 from datetime import datetime
 import re, sys, os
 # set DJANGO_SETTINGS_MODULE
-os.putenv('DJANGO_SETTINGS','web_admin.settings')
+os.putenv('DJANGO_SETTINGS_MODULE','web_admin.settings')
 from django.conf import settings
 
 from pushingbox import pushingbox
@@ -174,6 +174,9 @@ def handle_msg(client, event, target):
     said = event.arguments()[0]
 
     (name,truename) = event.source().split('!')
+
+# debug only. take out later
+    print "got msg (%s) from name (%s)" % (stuff,truename)
 
     time.sleep(random.choice(range(max_sleep)))
     try:

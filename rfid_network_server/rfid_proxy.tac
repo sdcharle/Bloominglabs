@@ -129,6 +129,8 @@ class USBClient(LineReceiver): #Protocol):
         log.msg("eat it jerky. USB connection lost for reason: %s" % reason)
         self.network.USBLost(reason)
 
+# do a reactor stop?
+
 class RFIDClient(LineReceiver):
 
     def connectionMade(self):
@@ -182,11 +184,11 @@ class RFIDClientFactory(Factory):
 
 # for Service purposes
 # is this ever used, though???
-class RFIDService(service.Service):
-
-    def startService(self):
-        service.Service.startService(self)
-        log.msg('RFID Service: INITIATE!')
+# does not appear to be
+#class RFIDService(service.Service):
+#    def startService(self):
+#        service.Service.startService(self)
+#        log.msg('RFID Service: INITIATE!')
 
 """
 
