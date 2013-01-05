@@ -60,7 +60,7 @@ class UserProfile(models.Model):
     def save(self, *args, **kwargs):
         print "in da save, son"
         try:
-            mask = 0
+            mask = 255 # actually this is the 'locked out' - 0 is the 'just log it'
             existing = UserProfile.objects.all().get(user=self.user)
 
             self.id = existing.id #force update instead of insert
