@@ -104,9 +104,9 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 logger.info("RFID logger bot started.")
 
-#IRC_SERVER =  'irc.bloominglabs.org' 
+IRC_SERVER =  'irc.bloominglabs.org' 
 #IRC_SERVER = 'stephen-charlesworths-macbook-pro.local'
-IRC_SERVER = '127.0.0.1'
+#IRC_SERVER = '127.0.0.1'
 
 IRC_PORT = 6667
 IRC_NICK = 'doorbot'
