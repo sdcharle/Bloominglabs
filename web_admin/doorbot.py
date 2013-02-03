@@ -1,36 +1,4 @@
 """
-SDC 1/11/2012
-
-Bot that says 'hi' on IRC channel when people are authenticated by the RFID
-
-messages have the form:
-18:50:21  1/11/12 WED 18:50:21  1/11/12 WED User 14 authenticated.
-18:50:21  1/11/12 WED User  granted access at reader 1
-
-
-1/12/2012
-
-Note, this is fun, reads the msgs in a voice usin festival
-
-http://brainwagon.org/2011/01/30/my-speech-bot-using-irclib-py/
-he has some great Arduino/hacker stuff, too
-
-irclib code is here:
-
-http://forge.kasey.fr/projets/hashzor/irclib.py
-
-1/14/2012
-SDC
-Using 'select' so pings are handled.
-Note they say poll may be better here:
-http://docs.python.org/library/select.html
-
-for testing use 'UNREAL'
-sudo ./unreal in the Unreal dir
-wooty.
-
-note while testing if you add to the thing and save it goes back to the beginning of the file
-try the test w/ a 'feeder
 
 3/1/2012 SDC
 Database!
@@ -65,11 +33,15 @@ from django.conf import settings
 
 from pushingbox import pushingbox
 
-ACCESS_LOG_FILE = '~/Bloominglabs/open_access_scripts/access_log.txt'
+# sdc new pachube thingy
+
+from pachube_updater import *
+
+ACCESS_LOG_FILE = '/home/access/scripts/access_log.txt'
 
 settings.configure(
     DATABASE_ENGINE    = "sqlite3",
-    DATABASE_NAME      = "/Users/scharlesworth/BloomingLabs/web_admin/BloomingLabs.db",
+    DATABASE_NAME      = "/home/access/databases/BloomingLabs.db",
     INSTALLED_APPS     = ("doorman",)
 )
 # note, you need to setup the above before importing modules etc
@@ -78,7 +50,7 @@ from doorman.models import UserProfile, AccessEvent, SensorEvent, PushingboxNoti
 
 logger = logging.getLogger('rfid_logger')
 logger.setLevel(logging.INFO)
-fh = logging.FileHandler('rfid.log')
+fh = logging.FileHandler('/home/access/logs/rfid4.log')
 fh.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger.addHandler(fh)
@@ -89,12 +61,12 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 logger.info("RFID logger bot started.")
 
-#IRC_SERVER =  'irc.bloominglabs.org' 
+IRC_SERVER =  'irc.bloominglabs.org' 
 #IRC_SERVER = 'stephen-charlesworths-macbook-pro.local'
-IRC_SERVER = '127.0.0.1'
+#IRC_SERVER = '127.0.0.1'
 
 IRC_PORT = 6667
-IRC_NICK = 'doorbot'
+IRC_NICK = 'doorbot_IV'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
 IRC_CHANNEL = "#blabs-bots"
 
@@ -164,7 +136,7 @@ def last_command_responses(stuff):
     else:
         responses = ('Command not understood. Types are ''sensor'' or ''access'', you asked for %s' % matches[1],)
     return responses
-    
+   
 
 # like before but now both use these
 
@@ -185,7 +157,7 @@ def handle_msg(client, event, target):
                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
                 logger.info("Fuck it, I disconnected")
             else:
-                client.privmsg(target,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
+                client.privmsg(target,u'%s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors'))
 # handle last command (if anything came back)
         else:
             for r in last_command_responses(stuff):
@@ -222,7 +194,7 @@ def log_door_event(connection, user_id):
     try:
         prof = UserProfile.objects.get(rfid_slot = user_id)
     except:
-        logger.error("Strange: no username found in DB for user %s." % user_id)
+        logger.error("Strange: no username found in DB for user >%s<." % user_id)
     username = 'UNKNOWN'
     if prof:
         # note can't log unknow this way, though
@@ -231,6 +203,9 @@ def log_door_event(connection, user_id):
         username = prof.user.username   
     logger.info("we see: %s aka %s" % (user_id, username))
     msg = random_sez[random.choice(range(len(random_sez)))] % username
+ 
+#    p = subprocess.Popen("echo  %s | festival --tts" % msg, shell=True)
+
     connection.privmsg(IRC_CHANNEL,msg)
     pushingbox_notify(username)
 
@@ -249,10 +224,13 @@ def log_sensor_event(connection, sensor_id):
 Main program, fields messages
 TO-DO: handle 'last visit' and 'last sensor' commands
 """
-if __name__ == '__main__':
+"""
+Main program, fields messages
+TO-DO: handle 'last visit' and 'last sensor' commands
+"""
+if __name__ == '__main__':    
     irc = irclib.IRC()
     server = irc.server()
-    
     ircConn = server.connect(IRC_SERVER,IRC_PORT,IRC_NICK,ircname= IRC_NAME)
     ircConn.join(IRC_CHANNEL)
     ircConn.add_global_handler('privmsg',handle_privmsg, -1)
@@ -263,8 +241,10 @@ if __name__ == '__main__':
     logger.info("Started RFID logger.")
     p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
     stringy = ''
+    pac = Pachube('/v2/feeds/53278.xml')
     while True:
-
+	doorval = 0
+        officeval = 0
         r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
         while r:
             charry = p.stdout.read(1)
@@ -272,11 +252,19 @@ if __name__ == '__main__':
             uid = check_for_door(stringy)
             if uid:
                 log_door_event(ircConn, uid)
+		doorval = 1
                 time.sleep(3)
                 stringy = ''
             sid = check_for_sensor(stringy)
             if sid:
                 log_sensor_event(ircConn, sid)
+		officeval = 1
                 stringy = ''
             r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
-        irc.process_once(5) # timeout is 5
+        try:
+            pac.log('Door', doorval)
+            ircConn.pong(IRC_CHANNEL)
+            pac.log('Office',officeval)
+        except Exception, val:
+            logger.error("Pachube update problems: %s:%s" % (Exception, val))
+	irc.process_once(5) # timeout is 5
