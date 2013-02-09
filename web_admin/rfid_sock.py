@@ -100,6 +100,6 @@ def send_command(command):
     return string
 
 if __name__ == '__main__':
-    #send_command("m 222222 1$99bead00\r\n")
-    modify_user(HOST, PORT, "222222", "1", "99bead00")
+    #send_command("m 222222 1$notpassword\r\n")
+    modify_user(HOST, PORT, "222222", "1", "notpassword")
     sys.exit(0)
