@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# SDC in the place to B
 from twisted.words.protocols import irc
 from twisted.internet import protocol
 from twisted.internet import reactor
