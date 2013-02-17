@@ -9,6 +9,7 @@ import alphasign
 from alphasign.modes import *
 import random
 USB_PORT = "/dev/ttyUSB3"
+
 modes = [TWINKLE,
            SPARKLE,
            SNOW,
