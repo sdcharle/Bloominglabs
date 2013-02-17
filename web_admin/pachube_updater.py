@@ -37,5 +37,6 @@ class Pachube():
         
 if __name__ == '__main__':
     pac = Pachube('/v2/feeds/53278.xml')
-    print pac.log('Door', 1, OnOffUnit)
+    print pac.log('Door', 0, OnOffUnit)
     print pac.log('Office',0,OnOffUnit)
+    print pac.log('Workshop',1,OnOffUnit)
