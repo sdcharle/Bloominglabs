@@ -79,14 +79,14 @@ db = {
 }
 
 
-#IRC_SERVER =  'irc.bloominglabs.org' 
+IRC_SERVER =  'irc.bloominglabs.org' 
 #IRC_SERVER = 'stephen-charlesworths-macbook-pro.local'
-IRC_SERVER = '127.0.0.1'
+#IRC_SERVER = '127.0.0.1'
 
 IRC_PORT = 6667
 IRC_NICK = 'madbot'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
-IRC_CHANNEL = "#hackerspace"
+IRC_CHANNEL = "#blabs-bots"
 
 random.seed()
 max_sleep = 3 # 'take a breath' after responding. prevent bots from making

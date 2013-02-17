@@ -84,7 +84,7 @@ This is the RFID server
 
 # 1a21 is left port on laptop
 # 1d11 is right port on laptop
-
+# note SDC doesn't seem like options being used here
     parser.add_option("-s", "--serial",
                   action="store", help = help, type="string", dest="SERIAL_PORT", default= '/dev/tty.usbmodem1a21')
     help = "The baud rate"
@@ -129,6 +129,8 @@ class USBClient(LineReceiver): #Protocol):
         log.msg("eat it jerky. USB connection lost for reason: %s" % reason)
         self.network.USBLost(reason)
 
+# do a reactor stop?
+
 class RFIDClient(LineReceiver):
 
     def connectionMade(self):
@@ -158,7 +160,6 @@ class RFIDClientFactory(Factory):
 
 # notice that the log message below causes way too fucking much logging
     def notifyAll(self, data):
-        log.msg("RFID Client: let's notify all up in this bitch %s clients" % len(self.client_list))
         for cli in self.client_list:
             log.msg("notify client: %s" % cli)
             cli.transport.write(data + '\r\n')
@@ -182,11 +183,11 @@ class RFIDClientFactory(Factory):
 
 # for Service purposes
 # is this ever used, though???
-class RFIDService(service.Service):
-
-    def startService(self):
-        service.Service.startService(self)
-        log.msg('RFID Service: INITIATE!')
+# does not appear to be
+#class RFIDService(service.Service):
+#    def startService(self):
+#        service.Service.startService(self)
+#        log.msg('RFID Service: INITIATE!')
 
 """
 
@@ -196,8 +197,9 @@ Below we set up the twistd DAEMON!
 
 #options = parse_args()
 # note: figure out how to pass args in to twistd daemon
-
-SERIAL_PORT = '/dev/tty.usbmodem1d11'
+# note, you may or may not be good here
+SERIAL_PORT = '/dev/ttyUSB0'
+#SERIAL_PORT = '/dev/ttyUSB3'
 BAUD = 57600
 
 log.msg("Serial port be: %s" % SERIAL_PORT)

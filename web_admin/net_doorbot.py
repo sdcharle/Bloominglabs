@@ -7,7 +7,6 @@ messages have the form:
 18:50:21  1/11/12 WED 18:50:21  1/11/12 WED User 14 authenticated.
 18:50:21  1/11/12 WED User  granted access at reader 1
 
-
 1/12/2012
 
 Note, this is fun, reads the msgs in a voice usin festival
@@ -16,34 +15,23 @@ http://brainwagon.org/2011/01/30/my-speech-bot-using-irclib-py/
 he has some great Arduino/hacker stuff, too
 
 irclib code is here:
-
 http://forge.kasey.fr/projets/hashzor/irclib.py
 
-1/14/2012
-SDC
+1/14/2012 SDC
 Using 'select' so pings are handled.
 Note they say poll may be better here:
 http://docs.python.org/library/select.html
 
 for testing use 'UNREAL'
 sudo ./unreal in the Unreal dir
-wooty.
-
-note while testing if you add to the thing and save it goes back to the beginning of the file
-try the test w/ a 'feeder
 
 3/1/2012 SDC
 Database!
 
 Note, depending where this 'lives', you will need to change DATABASE_NAME and ACCESS_LOG_FILE appropriately
 
-to-do - don't get caught in a loop ('cool off')
-
 3/12/2012
 
-TO-DO
-
-Pushing box integration (table of notifications to send - notify the iPhone)
 Auto-start on boot up.
 remember the pogobox is now bloominglabs.no-ip.org
 
@@ -60,6 +48,22 @@ TODO - net (IRC) connectivity.
 WTF w/ nohup?
 general error handlin
 
+7/15/2012 SDC
+Don't forget pachube yo
+
+9/30/2012 SDC
+ever so minor logging conundrum.
+When you get an event, it will set val = 1
+but, only one will be set at a time.
+so, when to set to zero? both may be triggered at more or less the same time. when to consider one (or both) 'off' when simultaneous activity.
+
+How about (do this soon):
+take office val/workshop val out.
+when processing input, query the db. see if any events in last 10 sec. if so
+send 1 else send 0. Duh.
+
+11/9/2012 SDC
+should really only log to pachube maybe once a minute for sensors anyway.
 """
 
 import logging
@@ -67,23 +71,25 @@ import subprocess, select
 import irclib, random
 import time, urllib, urllib2, simplejson
 import time
-from datetime import datetime
 import re, sys, os
-
+import datetime
+# for future investigation - weirdly from datetime import datetime didn't work!
 # for network piece
 import socket
 from pachube_updater import *
 
 pac = Pachube('/v2/feeds/53278.xml')
 
-# set DJANGO_SETTINGS_MODULE
-#os.putenv('DJANGO_SETTINGS_MODULE','web_admin.settings')
+from pachube_updater import *
+upload_interval = 60 # seconds between uploading sensor/door reading
+last_upload_time = datetime.datetime.now()
+pac = Pachube('/v2/feeds/53278.xml')
 os.environ['DJANGO_SETTINGS_MODULE'] ="settings"
 from django.conf import settings
-
 from pushingbox import pushingbox
 
-
+# put in a proper db or config in future
+sensor_dict = {'1':'Office','0':'Workshop'}
 
 # port where the RFID server is running. put this in settings.py for the django
 # server
@@ -92,12 +98,6 @@ RFID_HOST = settings.RFID_HOST
 
 ACCESS_LOG_FILE = '~/Bloominglabs/open_access_scripts/access_log.txt'
 
-#settings.configure(
-#    DATABASE_ENGINE    = "sqlite3",
-#    DATABASE_NAME      = "/Users/scharlesworth/BloomingLabs/web_admin/BloomingLabs.db",
-#    INSTALLED_APPS     = ("doorman",)
-#)
-# note, you need to setup the above before importing modules etc
 from django.db import models
 from doorman.models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
 
@@ -115,9 +115,6 @@ logger.addHandler(ch)
 logger.info("RFID logger bot started.")
 
 IRC_SERVER =  'irc.bloominglabs.org' 
-#IRC_SERVER = 'stephen-charlesworths-macbook-pro.local'
-#IRC_SERVER = '127.0.0.1'
-
 IRC_PORT = 6667
 IRC_NICK = 'doorbot_net'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
@@ -138,11 +135,20 @@ random_sez = [
     'Never fear, %s is here',
 ]
 
-authpat =  re.compile("User (\d+) authenticated.", re.M)
+random_greets = [
+    'Nice to see you, %s.',
+    'What you talking about, %s?',
+    'YAWN! You woke me up, %s. Now what do ya want?',
+]
+
+# note. now have to do by tag. watch out for case sensitivity
+authpat =  re.compile("User (\S+) granted access", re.M)
 # add sensor regexp
 sensorpat = re.compile('Zone (\d+) sensor activated', re.M)
 # last command
 last_command_pat = re.compile('last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
+def greet(user):
+    p = subprocess.Popen("sleep 1;/usr/local/wintermute/wm entry %s" % user, shell=True, stdout=subprocess.PIPE)
 
 # just look for access message, if so gimme the user
 def check_for_door(stuff):
@@ -189,12 +195,10 @@ def last_command_responses(stuff):
     else:
         responses = ('Command not understood. Types are ''sensor'' or ''access'', you asked for %s' % matches[1],)
     return responses
-    
 
 # like before but now both use these
 
 def handle_msg(client, event, target):
-
     stuff = ','.join(event.arguments())
     said = event.arguments()[0]
 
@@ -207,7 +211,9 @@ def handle_msg(client, event, target):
                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
                 logger.info("Fuck it, I disconnected")
             else:
-                client.privmsg(target,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
+#                client.privmsg(target,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
+                msg = random_greets[random.choice(range(len(random_greets)))] % name 
+                client.privmsg(target,msg)
 # handle last command (if anything came back)
         else:
             for r in last_command_responses(stuff):
@@ -231,18 +237,10 @@ def handle_join(client,event):
         (name,truename) = event.source().split('!')  
         client.privmsg(IRC_CHANNEL,'%s!!!' % name.upper())
 
-# only get stuff if there is in fact stuff to get
-def get_log_line(p):                                                                                                              
-    r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
-    if r:
-        return p.stdout.readline()
-    else:
-        return None
-
 def log_door_event(connection, user_id):
     prof = None
     try:
-        prof = UserProfile.objects.get(rfid_slot = user_id)
+        prof = UserProfile.objects.get(rfid_tag__iexact = user_id)
     except:
         logger.error("Strange: no username found in DB for user %s." % user_id)
     username = 'UNKNOWN'
@@ -250,28 +248,25 @@ def log_door_event(connection, user_id):
         # note can't log unknow this way, though
         event = AccessEvent(user = prof.user)
         event.save()
-        username = prof.user.username   
+        username = prof.user.username
+        greet(username)   
     logger.info("we see: %s aka %s" % (user_id, username))
-    msg = random_sez[random.choice(range(len(random_sez)))] % username
+    msg = "!s " + random_sez[random.choice(range(len(random_sez)))] % username
     connection.privmsg(IRC_CHANNEL,msg)
     pushingbox_notify(username)
 
 def pushingbox_notify(username):
     pbns = PushingboxNotification.objects.filter(notification_type = 'Access')
 
-    for p in pbns:   
+    for p in pbns:  
+        logger.info("push: (%s)" % p.notification_devid )
         pushingbox(p.notification_devid, {'user':username})
     
 def log_sensor_event(connection, sensor_id):
     event = SensorEvent(event_type = 'Motion', event_source = sensor_id, event_value = 1)
     event.save()
 
-    
-"""
-Main program, fields messages
-TO-DO: handle 'last visit' and 'last sensor' commands
-"""
-if __name__ == '__main__':
+def irc_connect():
     irc = irclib.IRC()
     server = irc.server()
     
@@ -280,16 +275,22 @@ if __name__ == '__main__':
     ircConn.add_global_handler('privmsg',handle_privmsg, -1)
     ircConn.add_global_handler('pubmsg',handle_pubmsg, -1)
     ircConn.add_global_handler('join',handle_join, -1)
-    
-    print "I'm live."
+    return irc, ircConn 
+"""
+Main program, fields messages
+TO-DO: handle 'last visit' and 'last sensor' commands
+"""
+if __name__ == '__main__':
+    irc, ircConn = irc_connect()
     logger.info("Started RFID logger.")
-#    p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
-
     # connect up in this piece
     rfid_client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     rfid_client.connect((RFID_HOST,RFID_PORT))
 
     stringy = ''
+    doorval = 0
+    officeval = 0
+    workshopval = 0
     while True:
 	doorval = 0
 	officeval = 0
@@ -308,18 +309,31 @@ if __name__ == '__main__':
                         time.sleep(3)
                         stringy = ''
                     sid = check_for_sensor(stringy)
-                    if sid:
-			officeval = 1
-                        log_sensor_event(ircConn, sid)
+                    if sid != None:
+			if sensor_dict[sid] == 'Office':
+			    officeval = 1
+			if sensor_dict[sid] == 'Workshop':
+			    workshopval = 1
                         stringy = ''
+                        log_sensor_event(ircConn, sid)
             input_ready, output_ready,except_ready = select.select([rfid_client], [],[],1)
-        print "woot"
         try:
-            pac.log('Door', doorval)
-            ircConn.pong(IRC_CHANNEL)
-            pac.log('Office',officeval)
-	    print "doorlog be good"
+            ircConn.pong(IRC_CHANNEL) 
+        except Exception, val:
+            irc, ircConn = irc_connect()
+            logger.error("Failure to pong: %s:%s" % (Exception, val))
+        try:
+            if (datetime.datetime.now() - last_upload_time).total_seconds() > upload_interval:
+                last_upload_time = datetime.datetime.now()
+                logger.info("let's do some pachube shit")
+                pac.log('Door', doorval)
+                pac.log('Office',officeval)
+                pac.log('Workshop',workshopval)
+                doorval = 0
+                officeval = 0
+                workshopval = 0
+              
         except Exception, val:
 	    print "cosm probs: %s, %s" % (Exception, val)
-            logger.error("Pachube update problems: %s:%s" % (Exception, val))
+            logger.error("IRC/pachube update problems: %s:%s" % (Exception, val))
 	irc.process_once(5) # timeout is 5

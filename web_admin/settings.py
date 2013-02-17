@@ -5,18 +5,24 @@ to do, work out DJANGO_SETTINGS env var, what if multiple projects son?
 """
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
+RFID_PORT = 6666
+RFID_HOST = 'localhost'
+print "django in the house"
 ADMINS = (
     ('steve','steve@bloominglabs.org'),
 )
-
+import os
 MANAGERS = ADMINS
 AUTH_PROFILE_MODULE = 'doorman.UserProfile'
+
+RFID_SERVER = "127.0.0.1"
+RFID_PORT = 6666
+RFID_PASSWORD = '99bead00'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'BloomingLabs.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/access/databases/BloomingLabs.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -31,7 +37,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = None # 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -47,29 +53,28 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+PROJECT_ROOT = '/home/access/Bloominglabs/web_admin/'
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
-
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+print "MEDIA_ROOT: %s" % MEDIA_ROOT
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
+
+# sort of goofy thing to preserve window stuff
+WWW_ROOT = '/var/www/html/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
-
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
-
-# URL prefix for admin static files -- CSS, JavaScript and images.
-# Make sure to use a trailing slash.
-# Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -116,13 +121,11 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+ # prob moving code back and forth
+#   'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
     'doorman',
 )
 
