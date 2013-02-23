@@ -198,7 +198,7 @@ Below we set up the twistd DAEMON!
 #options = parse_args()
 # note: figure out how to pass args in to twistd daemon
 # note, you may or may not be good here
-SERIAL_PORT = '/dev/ttyUSB0'
+SERIAL_PORT = '/dev/ttyUSB1'
 #SERIAL_PORT = '/dev/ttyUSB3'
 BAUD = 57600
 

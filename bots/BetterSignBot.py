@@ -51,9 +51,13 @@ first just have a queue of 10 that
 
 to do - changes to modes, colors, etc.
 
+general notes:
+
+string file has 125 max
+
 """
 
-USB_PORT = '/dev/tty.usbserial-FTCBW2W2'
+USB_PORT = '/dev/serial/by-id/usb-FIDI_usb_serial_converter_FTCBW2W2-if00-port0'
 
 class Sign():
   
@@ -71,17 +75,25 @@ class Sign():
     # how many 'live' messages do we have?
     self.size = 0
     self.max_size = max_size
-    
+    label_num = 0    
     for i in range(self.max_size):
       msg = {}
-      msg["str"] = alphasign.String(size = 255, label = "S" + str(i))
-      msg["txt"] = alphasign.Text("%s" % msg["str"].call(), label="T" + str(i), mode = alphasign.modes.ROTATE)
-      self.messages.append(msg)
-      self.sign.allocate((msg["txt"], msg["str"]))
       
-  def addMessage(self,message):
+      msg["str"] = alphasign.String(size = 125, label = chr(ord('A') + label_num)) 
+      label_num = label_num + 1
+      msg["txt"] = alphasign.Text("%s%s" % (alphasign.colors.GREEN,msg["str"].call()), chr(ord('A') + label_num), mode = alphasign.modes.ROTATE)
+      label_num = label_num + 1
+      self.messages.append(msg)
+      self.sign.allocate((msg["str"], msg["txt"]))
+      self.sign.write(msg["str"])
+      self.sign.write(msg["txt"])
+      print "alloc'ed: %s string, %s text" % (
+msg["str"], msg["txt"])
+
+# note, ensure wrap-around working properly here      
+  def addMessage(self,messageText):
     message = self.messages[self.index]
-    message["str"].data = message
+    message["str"].data = messageText
     self.sign.write(message["str"])
     self.index = (self.index + 1) % self.max_size
     self.size = self.size + 1
@@ -91,7 +103,11 @@ class Sign():
     run_sequence = []
     for i in range(self.size):
       run_sequence.append(self.messages[(self.start_index + i) % self.max_size]["txt"])
-    self.sign.set_run_sequence(run_sequence)    
+    self.sign.set_run_sequence(run_sequence)  
+    print "sequence is:" 
+    print  run_sequence  
+    print "messages: " 
+    print self.messages
 
   # could do below or could do clear mem against sign
   def clear(self):
@@ -168,8 +184,12 @@ class SignBotFactory(protocol.ClientFactory):
     print "Could not connect: %s" % (reason,)
 
 if __name__ == "__main__":
-  nickname = 'SignBot'
-  channel = 'blabs-bots'
-  password = ''
-  reactor.connectTCP('irc.bloominglabs.org', 6667, SignBotFactory('#' + channel, nickname, password))
-  reactor.run()
+#  nickname = 'SignBot'
+#  channel = 'blabs-bots'
+#  password = ''
+#  reactor.connectTCP('irc.bloominglabs.org', 6667, SignBotFactory('#' + channel, nickname, password))
+#  reactor.run()a
+  sign = Sign(usb_port = USB_PORT) #, max_size = 1)
+  sign.addMessage("Eat")
+  sign.addMessage("at")
+  sign.addMessage("Joe's")

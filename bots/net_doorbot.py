@@ -64,6 +64,10 @@ send 1 else send 0. Duh.
 
 11/9/2012 SDC
 should really only log to pachube maybe once a minute for sensors anyway.
+
+2/17/2013 SDC
+add path for settings. moved to 'bots' dir. Where it belongs
+
 """
 
 import logging
@@ -77,7 +81,9 @@ import datetime
 # for network piece
 import socket
 from pachube_updater import *
+import sys
 
+sys.path.append('/home/access/Bloominglabs/web_admin')
 pac = Pachube('/v2/feeds/53278.xml')
 
 from pachube_updater import *
@@ -116,7 +122,7 @@ logger.info("RFID logger bot started.")
 
 IRC_SERVER =  'irc.bloominglabs.org' 
 IRC_PORT = 6667
-IRC_NICK = 'doorbot_net'
+IRC_NICK = 'doorbot'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
 IRC_CHANNEL = "#blabs-bots"
 
