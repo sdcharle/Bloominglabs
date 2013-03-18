@@ -79,9 +79,9 @@ class Sign():
       self.messages.append(msg)
       self.sign.allocate((msg["txt"], msg["str"]))
       
-  def addMessage(self,message):
+  def addMessage(self,messageText):
     message = self.messages[self.index]
-    message["str"].data = message
+    message["str"].data = messageText
     self.sign.write(message["str"])
     self.index = (self.index + 1) % self.max_size
     self.size = self.size + 1
