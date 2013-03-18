@@ -49,7 +49,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     # Other fields here
     rfid_access = models.BooleanField(default=False)
-    rfid_tag = models.CharField(max_length=20,blank=True,null=True)
+    rfid_tag = models.CharField(max_length=20,blank=True,null=True,unique=True)
     #rfid_in_eeprom = models.BooleanField(default=False) # changed from slot, which was unwieldy to manage.
 
     rfid_label = models.CharField(max_length = 50) # little label on the tag
