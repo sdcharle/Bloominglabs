@@ -1,7 +1,6 @@
 """
 
 to dos:
-keep track of who has the 'authorized' mode - don't let others make changes
 add set time command (on RFID board)
 is it possible for the service to detect if serial port is plugged in or comes back to life again?
 time outs for connections
@@ -50,8 +49,6 @@ try:
 except:
     log.err()   # will log the ZeroDivisionError
     
-
-
 """
 
 from twisted.application import internet, service
@@ -63,46 +60,18 @@ from twisted.internet.protocol import Protocol, Factory
 from twisted.protocols.basic import LineReceiver
 from twisted.python import log
 import sys
-import optparse
 
-#filey = open("rfidtwisted.log","w")
-#log.startLogging(filey)
+import time
 
-def parse_args():
-
-    usage = """usage: %prog [options] 
-
-This is the RFID server
-
-  python rfid-proxy.py --serial=/dev/ttyUSB1 --baud=9600
-
-"""
-
-    parser = optparse.OptionParser(usage)
-
-    help = "The serial port."
 
 # 1a21 is left port on laptop
 # 1d11 is right port on laptop
-# note SDC doesn't seem like options being used here
-    parser.add_option("-s", "--serial",
-                  action="store", help = help, type="string", dest="SERIAL_PORT", default= '/dev/tty.usbmodem1a21')
-    help = "The baud rate"
-    parser.add_option("-b", "--baud",
-                  action="store", help = help, type="string", dest="BAUD", default= '57600')
-    parser.add_option("-l", "--logfile",
-                  action="store", help = help, type="string", dest="LOGFILE", default= 'rfid.log')
 
-    options, args = parser.parse_args()
-    return options
-
-# note, the below caused all hell to break loose (logging in seemingly infinite loop?)
-#log.startLogging(sys.stdout)
-
-class USBClient(LineReceiver): #Protocol):
+class USBClient(LineReceiver): 
 
     def __init__(self, network):
         self.network = network
+        self.USB_connected = False
 
     def connectionFailed(self):
         log.msg( "USB Connection Failed:" + repr(self))
@@ -110,11 +79,11 @@ class USBClient(LineReceiver): #Protocol):
 
     def connectionMade(self):
         log.msg('Connected to USB port')
+        self.USB_connected = True
 
     def lineReceived(self, line):
         log.msg("USB Line received: %s" % repr(line))
         self.network.notifyAll(line)
-        # err, not yourself, though.
 
     def sendLine(self, cmd):
         log.msg("Command sent down: %s" % cmd)
@@ -126,8 +95,11 @@ class USBClient(LineReceiver): #Protocol):
     
     # verify this    
     def connectionLost(self, reason):
+        # Add reconnect attempts!!!!
         log.msg("eat it jerky. USB connection lost for reason: %s" % reason)
         self.network.USBLost(reason)
+        self.USB_connected = False
+        # pass it up o the factory
 
 # do a reactor stop?
 
@@ -168,7 +140,9 @@ class RFIDClientFactory(Factory):
     def USBLost(self, reason):
         self.serial_port = None
         self.notifyAll("USB Connection be lost: %s" % reason)
-        self.dropAll()
+        from twisted.internet import reactor
+        self.retry = reactor.callLater(5, self.establishConnection)        
+        #self.dropAll()
 
 # sending to s port now, it is ignoring us!!!!
     def notifyUSB(self, data):
@@ -181,25 +155,25 @@ class RFIDClientFactory(Factory):
             cli.transport.loseConnection()
             self.client_list.remove(cli)
 
-# for Service purposes
-# is this ever used, though???
-# does not appear to be
-#class RFIDService(service.Service):
-#    def startService(self):
-#        service.Service.startService(self)
-#        log.msg('RFID Service: INITIATE!')
-
+    # retry?
+    def establishConnection(self):
+        # get reactor ref
+        from twisted.internet import reactor
+        try:
+            log.msg("RFID Client Factory attempting to restore serial port conn")
+            self.serial_port = SerialPort(USBClient(self), SERIAL_PORT, reactor, BAUD)
+        except:
+            log.msg("Error opening serial port %s (%s)" % (self.serial_port, sys.exc_info()[1]))
+            log.msg("Reconnecting in 5 seconds...")
+            self.retry = reactor.callLater(5, self.establishConnection)
+            
 """
 
 Below we set up the twistd DAEMON!
 
 """
 
-#options = parse_args()
-# note: figure out how to pass args in to twistd daemon
-# note, you may or may not be good here
 SERIAL_PORT = '/dev/ttyUSB0'
-#SERIAL_PORT = '/dev/ttyUSB3'
 BAUD = 57600
 
 log.msg("Serial port be: %s" % SERIAL_PORT)
@@ -212,8 +186,13 @@ tcpfactory = RFIDClientFactory()
 # will blow up if you can't open the port, though
 # so this is using the same factory, however other clients attaching to the server can't seem to see this!
 
-sp = SerialPort(USBClient(tcpfactory), SERIAL_PORT, reactor, BAUD)
-tcpfactory.serial_port = sp
+# put this in a retry loop? For how long?
+
+tcpfactory.establishConnection()
+#sp = SerialPort(USBClient(tcpfactory), SERIAL_PORT, reactor, BAUD)
+#tcpfactory.serial_port = sp
+
+
 
 # service stuff
 application = service.Application("rfid_network_server")
