@@ -173,8 +173,7 @@ Below we set up the twistd DAEMON!
 
 """
 
-SERIAL_PORT = '/dev/tty.usbmodem1a21'#'/dev/ttyUSB0'
-
+SERIAL_PORT = '/dev/ttyUSB0'
 BAUD = 57600
 
 log.msg("Serial port be: %s" % SERIAL_PORT)

@@ -2,6 +2,10 @@
 7/16/2013 SDC
 just here to log LAZZOR time.
 scan the network for something on port 12345
+
+7/20/2013 SDC
+now use 192.168.1.5
+better logging
 """
 import logging
 import subprocess, select
@@ -27,9 +31,9 @@ pac = Pachube('/v2/feeds/53278.xml')
 last_check_time = datetime.datetime.now()
 
 logger = logging.getLogger('laser_logger')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.WARNING)
 fh = logging.FileHandler('laser.log')
-fh.setLevel(logging.INFO)
+fh.setLevel(logging.WARNING)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger.addHandler(fh)
 ch = logging.StreamHandler()
@@ -73,14 +77,13 @@ def get_lazzor_status():
                     status = conn.recv(1024)
         except Exception, val:
             pass # only log if not timeout?
-            #logger.info('Exc: %s, val: %s keep going' % (Exception, val))
+            logger.warning('Exc: %s, val: %s keep going' % (Exception, val))
     return 'DOWN'
 
 if __name__ == '__main__':
 
     logger.info("Started lazzor logger.")
     # connect up in this piece
-
     while True:
         # try last thing we used, if we failed wheel that shit around
         status = get_lazzor_status()
@@ -90,9 +93,8 @@ if __name__ == '__main__':
             lc = 1
         elif status.find('RUNNING') > -1:
             lc = 2
-
-        #logger.info("let's do some Xively shit %s" % status)
-        pac.log('LaserCutter', lc)
+        try:
+            pac.log('LaserCutter', lc)
+        except Exception, val:
+            logger.warning("aw shit Xively prob: %s - %s" % (Exception, val))
         time.sleep(CHECK_INTERVAL)
-
-
