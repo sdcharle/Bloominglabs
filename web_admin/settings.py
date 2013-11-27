@@ -22,7 +22,7 @@ RFID_PASSWORD = '99bead00'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/access/databases/BloomingLabs.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/pi/databases/BloomingLabs.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -53,7 +53,7 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-PROJECT_ROOT = '/home/access/Bloominglabs/web_admin/'
+PROJECT_ROOT = '/home/pi/Bloominglabs/web_admin/'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
