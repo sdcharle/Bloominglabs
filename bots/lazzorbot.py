@@ -17,14 +17,14 @@ import datetime
 # for future investigation - weirdly from datetime import datetime didn't work!
 # for network piece
 import socket
-sys.path.append('/home/pi/Bloominglabs/web_admin')
+sys.path.append('/Users/scharlesworth/Bloominglabs/web_admin')
 from pachube_updater import *
 import sys
 
 LAZZOR_PORT = 12345
 # sounds like a port an idiot would use for his luggage
-CHECK_INTERVAL = 30 # seconds between checks
-LAST_LAZZOR_IP = 5 # start here. Wheel around! Check every CHECK_INTERVAL seconds
+CHECK_INTERVAL = 60 # seconds between checks
+LAST_LAZZOR_IP = 149 # start here. Wheel around! Check every 30 seconds
 
 pac = Pachube('/v2/feeds/53278.xml')
 
@@ -94,9 +94,7 @@ if __name__ == '__main__':
         elif status.find('RUNNING') > -1:
             lc = 2
         try:
-            #print "log to pac"
             pac.log('LaserCutter', lc)
         except Exception, val:
             logger.warning("aw shit Xively prob: %s - %s" % (Exception, val))
         time.sleep(CHECK_INTERVAL)
-

@@ -3,11 +3,11 @@
 to do, work out DJANGO_SETTINGS env var, what if multiple projects son?
 
 """
-DEBUG = True
+
+from local_settings import *
+
 TEMPLATE_DEBUG = DEBUG
-RFID_PORT = 6666
-RFID_HOST = 'localhost'
-print "django in the house"
+
 ADMINS = (
     ('steve','steve@bloominglabs.org'),
 )
@@ -15,14 +15,10 @@ import os
 MANAGERS = ADMINS
 AUTH_PROFILE_MODULE = 'doorman.UserProfile'
 
-RFID_SERVER = "127.0.0.1"
-RFID_PORT = 6666
-RFID_PASSWORD = '99bead00'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/pi/databases/BloomingLabs.db',                      # Or path to database file if using sqlite3.
+        'NAME': DATABASE_NAME,                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -53,7 +49,7 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-PROJECT_ROOT = '/home/pi/Bloominglabs/web_admin/'
+#PROJECT_ROOT = '/Users/scharlesworth/Bloominglabs/web_admin/'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -65,7 +61,7 @@ print "MEDIA_ROOT: %s" % MEDIA_ROOT
 MEDIA_URL = '/media/'
 
 # sort of goofy thing to preserve window stuff
-WWW_ROOT = '/var/www/html/'
+WWW_ROOT = os.path.join(PROJECT_ROOT, 'www')
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -115,6 +111,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT,'templates'),
 )
 
 INSTALLED_APPS = (
@@ -127,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'doorman',
+    'thermo',
 )
 
 # A sample logging configuration. The only tangible logging

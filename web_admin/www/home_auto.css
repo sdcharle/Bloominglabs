@@ -1,0 +1,32 @@
+body {
+        margin:50px 0px; padding:0px;
+        text-align:center;
+        }
+h1
+{
+text-align: center;
+font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+}
+a
+{
+text-decoration:none;
+width:75px;
+height:50px;
+border-color:black;
+border-top:2px solid;
+border-bottom:2px solid;
+border-right:2px solid;
+border-left:2px solid;
+border-radius:10px 10px 10px;
+-o-border-radius:10px 10px 10px;
+-webkit-border-radius:10px 10px 10px;
+font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+-moz-border-radius:10px 10px 10px;
+background-color:#525252;
+padding:8px;
+text-align:center;
+}
+a:link {color:white;}      /* unvisited link */
+a:visited {color:white;}  /* visited link */
+a:hover {color:white;}  /* mouse over link */
+a:active {color:white;}  /* selected link */

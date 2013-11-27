@@ -13,7 +13,7 @@ import eeml
 import eeml.datastream
 import datetime
 # blabs specific key
-API_KEY = 'JfY5_eKfAzMez6mElZKSISwHMiCSAKxFcXBZSVdQOVV1OD0g'
+API_KEY = '<GIT YR OWN FOOL>'
 # for Pachube
 OnOffUnit = eeml.Unit('On/Off', 'basicSI', 'ON')
 
