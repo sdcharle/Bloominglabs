@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 temp_pat = re.compile(r'(\d+\.\d+).*?(\d+\.\d+)', re.MULTILINE)
 thermo_pat = re.compile(r'(\w+)\<\/p\>\<a href="\/\?heat', re.MULTILINE)
 
-ARDUINO_URL = "http://127.0.0.1:7777/ardtherm.html"
+from local_settings import ARDUINO_URL
 
 def parse_temp(temp_text):
     temp = None
@@ -33,8 +33,7 @@ def get_page(url):
 @login_required
 def thermo_set(request, setting):
     url =  ARDUINO_URL
-    # get shit passed in:
-    print "setting:%s" % setting
+
     temp = None
     humidity = None
     thermostat = None
@@ -44,7 +43,6 @@ def thermo_set(request, setting):
     elif setting == "OFF":
         url += "/?heatoff"    
     try:
-        # doesn't work if you call django server from django server. This should be no big surprise champ.
         html = get_page(url)
         if html:
             (temp, humidity, thermostat) = parse_temp(html)
