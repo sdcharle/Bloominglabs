@@ -31,3 +31,5 @@ rfid_network_server/testdb
 web_admin/doorman/admin.pyc
 web_admin/doorman/models.pyc
 web_admin/static/*
+*.ig
+

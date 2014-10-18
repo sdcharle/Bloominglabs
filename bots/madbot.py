@@ -135,7 +135,7 @@ def handle_pubmsg(client, event):
     said = event.arguments()[0]
     sayit = ''
     (name,truename) = event.source().split('!')
-
+    print said
     time.sleep(random.choice(range(max_sleep)))
     try:
         logger.info("%s: %s" % (name, stuff))
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     ircConn.add_global_handler('join',handle_join, -1)
     print "Shaolin runnin it son. I'm live."
     logger.info("Started RFID logger.")
-    p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
+ #   p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
     stringy = ''
     while True:
         r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
