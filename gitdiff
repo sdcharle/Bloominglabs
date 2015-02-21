@@ -1,0 +1,338 @@
+diff --git a/README b/README
+index 8f0ab1e..53e2600 100644
+--- a/README
++++ b/README
+@@ -3,3 +3,8 @@ A fun assortment of network daemons, web apps, irc bots, and other things.
+ 
+ 2013 SDC
+ 
++Note, the EEML standard is such that feeds must have integer id's not names
++this is NFG from a human readability standpoint. 
++
++So I took decisive action and relaxed that condition.
++
+diff --git a/bots/SignBot.py b/bots/SignBot.py
+index 134e7d8..b6f0ca9 100755
+--- a/bots/SignBot.py
++++ b/bots/SignBot.py
+@@ -9,7 +9,8 @@ import time
+ import alphasign
+ from alphasign.modes import *
+ import random
+-USB_PORT = "/dev/serial/by-id/usb-FIDI_usb_serial_converter_FTCBW2W2-if00-port0"
++#USB_PORT = "/dev/serial/by-id/usb-FIDI_usb_serial_converter_FTCBW2W2-if00-port0"
++USB_PORT = "/dev/ttyUSB1"
+ 
+ modes = [TWINKLE,
+            SPARKLE,
+diff --git a/bots/lazzorbot.py b/bots/lazzorbot.py
+index 14a48e2..18b967b 100644
+--- a/bots/lazzorbot.py
++++ b/bots/lazzorbot.py
+@@ -17,7 +17,7 @@ import datetime
+ # for future investigation - weirdly from datetime import datetime didn't work!
+ # for network piece
+ import socket
+-sys.path.append('/Users/scharlesworth/Bloominglabs/web_admin')
++sys.path.append('/home/pi/Bloominglabs/web_admin')
+ from pachube_updater import *
+ import sys
+ 
+@@ -77,6 +77,7 @@ def get_lazzor_status():
+                     status = conn.recv(1024)
+         except Exception, val:
+             pass # only log if not timeout?
++            time.sleep(CHECK_INTERVAL)
+             logger.warning('Exc: %s, val: %s keep going' % (Exception, val))
+     return 'DOWN'
+ 
+diff --git a/bots/net_doorbot.py b/bots/net_doorbot.py
+index 7595af7..31e122c 100644
+--- a/bots/net_doorbot.py
++++ b/bots/net_doorbot.py
+@@ -28,7 +28,7 @@ sudo ./unreal in the Unreal dir
+ 3/1/2012 SDC
+ Database!
+ 
+-Note, depending where this 'lives', you will need to change DATABASE_NAME and ACCESS_LOG_FILE appropriately
++Note, depending where this 'lives', you will need to change DATABASE_NAME appropriately
+ 
+ 3/12/2012
+ 
+@@ -68,14 +68,22 @@ should really only log to pachube maybe once a minute for sensors anyway.
+ 2/17/2013 SDC
+ add path for settings. moved to 'bots' dir. Where it belongs
+ 
++3/22/2013 SDC
++coding coders
++some mods for RPi version + retry at startup.
++
++7/16/2013 SDC
++change logging level to warning 
++
+ """
+ 
++import re, sys, os
++sys.path.append('/home/pi/Bloominglabs/web_admin')
+ import logging
+ import subprocess, select
+ import irclib, random
+ import time, urllib, urllib2, simplejson
+ import time
+-import re, sys, os
+ import datetime
+ # for future investigation - weirdly from datetime import datetime didn't work!
+ # for network piece
+@@ -83,7 +91,6 @@ import socket
+ from pachube_updater import *
+ import sys
+ 
+-sys.path.append('/home/access/Bloominglabs/web_admin')
+ pac = Pachube('/v2/feeds/53278.xml')
+ 
+ from pachube_updater import *
+@@ -102,19 +109,17 @@ sensor_dict = {'1':'Office','0':'Workshop'}
+ RFID_PORT = settings.RFID_PORT
+ RFID_HOST = settings.RFID_HOST
+ 
+-ACCESS_LOG_FILE = '~/Bloominglabs/open_access_scripts/access_log.txt'
+-
+ from django.db import models
+ from doorman.models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
+ 
+ logger = logging.getLogger('rfid_logger')
+-logger.setLevel(logging.INFO)
++logger.setLevel(logging.WARNING)
+ fh = logging.FileHandler('rfid.log')
+ fh.setLevel(logging.INFO)
+ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ logger.addHandler(fh)
+ ch = logging.StreamHandler()
+-ch.setLevel(logging.INFO)
++ch.setLevel(logging.WARNING)
+ fh.setFormatter(formatter)
+ ch.setFormatter(formatter)
+ logger.addHandler(ch)
+@@ -122,7 +127,7 @@ logger.info("RFID logger bot started.")
+ 
+ IRC_SERVER =  'irc.bloominglabs.org' 
+ IRC_PORT = 6667
+-IRC_NICK = 'doorbot'
++IRC_NICK = 'senor_doorbot'
+ IRC_NAME = 'Bloominglabs RFID Door System thing'
+ IRC_CHANNEL = "#blabs-bots"
+ 
+@@ -143,6 +148,12 @@ random_sez = [
+ 
+ random_greets = [
+     'Nice to see you, %s.',
++    'Whatever %s.',
++    'Well, %s, Lemonade was a popular drink in my time. And it still is!',
++    'Tell it to the judge, %s.',
++    'Thar\'s a snake in mah boot %s.',
++    'You try doing this job %s.',
++    'My cat\'s breath smells like catfood, %s.',
+     'What you talking about, %s?',
+     'YAWN! You woke me up, %s. Now what do ya want?',
+ ]
+@@ -152,7 +163,7 @@ authpat =  re.compile("User (\S+) granted access", re.M)
+ # add sensor regexp
+ sensorpat = re.compile('Zone (\d+) sensor activated', re.M)
+ # last command
+-last_command_pat = re.compile('last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
++last_command_pat = re.compile('\!last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
+ def greet(user):
+     p = subprocess.Popen("sleep 1;/usr/local/wintermute/wm entry %s" % user, shell=True, stdout=subprocess.PIPE)
+ 
+@@ -200,6 +211,7 @@ def last_command_responses(stuff):
+             responses.append('%s at %s' % (q.user.username, q.event_date))
+     else:
+         responses = ('Command not understood. Types are ''sensor'' or ''access'', you asked for %s' % matches[1],)
++    print responses
+     return responses
+ 
+ # like before but now both use these
+@@ -213,6 +225,7 @@ def handle_msg(client, event, target):
+     time.sleep(random.choice(range(max_sleep)))
+     try:
+         if stuff.upper().find(IRC_NICK.upper()) >= 0:
++        #if stuff.er().find('fantasticmagic') >= 0:
+             if stuff.find('get lost')>=0:
+                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
+                 logger.info("Fuck it, I disconnected")
+@@ -255,7 +268,8 @@ def log_door_event(connection, user_id):
+         event = AccessEvent(user = prof.user)
+         event.save()
+         username = prof.user.username
+-        greet(username)   
++        # below deactivated until wintermute is back
++        #greet(username)   
+     logger.info("we see: %s aka %s" % (user_id, username))
+     msg = "!s " + random_sez[random.choice(range(len(random_sez)))] % username
+     connection.privmsg(IRC_CHANNEL,msg)
+@@ -290,9 +304,16 @@ if __name__ == '__main__':
+     irc, ircConn = irc_connect()
+     logger.info("Started RFID logger.")
+     # connect up in this piece
++    weConnected = False
++    
+     rfid_client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+-    rfid_client.connect((RFID_HOST,RFID_PORT))
+-
++    while not weConnected:
++        try: 
++            rfid_client.connect((RFID_HOST,RFID_PORT))
++            weConnected = True
++        except: 
++            logger.info("retrying connect to rfid in 10....")
++            time.sleep(10)
+     stringy = ''
+     doorval = 0
+     officeval = 0
+diff --git a/web_admin/doorman.wsgi b/web_admin/doorman.wsgi
+index 12bd5ab..54eec96 100644
+--- a/web_admin/doorman.wsgi
++++ b/web_admin/doorman.wsgi
+@@ -1,11 +1,10 @@
+ import os
+ import sys
+-print "whiskey time"
+-sys.path.append('/home/access/Bloominglabs/')
+-sys.path.append('/home/access/Bloominglabs/web_admin')
+-sys.path.append('/home/access/Bloominglabs/web_admin/doorman')
++sys.path.append('/home/pi/Bloominglabs/')
++sys.path.append('/home/pi/Bloominglabs/web_admin')
++sys.path.append('/home/pi/Bloominglabs/web_admin/doorman')
++sys.path.append('/home/pi/Bloominglabs/web_admin/thermo')
+ os.environ['DJANGO_SETTINGS_MODULE'] = 'web_admin.settings'
+ print sys.path
+ import django.core.handlers.wsgi
+ application = django.core.handlers.wsgi.WSGIHandler()
+-print "no longer whiskey time"
+diff --git a/web_admin/doorman/models.py b/web_admin/doorman/models.py
+index 6cf92f4..3d6d95c 100644
+--- a/web_admin/doorman/models.py
++++ b/web_admin/doorman/models.py
+@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, Group
+ from django.db.models.signals import post_save, pre_delete
+ from datetime import datetime
+ import settings
++import local_settings
+ import rfid_sock
+ 
+ """
+@@ -67,7 +68,7 @@ class UserProfile(models.Model):
+             if (self.rfid_access):
+                 mask = 1
+             print "going for the EEPROM mod"
+-            if rfid_sock.modify_user(settings.RFID_SERVER, settings.RFID_PORT, self.rfid_tag, mask, settings.RFID_PASSWORD):
++            if rfid_sock.modify_user(local_settings.RFID_HOST, local_settings.RFID_PORT, self.rfid_tag, mask, local_settings.RFID_PASSWORD):
+                 self.sync_date = datetime.now()
+             # also set synch date, synching
+             
+diff --git a/web_admin/manage.py b/web_admin/manage.py
+index 3e4eedc..f9726f9 100644
+--- a/web_admin/manage.py
++++ b/web_admin/manage.py
+@@ -1,14 +1,10 @@
+ #!/usr/bin/env python
+-from django.core.management import execute_manager
+-import imp
+-try:
+-    imp.find_module('settings') # Assumed to be in the same directory.
+-except ImportError:
+-    import sys
+-    sys.stderr.write("Error: Can't find the file 'settings.py' in the directory containing %r. It appears you've customized things.\nYou'll have to run django-admin.py, passing it your settings module.\n" % __file__)
+-    sys.exit(1)
+-
+-import settings
++import os
++import sys
+ 
+ if __name__ == "__main__":
+-    execute_manager(settings)
++    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
++
++    from django.core.management import execute_from_command_line
++
++    execute_from_command_line(sys.argv)
+diff --git a/web_admin/pachube_updater.py b/web_admin/pachube_updater.py
+index 16edc99..1b9c1d2 100644
+--- a/web_admin/pachube_updater.py
++++ b/web_admin/pachube_updater.py
+@@ -13,7 +13,7 @@ import eeml
+ import eeml.datastream
+ import datetime
+ # blabs specific key
+-API_KEY = '<GIT YR OWN FOOL>'
++API_KEY = 'JfY5_eKfAzMez6mElZKSISwHMiCSAKxFcXBZSVdQOVV1OD0g'
+ # for Pachube
+ OnOffUnit = eeml.Unit('On/Off', 'basicSI', 'ON')
+ 
+diff --git a/web_admin/settings.py b/web_admin/settings.py
+index cb61b26..5f2a705 100644
+--- a/web_admin/settings.py
++++ b/web_admin/settings.py
+@@ -5,7 +5,7 @@ to do, work out DJANGO_SETTINGS env var, what if multiple projects son?
+ """
+ 
+ from local_settings import *
+-
++DEBUG=True
+ TEMPLATE_DEBUG = DEBUG
+ 
+ ADMINS = (
+diff --git a/web_admin/templates/thermo_set.html b/web_admin/templates/thermo_set.html
+index dd136a4..3dd2ca8 100644
+--- a/web_admin/templates/thermo_set.html
++++ b/web_admin/templates/thermo_set.html
+@@ -3,7 +3,7 @@
+ <HEAD>
+ <meta name='apple-mobile-web-app-capable' content='yes' />
+ <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+-<link rel='stylesheet' type='text/css' href='/home_auto.css' />
++<link rel='stylesheet' type='text/css' href='/wsgi-scripts/home_auto.css' />
+ <title>Set the Thermostat</title>
+ </HEAD>
+ <body>
+@@ -13,7 +13,7 @@
+ </h1>
+ <h1>The Heat is:
+ {{thermostat}}</h1>
+-<a href="/thermo/ON"">Turn On Heat</a>
+-<a href="/thermo/OFF"">Turn Off Heat</a><br />
++<a href="/wsgi-scripts/thermo/ON"">Turn On Heat</a>
++<a href="/wsgi-scripts/thermo/OFF"">Turn Off Heat</a><br />
+     </body>
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/web_admin/thermo/views.py b/web_admin/thermo/views.py
+index 9119444..0027a83 100644
+--- a/web_admin/thermo/views.py
++++ b/web_admin/thermo/views.py
+@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
+ temp_pat = re.compile(r'(\d+\.\d+).*?(\d+\.\d+)', re.MULTILINE)
+ thermo_pat = re.compile(r'(\w+)\<\/p\>\<a href="\/\?heat', re.MULTILINE)
+ 
+-ARDUINO_URL = "http://127.0.0.1:7777/ardtherm.html"
++ARDUINO_URL = "http://192.168.1.3"
+ 
+ def parse_temp(temp_text):
+     temp = None
+@@ -30,7 +30,7 @@ def get_page(url):
+     response = urllib2.urlopen(url)
+     return response.read()
+ 
+-@login_required
++@login_required(login_url='/wsgi-scripts/accounts/login/')
+ def thermo_set(request, setting):
+     url =  ARDUINO_URL
+     # get shit passed in:
+@@ -53,4 +53,4 @@ def thermo_set(request, setting):
+     return render_to_response('thermo_set.html',
+                               { 'temp': temp,
+                                'humidity': humidity,
+-                               'thermostat': thermostat})
+\ No newline at end of file
++                               'thermostat': thermostat})

@@ -9,7 +9,8 @@ import time
 import alphasign
 from alphasign.modes import *
 import random
-USB_PORT = "/dev/serial/by-id/usb-FIDI_usb_serial_converter_FTCBW2W2-if00-port0"
+#USB_PORT = "/dev/serial/by-id/usb-FIDI_usb_serial_converter_FTCBW2W2-if00-port0"
+USB_PORT = "/dev/ttyUSB1"
 
 modes = [TWINKLE,
            SPARKLE,

@@ -12,8 +12,8 @@ https://pachube.com/docs/v2/datastream/update.html
 import eeml
 import eeml.datastream
 import datetime
+from local_config import API_KEY
 # blabs specific key
-API_KEY = '<GIT YR OWN FOOL>'
 # for Pachube
 OnOffUnit = eeml.Unit('On/Off', 'basicSI', 'ON')
 

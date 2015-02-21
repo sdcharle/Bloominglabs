@@ -17,13 +17,13 @@ import datetime
 # for future investigation - weirdly from datetime import datetime didn't work!
 # for network piece
 import socket
-sys.path.append('/Users/scharlesworth/Bloominglabs/web_admin')
+sys.path.append('/home/pi/Bloominglabs/web_admin')
 from pachube_updater import *
 import sys
 
 LAZZOR_PORT = 12345
 # sounds like a port an idiot would use for his luggage
-CHECK_INTERVAL = 60 # seconds between checks
+CHECK_INTERVAL = 15 # seconds between checks
 LAST_LAZZOR_IP = 149 # start here. Wheel around! Check every 30 seconds
 
 pac = Pachube('/v2/feeds/53278.xml')
@@ -31,9 +31,9 @@ pac = Pachube('/v2/feeds/53278.xml')
 last_check_time = datetime.datetime.now()
 
 logger = logging.getLogger('laser_logger')
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.INFO)
 fh = logging.FileHandler('laser.log')
-fh.setLevel(logging.WARNING)
+fh.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger.addHandler(fh)
 ch = logging.StreamHandler()
@@ -77,6 +77,7 @@ def get_lazzor_status():
                     status = conn.recv(1024)
         except Exception, val:
             pass # only log if not timeout?
+            time.sleep(CHECK_INTERVAL)
             logger.warning('Exc: %s, val: %s keep going' % (Exception, val))
     return 'DOWN'
 

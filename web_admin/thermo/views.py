@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 temp_pat = re.compile(r'(\d+\.\d+).*?(\d+\.\d+)', re.MULTILINE)
 thermo_pat = re.compile(r'(\w+)\<\/p\>\<a href="\/\?heat', re.MULTILINE)
 
-ARDUINO_URL = "http://127.0.0.1:7777/ardtherm.html"
+ARDUINO_URL = "http://192.168.1.3"
 
 def parse_temp(temp_text):
     temp = None
@@ -30,7 +30,7 @@ def get_page(url):
     response = urllib2.urlopen(url)
     return response.read()
 
-@login_required
+@login_required(login_url='/wsgi-scripts/accounts/login/')
 def thermo_set(request, setting):
     url =  ARDUINO_URL
     # get shit passed in:

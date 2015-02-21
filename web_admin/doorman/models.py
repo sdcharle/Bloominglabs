@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models.signals import post_save, pre_delete
 from datetime import datetime
 import settings
+import local_settings
 import rfid_sock
 
 """
@@ -67,7 +68,7 @@ class UserProfile(models.Model):
             if (self.rfid_access):
                 mask = 1
             print "going for the EEPROM mod"
-            if rfid_sock.modify_user(settings.RFID_SERVER, settings.RFID_PORT, self.rfid_tag, mask, settings.RFID_PASSWORD):
+            if rfid_sock.modify_user(local_settings.RFID_HOST, local_settings.RFID_PORT, self.rfid_tag, mask, local_settings.RFID_PASSWORD):
                 self.sync_date = datetime.now()
             # also set synch date, synching
             

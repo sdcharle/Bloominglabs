@@ -3,3 +3,8 @@ A fun assortment of network daemons, web apps, irc bots, and other things.
 
 2013 SDC
 
+Note, the EEML standard is such that feeds must have integer id's not names
+this is NFG from a human readability standpoint. 
+
+So I took decisive action and relaxed that condition.
+
