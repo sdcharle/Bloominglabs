@@ -30,7 +30,7 @@ def get_page(url):
     response = urllib2.urlopen(url)
     return response.read()
 
-@login_required
+@login_required(login_url='/wsgi-scripts/accounts/login/')
 def thermo_set(request, setting):
     url =  ARDUINO_URL
 

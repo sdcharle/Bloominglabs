@@ -28,7 +28,7 @@ sudo ./unreal in the Unreal dir
 3/1/2012 SDC
 Database!
 
-Note, depending where this 'lives', you will need to change DATABASE_NAME and ACCESS_LOG_FILE appropriately
+Note, depending where this 'lives', you will need to change DATABASE_NAME appropriately
 
 3/12/2012
 
@@ -68,14 +68,22 @@ should really only log to pachube maybe once a minute for sensors anyway.
 2/17/2013 SDC
 add path for settings. moved to 'bots' dir. Where it belongs
 
+3/22/2013 SDC
+coding coders
+some mods for RPi version + retry at startup.
+
+7/16/2013 SDC
+change logging level to warning 
+
 """
 
+import re, sys, os
+sys.path.append('/home/pi/Bloominglabs/web_admin')
 import logging
 import subprocess, select
 import irclib, random
 import time, urllib, urllib2, simplejson
 import time
-import re, sys, os
 import datetime
 # for future investigation - weirdly from datetime import datetime didn't work!
 # for network piece
@@ -83,7 +91,6 @@ import socket
 from pachube_updater import *
 import sys
 
-sys.path.append('/home/access/Bloominglabs/web_admin')
 pac = Pachube('/v2/feeds/53278.xml')
 
 from pachube_updater import *
@@ -102,19 +109,17 @@ sensor_dict = {'1':'Office','0':'Workshop'}
 RFID_PORT = settings.RFID_PORT
 RFID_HOST = settings.RFID_HOST
 
-ACCESS_LOG_FILE = '~/Bloominglabs/open_access_scripts/access_log.txt'
-
 from django.db import models
 from doorman.models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
 
 logger = logging.getLogger('rfid_logger')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.WARNING)
 fh = logging.FileHandler('rfid.log')
 fh.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger.addHandler(fh)
 ch = logging.StreamHandler()
-ch.setLevel(logging.INFO)
+ch.setLevel(logging.WARNING)
 fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 logger.addHandler(ch)
@@ -122,7 +127,7 @@ logger.info("RFID logger bot started.")
 
 IRC_SERVER =  'irc.bloominglabs.org' 
 IRC_PORT = 6667
-IRC_NICK = 'doorbot'
+IRC_NICK = 'senor_doorbot'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
 IRC_CHANNEL = "#blabs-bots"
 
@@ -143,6 +148,12 @@ random_sez = [
 
 random_greets = [
     'Nice to see you, %s.',
+    'Whatever %s.',
+    'Well, %s, Lemonade was a popular drink in my time. And it still is!',
+    'Tell it to the judge, %s.',
+    'Thar\'s a snake in mah boot %s.',
+    'You try doing this job %s.',
+    'My cat\'s breath smells like catfood, %s.',
     'What you talking about, %s?',
     'YAWN! You woke me up, %s. Now what do ya want?',
 ]
@@ -152,7 +163,7 @@ authpat =  re.compile("User (\S+) granted access", re.M)
 # add sensor regexp
 sensorpat = re.compile('Zone (\d+) sensor activated', re.M)
 # last command
-last_command_pat = re.compile('last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
+last_command_pat = re.compile('\!last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
 def greet(user):
     p = subprocess.Popen("sleep 1;/usr/local/wintermute/wm entry %s" % user, shell=True, stdout=subprocess.PIPE)
 
@@ -200,6 +211,7 @@ def last_command_responses(stuff):
             responses.append('%s at %s' % (q.user.username, q.event_date))
     else:
         responses = ('Command not understood. Types are ''sensor'' or ''access'', you asked for %s' % matches[1],)
+    print responses
     return responses
 
 # like before but now both use these
@@ -213,6 +225,7 @@ def handle_msg(client, event, target):
     time.sleep(random.choice(range(max_sleep)))
     try:
         if stuff.upper().find(IRC_NICK.upper()) >= 0:
+        #if stuff.er().find('fantasticmagic') >= 0:
             if stuff.find('get lost')>=0:
                 client.disconnect('AAGUUGGGHHHHHHuuaaaaa!')
                 logger.info("Fuck it, I disconnected")
@@ -255,7 +268,8 @@ def log_door_event(connection, user_id):
         event = AccessEvent(user = prof.user)
         event.save()
         username = prof.user.username
-        greet(username)   
+        # below deactivated until wintermute is back
+        #greet(username)   
     logger.info("we see: %s aka %s" % (user_id, username))
     msg = "!s " + random_sez[random.choice(range(len(random_sez)))] % username
     connection.privmsg(IRC_CHANNEL,msg)
@@ -290,9 +304,16 @@ if __name__ == '__main__':
     irc, ircConn = irc_connect()
     logger.info("Started RFID logger.")
     # connect up in this piece
+    weConnected = False
+    
     rfid_client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    rfid_client.connect((RFID_HOST,RFID_PORT))
-
+    while not weConnected:
+        try: 
+            rfid_client.connect((RFID_HOST,RFID_PORT))
+            weConnected = True
+        except: 
+            logger.info("retrying connect to rfid in 10....")
+            time.sleep(10)
     stringy = ''
     doorval = 0
     officeval = 0

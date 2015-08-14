@@ -35,3 +35,6 @@ web_admin/static/*
 *.kpf
 backups/*
 backups
+*local_config.py
+gitdiff
+superDiff11-27-2013.txt

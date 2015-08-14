@@ -10,9 +10,10 @@ https://pachube.com/docs/v2/datastream/update.html
 
 """
 import eeml
+import eeml.datastream
 import datetime
+from local_config import API_KEY
 # blabs specific key
-API_KEY = '<GIT YR OWN FOOL>'
 # for Pachube
 OnOffUnit = eeml.Unit('On/Off', 'basicSI', 'ON')
 
@@ -24,7 +25,8 @@ class PachubeError(Exception):
 
 class Pachube():
     def __init__(self,url, key = API_KEY):
-        self.pac = eeml.Pachube(url, API_KEY)
+        # changed since pachube is now Cosm 
+        self.pac = eeml.datastream.Cosm(url, API_KEY)
 
     def log(self,datastream_name, value, unit = OnOffUnit):
         try:
@@ -37,6 +39,7 @@ class Pachube():
         
 if __name__ == '__main__':
     pac = Pachube('/v2/feeds/53278.xml')
+    #print pac.log(1, 100, OnOffUnit)
     print pac.log('Door', 0, OnOffUnit)
     print pac.log('Office',0,OnOffUnit)
     print pac.log('Workshop',1,OnOffUnit)
