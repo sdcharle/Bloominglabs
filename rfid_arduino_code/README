@@ -1,0 +1,8 @@
+Arduino sketch for the OpenAccess board.
+
+Note well that the password in here should be changed and must be identical to the one used by the 'twistd daemon'
+
+your friend,
+Steve C
+8/13/2015
+
