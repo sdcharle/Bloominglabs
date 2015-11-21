@@ -158,7 +158,7 @@ def main():
     SQ.addMessage('Home of Joe Mama\'s Pizza!', datetime.now(), 120,1)
     SQ.addMessage('Now 50% meth-free!', datetime.now(), 120,1)
     SQ.addMessage('top o da food chain!', datetime.now(), 120,1, 1)
-    SQ.addMessage('diversify yo bonds, n***', immediate = 1)
+    SQ.addMessage('diversify yo bonds, man', immediate = 1)
     while True:
         r = SQ.pullMessage()
         if r:
