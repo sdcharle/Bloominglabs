@@ -18,6 +18,32 @@ foundpat = re.compile("Tag: (\S+) found and updated to mask:(\S+)", re.M)
 # good update
 # no network server present
 # other test cases(?????)
+
+
+def open_fucking_door(host = HOST, port = PORT, password):
+    try:
+      print "make socket"
+      sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    except socket.error, msg:
+      sys.stderr.write("[CREATE SOCKET ERROR] %s\n" % msg[1])
+      return False
+    try:
+      print "connect"
+      sock.connect((host,port))
+    except socket.error, msg:
+      sys.stderr.write("[CONNECT ERROR] %s\n" % msg[1])
+      return False
+# add Exception below
+    try:
+        print "send"
+        sock.send("o 1$%s\r\n" % (password))
+    except socket.error, msg:
+        sys.stderr.write("[SEND ERROR] %s\n" % msg[1])
+        return False
+    # at this point essentially fuck it.
+    return True
+
+
 def modify_user(host, port, tag, mask, password):
     try:
       print "make socket"
