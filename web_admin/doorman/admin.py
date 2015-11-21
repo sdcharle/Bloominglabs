@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 from models import UserProfile
+# sdc 6/24/2015
  
 admin.site.unregister(User)
  
@@ -32,7 +33,28 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification, Timespan, Calendar
+from django.contrib.admin import SimpleListFilter
 
+
+class RFIDFilter(SimpleListFilter):
+    title = 'Has RFID access'
+    parameter_name = 'rfid_access'
+
+    def lookups(self, request, model_admin):
+        return (
+                 ('Yes', 'Yes'),
+                 ('No', 'No'),
+               )
+                
+    def queryset(self, request, queryset):
+        """
+        filter be access 
+        """ 
+        if self.value() == 'Yes':
+            return queryset.filter(userprofile__rfid_access__exact = True)
+        if self.value() == 'No':
+            return queryset.filter(userprofile__rfid_access__exact = False)
+   
 # also could try (no 'fk_name') http://stackoverflow.com/questions/4565814/django-user-userprofile-and-admin
 
 class UserProfileInline(admin.TabularInline):
@@ -47,6 +69,7 @@ class CustomUserAdmin(UserAdmin):
     list_display = ('username', 'email', 'first_name', 'last_name',
                     'user_rfid_access',  'user_rfid_tag', 'user_rfid_label',
                     'is_staff', 'is_active')
+    list_filter = (RFIDFilter,)
     
     def user_rfid_tag(self, instance):
         return instance.get_profile().rfid_tag
