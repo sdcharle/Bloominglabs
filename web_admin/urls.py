@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from thermo.views import thermo_set
 from django.contrib.auth.views import login
+from views import open_door
 
 import settings
 from thermo.views import *
@@ -19,6 +20,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^thermo/(?P<setting>.+)?', thermo_set),
+    url(r'^open_door/', open_door),
     url(r'^accounts/login/$', login),
 )
 # SDC 12/20/2012

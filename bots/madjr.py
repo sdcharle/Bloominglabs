@@ -86,7 +86,7 @@ IRC_SERVER =  'irc.bloominglabs.org'
 IRC_PORT = 6667
 IRC_NICK = 'madbot'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
-IRC_CHANNEL = "#blabs-bots"
+IRC_CHANNEL = "#bb2"
 
 random.seed()
 max_sleep = 3 # 'take a breath' after responding. prevent bots from making
@@ -180,22 +180,7 @@ if __name__ == '__main__':
     ircConn.add_global_handler('pubmsg',handle_pubmsg, -1)
     ircConn.add_global_handler('action',handle_action, -1)
     ircConn.add_global_handler('join',handle_join, -1)
-    print "Shaolin runnin it son. I'm live."
-    logger.info("Started RFID logger.")
- #   p = subprocess.Popen("tail -0f %s" % ACCESS_LOG_FILE, shell=True, stdout=subprocess.PIPE)
-    stringy = ''
+    print "I'm live."
     while True:
-        r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
-        while r:
-            charry = p.stdout.read(1)
-            stringy = stringy + charry
-            uid = check_for_door(stringy)
-            if uid:
-                if db.has_key(uid):
-                    logger.info("we see: %s aka %s" % (uid, db[uid]))
-                    msg = random_sez[random.choice(range(len(random_sez)))] % db[uid]
-                    ircConn.privmsg(IRC_CHANNEL,msg)
-                    time.sleep(3)
-                stringy = ''
-            r, w, x = select.select([p.stdout.fileno()],[],[],1.0)
-        irc.process_once(5) # timeout is 5
+        irc.process_once(5) 
+ # just roll at this point?

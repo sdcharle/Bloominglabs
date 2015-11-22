@@ -31,7 +31,10 @@ rfid_network_server/testdb
 web_admin/doorman/admin.pyc
 web_admin/doorman/models.pyc
 web_admin/static/*
+*.ig
+*.kpf
+backups/*
+backups
 *local_config.py
 gitdiff
 superDiff11-27-2013.txt
-
