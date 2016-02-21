@@ -1,71 +1,36 @@
 """
-
-to dos:
-add set time command (on RFID board)
-is it possible for the service to detect if serial port is plugged in or comes back to life again?
-time outs for connections
-
-
-Client for serial port
-in turn, a proxy forwards client req to serial and sends responses back to ALL clients
-
-
-Things to use:
-GPSFix - example of Serial port
-
-Proxy???
-
-Arduino guy w/ questions:
-http://stackoverflow.com/questions/7134170/custom-python-twisted-protocol-good-practices-and-complexity
+Use the Twisted library to 'break out' the serial port connection. See the Twisted Docs for more: 
+https://twistedmatrix.com/trac/
 
 Some great serial examples:
 http://stackoverflow.com/questions/4715340/python-twisted-receive-command-from-tcp-write-to-serial-device-return-response
 (service w/ retries, state machine framework)
-
 Arduino serial example!
 http://nullege.com/codes/show/src%40o%40f%40office-weather-HEAD%40listener.py/21/twisted.internet.serialport.SerialPort/python
 Notice he's using twisted.python usage function
-
 This one is neat, has hardware detecting when serial connects
 http://nullege.com/codes/show/src%40s%40p%40Sparked-0.6%40sparked%40hardware%40serial.py/14/twisted.internet.serialport.SerialPort/python
-
 http://twistedmatrix.com/documents/current/core/howto/tutorial/protocol.html
-
 above includes IRC reply bot! yeah!
 
 5/20/12 - SDC
 woo-hoo! works! now test to ensure clients don't clobber each other.
-Actually hit it w/ a bunch of clients req. Surely it knows what comes from who, right?
+Actually hit it w/ a bunch of clients req.
 
 5/26/2012 - SDC
 Added some 'connection lost' handling
 Add service capabilities
-
-
-
-note also:
-try:
-    x = 1 / 0
-except:
-    log.err()   # will log the ZeroDivisionError
-    
 """
 
 from twisted.application import internet, service
 from twisted.internet.protocol import ServerFactory
-
 from twisted.internet import reactor
 from twisted.internet.serialport import SerialPort
 from twisted.internet.protocol import Protocol, Factory
 from twisted.protocols.basic import LineReceiver
 from twisted.python import log
 import sys
-
 import time
-
-
-# 1a21 is left port on laptop
-# 1d11 is right port on laptop
 
 class USBClient(LineReceiver): 
 
@@ -93,15 +58,11 @@ class USBClient(LineReceiver):
         log.msg("outReceived! with %d bytes!" % len(data))
         self.data = self.data + data
     
-    # verify this    
     def connectionLost(self, reason):
-        # Add reconnect attempts!!!!
         log.msg("eat it jerky. USB connection lost for reason: %s" % reason)
         self.network.USBLost(reason)
         self.USB_connected = False
         # pass it up o the factory
-
-# do a reactor stop?
 
 class RFIDClient(LineReceiver):
 
@@ -120,8 +81,6 @@ class RFIDClient(LineReceiver):
         self.factory.notifyAll(line)
         self.factory.notifyUSB(line)
         #Build command, if ok, send to serial port
-
-# note, what about things going down to s port tho.
 
 class RFIDClientFactory(Factory):
     protocol = RFIDClient
@@ -142,7 +101,6 @@ class RFIDClientFactory(Factory):
         self.notifyAll("USB Connection be lost: %s" % reason)
         from twisted.internet import reactor
         self.retry = reactor.callLater(5, self.establishConnection)        
-        #self.dropAll()
 
 # sending to s port now, it is ignoring us!!!!
     def notifyUSB(self, data):
@@ -168,9 +126,7 @@ class RFIDClientFactory(Factory):
             self.retry = reactor.callLater(5, self.establishConnection)
             
 """
-
 Below we set up the twistd DAEMON!
-
 """
 
 SERIAL_PORT = '/dev/ttyUSB0'
@@ -180,22 +136,7 @@ log.msg("Serial port be: %s" % SERIAL_PORT)
 log.msg("Baud be: %s" % BAUD)
 
 tcpfactory = RFIDClientFactory()
-
-#   reactor.listenTCP(8000, tcpfactory)
-# q remains: do we specify reactor for USB or something else?
-# will blow up if you can't open the port, though
-# so this is using the same factory, however other clients attaching to the server can't seem to see this!
-
-# put this in a retry loop? For how long?
-
 tcpfactory.establishConnection()
-#sp = SerialPort(USBClient(tcpfactory), SERIAL_PORT, reactor, BAUD)
-#tcpfactory.serial_port = sp
-
-
-
-# service stuff
 application = service.Application("rfid_network_server")
-# note should do in settings.py
 networkService = internet.TCPServer(6666, tcpfactory)
 networkService.setServiceParent(application)
