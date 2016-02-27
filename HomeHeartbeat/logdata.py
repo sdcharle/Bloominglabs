@@ -27,7 +27,7 @@ import subprocess
 import re
 import time
 
-_token = '1451167639332_s16q6HHSjgYeKDGs'
+_token = 'STUFF'
 GET_DATA = '/home/blabs/hh/hh.pl'
 
 def getText():
