@@ -11,7 +11,7 @@ DEBUG = True
 
 RFID_PORT = 6666
 RFID_HOST = 'localhost'
-RFID_PASSWORD = '99bead00'
+RFID_PASSWORD = 'not this'
 DATABASE_NAME = '/Users/scharlesworth/BloomingLabs/web_admin/BloomingLabs.db'
 PROJECT_ROOT = '/Users/scharlesworth/Bloominglabs/web_admin/'
 
