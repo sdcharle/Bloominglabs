@@ -1,3 +1,5 @@
+web_admin/local_settings.py
+web_admin/settings.py
 web_admin/BloomingLabs.db
 web_admin/rfid.log
 open_access_scripts/other_install_notes.txt

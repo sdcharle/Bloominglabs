@@ -20,7 +20,7 @@ foundpat = re.compile("Tag: (\S+) found and updated to mask:(\S+)", re.M)
 # other test cases(?????)
 
 
-def open_fucking_door(host = HOST, port = PORT, password):
+def open_fucking_door(password, host = HOST, port = PORT):
     try:
       print "make socket"
       sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -29,7 +29,7 @@ def open_fucking_door(host = HOST, port = PORT, password):
       return False
     try:
       print "connect"
-      sock.connect((host,port))
+      sock.connect((host,int(port)))
     except socket.error, msg:
       sys.stderr.write("[CONNECT ERROR] %s\n" % msg[1])
       return False
@@ -42,7 +42,6 @@ def open_fucking_door(host = HOST, port = PORT, password):
         return False
     # at this point essentially fuck it.
     return True
-
 
 def modify_user(host, port, tag, mask, password):
     try:

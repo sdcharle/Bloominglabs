@@ -7,12 +7,12 @@ So, this.
 
 """
 
-DEBUG = True
+DEBUG = False
 
 RFID_PORT = 6666
 RFID_HOST = 'localhost'
 RFID_PASSWORD = '99bead00'
-DATABASE_NAME = '/Users/scharlesworth/BloomingLabs/web_admin/BloomingLabs.db'
-PROJECT_ROOT = '/Users/scharlesworth/Bloominglabs/web_admin/'
+DATABASE_NAME = '/home/pi/databases/BloomingLabs.db'
+PROJECT_ROOT = '/home/pi/Bloominglabs/web_admin'
+ARDUINO_URL = "192.168.1.3"
 
-ARDUINO_URL = "http://127.0.0.1:7777/ardtherm.html"
