@@ -15,6 +15,7 @@ rfid_network_server/twistd.log
 rfid_network_server/twistd.pid
 rfid_network_server/twistd_example.tac
 *.pyc
+*sensitive*
 .DS_Store
 *.log
 *.log*
