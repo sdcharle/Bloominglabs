@@ -73,7 +73,19 @@ coding coders
 some mods for RPi version + retry at startup.
 
 7/16/2013 SDC
-change logging level to warning 
+change logging level to warning
+
+9/6/2016 SDC
+Me again, dummy.
+Need to create 'dummy user' when unknown tag presented.
+I have a bad feeling about the tabbin'
+
+Try dese
+
+To look up the tag:
+
+prfo = UserProfile.objects.get(rfid_tag__iexact = 'shit')
+
 
 """
 
@@ -111,6 +123,7 @@ RFID_HOST = settings.RFID_HOST
 
 from django.db import models
 from doorman.models import UserProfile, AccessEvent, SensorEvent, PushingboxNotification
+from django.contrib.auth.models import User
 
 logger = logging.getLogger('rfid_logger')
 logger.setLevel(logging.WARNING)
@@ -125,7 +138,7 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 logger.info("RFID logger bot started.")
 
-IRC_SERVER =  'irc.bloominglabs.org' 
+IRC_SERVER =  'irc.bloominglabs.org'
 IRC_PORT = 6667
 IRC_NICK = 'senor_doorbot'
 IRC_NAME = 'Bloominglabs RFID Door System thing'
@@ -162,6 +175,11 @@ random_greets = [
 authpat =  re.compile("User (\S+) granted access", re.M)
 # add sensor regexp
 sensorpat = re.compile('Zone (\d+) sensor activated', re.M)
+
+
+lockedoutpat = re.compile("User (\S+) locked out.", re.M)
+deniedpat = re.compile("(\S+) denied access at reader", re.M)
+
 # last command
 last_command_pat = re.compile('\!last\s+(\d+|\s*)\s*(\S+)', re.M and re.IGNORECASE)
 def greet(user):
@@ -174,13 +192,53 @@ def check_for_door(stuff):
         return match.group(1)
     else:
         return None
-    
+
+def check_for_denied(stuff):
+    match = deniedpat.search(stuff)
+    if match:
+        return match.group(1)
+    else:
+        return None
+
+def check_for_lockedout(stuff):
+    match = lockedoutpat.search(stuff)
+    if match:
+        return match.group(1)
+    else:
+        return None
+
+"""
+
+Thing for when you DON'T find the RFID that was entered.
+
+TODO - what if it already exists???
+
+
+
+"""
+def create_dummy(rfid):
+    # TODO: if user doesn't exist create dummy user - if it does, update the sync date(?)
+    # first see if one there
+    try:
+        prfo = UserProfile.objects.get(rfid_tag__iexact = rfid)
+        prfo.rfid_tag = prfo.rfid_tag + '-returned'
+        prfo.save()
+    except: # nothing found
+        pass # yeah I know get off my back mom!
+    n = datetime.datetime.now()
+    username = "%s-dummy" % n.strftime('%Y-%m-%d-%H-%M-%S')
+    # note gotta randomize password there
+    user = User.objects.create_user(username, 'dummy@dummy.com',str(int(random.random() * 10000000)))
+    user.save()
+    up = UserProfile(user = user, rfid_access = False, rfid_tag = rfid)
+    up.save()
+
 def check_for_sensor(stuff):
     match = sensorpat.search(stuff)
     if match:
         return match.group(1)
     else:
-        return None    
+        return None
 
 def check_for_last_command(stuff):
     match = last_command_pat.search(stuff)
@@ -231,7 +289,7 @@ def handle_msg(client, event, target):
                 logger.info("Fuck it, I disconnected")
             else:
 #                client.privmsg(target,u'%s, %s' % ('Type ''last n access'' or ''last n sensor'' to see recent accesses or sensors',name))
-                msg = random_greets[random.choice(range(len(random_greets)))] % name 
+                msg = random_greets[random.choice(range(len(random_greets)))] % name
                 client.privmsg(target,msg)
 # handle last command (if anything came back)
         else:
@@ -240,20 +298,20 @@ def handle_msg(client, event, target):
 
     except Exception, val:
         logger.error("fail in pubmsg handle: (%s) (%s)" % (Exception, val))
-        
+
 def handle_privmsg(client, event):
     handle_msg(client,event, (event.source().split('!'))[0])
 
-    
+
 """
 kind of a big deal. handler of all msgs!
 """
 
 def handle_pubmsg(client, event):
     handle_msg(client, event, IRC_CHANNEL)
-        
+
 def handle_join(client,event):
-        (name,truename) = event.source().split('!')  
+        (name,truename) = event.source().split('!')
         client.privmsg(IRC_CHANNEL,'%s!!!' % name.upper())
 
 def log_door_event(connection, user_id):
@@ -269,7 +327,7 @@ def log_door_event(connection, user_id):
         event.save()
         username = prof.user.username
         # below deactivated until wintermute is back
-        #greet(username)   
+        #greet(username)
     logger.info("we see: %s aka %s" % (user_id, username))
     msg = "!s " + random_sez[random.choice(range(len(random_sez)))] % username
     connection.privmsg(IRC_CHANNEL,msg)
@@ -278,10 +336,10 @@ def log_door_event(connection, user_id):
 def pushingbox_notify(username):
     pbns = PushingboxNotification.objects.filter(notification_type = 'Access')
 
-    for p in pbns:  
+    for p in pbns:
         logger.info("push: (%s)" % p.notification_devid )
         pushingbox(p.notification_devid, {'user':username})
-    
+
 def log_sensor_event(connection, sensor_id):
     event = SensorEvent(event_type = 'Motion', event_source = sensor_id, event_value = 1)
     event.save()
@@ -289,13 +347,13 @@ def log_sensor_event(connection, sensor_id):
 def irc_connect():
     irc = irclib.IRC()
     server = irc.server()
-    
+
     ircConn = server.connect(IRC_SERVER,IRC_PORT,IRC_NICK,ircname= IRC_NAME)
     ircConn.join(IRC_CHANNEL)
     ircConn.add_global_handler('privmsg',handle_privmsg, -1)
     ircConn.add_global_handler('pubmsg',handle_pubmsg, -1)
     ircConn.add_global_handler('join',handle_join, -1)
-    return irc, ircConn 
+    return irc, ircConn
 """
 Main program, fields messages
 TO-DO: handle 'last visit' and 'last sensor' commands
@@ -305,13 +363,13 @@ if __name__ == '__main__':
     logger.info("Started RFID logger.")
     # connect up in this piece
     weConnected = False
-    
+
     rfid_client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     while not weConnected:
-        try: 
+        try:
             rfid_client.connect((RFID_HOST,RFID_PORT))
             weConnected = True
-        except: 
+        except:
             logger.info("retrying connect to rfid in 10....")
             time.sleep(10)
     stringy = ''
@@ -329,9 +387,16 @@ if __name__ == '__main__':
                 if i == rfid_client:
                     charry = rfid_client.recv(1)
                     stringy = stringy + charry
+
+                    uid = check_for_denied(stringy)
+                    if uid:
+                        create_dummy(uid)
+                    uid = check_for_lockedout(stringy)
+                    if uid:
+                        create_dummy(uid)
                     uid = check_for_door(stringy)
                     if uid:
-			doorval = 1
+                        doorval = 1
                         log_door_event(ircConn, uid)
                         time.sleep(3)
                         stringy = ''
@@ -345,7 +410,7 @@ if __name__ == '__main__':
                         log_sensor_event(ircConn, sid)
             input_ready, output_ready,except_ready = select.select([rfid_client], [],[],1)
         try:
-            ircConn.pong(IRC_CHANNEL) 
+            ircConn.pong(IRC_CHANNEL)
         except Exception, val:
             irc, ircConn = irc_connect()
             logger.error("Failure to pong: %s:%s" % (Exception, val))
@@ -359,7 +424,7 @@ if __name__ == '__main__':
                 doorval = 0
                 officeval = 0
                 workshopval = 0
-              
+
         except Exception, val:
 	    print "cosm probs: %s, %s" % (Exception, val)
             logger.error("IRC/pachube update problems: %s:%s" % (Exception, val))

@@ -1,4 +1,3 @@
-*sensitive*
 web_admin/local_settings.py
 web_admin/settings.py
 web_admin/BloomingLabs.db

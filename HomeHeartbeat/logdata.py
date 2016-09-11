@@ -26,8 +26,9 @@ from beebotte import *
 import subprocess
 import re
 import time
+import sensitive
 
-_token = 'STUFF'
+_token = sensitive.token
 GET_DATA = '/home/blabs/hh/hh.pl'
 
 def getText():

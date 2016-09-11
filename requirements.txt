@@ -1,0 +1,29 @@
+# this is from the 'poquito' server at Bloominglabs
+# yes, some of this is old but dude we have day jobs!
+Django==1.4
+PyYAML==3.10
+#RPi.GPIO==0.3.1a
+Twisted==12.3.0
+alphasign==0.9
+argparse==1.2.1
+distribute==0.6.27
+django-debug-toolbar==0.11.0
+gunicorn==0.17.2
+lxml==2.3.2
+numpy==1.6.2
+psycopg2==2.4.5
+#pygame==1.9.1release
+pyserial==2.6
+python-eeml==4.1.0
+#python-irclib==0.4.8
+simplejson==3.1.0
+#smbus==1.1
+sqlparse==0.1.10
+stevedore==0.8
+virtualenv==1.9.1
+virtualenv-clone==0.2.4
+virtualenvwrapper==3.7
+wsgiref==0.1.2
+yolk==0.4.3
+zope.interface==4.0.5
+

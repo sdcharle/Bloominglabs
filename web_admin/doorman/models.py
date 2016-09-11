@@ -27,7 +27,7 @@ ensure simple func to id stuff to sync, do periodically in the daemon process (t
 Add rfid sock func
 
 """
-   
+
 NOTIFICATION_TYPE_CHOICES = (
     ('Access', 'Door Unlocked'),
 )
@@ -55,7 +55,7 @@ class UserProfile(models.Model):
 
     rfid_label = models.CharField(max_length = 50) # little label on the tag
     update_date = models.DateTimeField(null=True, blank = False, auto_now = True) # taking matters into my own hands...
-    sync_date = models.DateTimeField(null=True, blank=True)
+    sync_date = models.DateTimeField(null=True, blank=True, auto_now = True, auto_now_add = True)
     #syncing = models.IntegerField(default = 0)
 
     def save(self, *args, **kwargs):
@@ -71,11 +71,11 @@ class UserProfile(models.Model):
             if rfid_sock.modify_user(local_settings.RFID_HOST, local_settings.RFID_PORT, self.rfid_tag, mask, local_settings.RFID_PASSWORD):
                 self.sync_date = datetime.now()
             # also set synch date, synching
-            
+
         except UserProfile.DoesNotExist:
-            pass 
-        models.Model.save(self, *args, **kwargs) 
-    
+            pass
+        models.Model.save(self, *args, **kwargs)
+
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
@@ -100,7 +100,7 @@ for storing when we let ppl in
 """
 
 class AccessEvent(models.Model):
-    user = models.ForeignKey(User) 
+    user = models.ForeignKey(User)
     event_date = models.DateTimeField(auto_now = True)
 
 """
@@ -114,7 +114,7 @@ class SensorEvent(models.Model):
     event_source = models.CharField(max_length=50)
     event_date = models.DateTimeField(auto_now = True)
     event_value = models.CharField(max_length=20, blank=True, null = True)
-    
+
 """
 
 for notifications
@@ -127,7 +127,7 @@ class PushingboxNotification(models.Model):
     notification_type = models.CharField(max_length = 20, choices=NOTIFICATION_TYPE_CHOICES)
 
     add_date = models.DateTimeField(auto_now_add = True)
-    update_date = models.DateTimeField(auto_now = True)    
+    update_date = models.DateTimeField(auto_now = True)
 
 """
 
@@ -137,7 +137,7 @@ for when you're allowed in
 """
 
 class Timespan(models.Model):
-    
+
     name = models.CharField(max_length = 30)
     description = models.CharField(max_length = 100)
     sunday = models.BooleanField(default = False)
@@ -150,13 +150,13 @@ class Timespan(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     # ensure: end time after start time.
-    
+
     add_date = models.DateTimeField(auto_now_add = True)
     update_date = models.DateTimeField(auto_now = True)
 
     def __unicode__(self):
         return self.name
-    
+
 """
 
 Assembly of timespans.
@@ -169,14 +169,14 @@ Many to Many to users
 class Calendar(models.Model):
     name = models.CharField(max_length = 30)
     description = models.CharField(max_length = 100)
-    
+
     timespans = models.ManyToManyField(Timespan)
     groups = models.ManyToManyField(Group) # probably better to define groups and use them!
-    
-# should this relationship go in the user profile instead? 
-    
+
+# should this relationship go in the user profile instead?
+
     add_date = models.DateTimeField(auto_now_add = True)
-    update_date = models.DateTimeField(auto_now = True)    
+    update_date = models.DateTimeField(auto_now = True)
 
     # check to see if time falls in the calendar
     def in_calendar(self,check_date):
@@ -192,6 +192,6 @@ class Calendar(models.Model):
                     if check_date.time() > t.start_time and check_date.time() < t.end_time:
                         return True
         return False
-                
+
     def __unicode__(self):
         return self.name

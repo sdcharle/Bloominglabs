@@ -1,0 +1,2337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vcalendar PUBLIC "-//IETF//DTD XCAL/iCalendar XML//EN"
+"http://www.ietf.org/internet-drafts/draft-ietf-calsch-many-xcal-01.txt">
+<vcalendar
+ version="2.0"
+ prodid="-//159.203.172.25//NONSGML kigkonsult.se iCalcreator 2.20//"
+ calscale="GREGORIAN"
+ method="PUBLISH">
+<x-from-url>https://bloomingtonlifesciences.com</x-from-url>
+<x-wr-timezone>America/Indiana/Indianapolis</x-wr-timezone>
+<vtimezone>
+<tzid>America/Indiana/Indianapolis</tzid>
+<x-lic-location>America/Indiana/Indianapolis</x-lic-location>
+<standard>
+<dtstart>20161106T020000</dtstart>
+<tzoffsetfrom>-0400</tzoffsetfrom>
+<tzoffsetto>-0500</tzoffsetto>
+<tzname>EST</tzname>
+</standard>
+<daylight>
+<dtstart>20160313T020000</dtstart>
+<tzoffsetfrom>-0500</tzoffsetfrom>
+<tzoffsetto>-0400</tzoffsetto>
+<rdate>20170312T020000</rdate>
+<tzname>EDT</tzname>
+</daylight>
+</vtimezone>
+<vevent>
+<uid>ai1ec-147@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.healthtech.com/biobanking</contact>
+<description>“Leaders in Biobanking: Maximizing Your Investment in Biospecimens”
+Today, biospecimen collections are used by multiple research groups for varying research aims, from basic research through clinical trials. A well-managed biobank is a critical prerequisite for high-quality biological research. The proper collection, processing, storage and tracking of biospecimens are critical components allowing researchers to better link molecular and clinical information. Thus, by necessity, biobanking is both a science and a business. Cambridge Healthtech Institute’s Fifth AnnualLeaders in Biobanking: Maximizing Your Investment in Biospecimens addresses both thebusiness and science of biobanking, bringing together biomedical and biopharmaceutical researchers, regulators, biorepository managers and practitioners to investigate the best strategies for effective use of biospecimens within today’s cutting-edge research.</description>
+<dtstart value="DATE">20131104</dtstart>
+<dtend value="DATE">20131106</dtend>
+<location>Sheraton Indianapolis City Centre @ Indianapolis, IN, USA</location>
+<sequence>0</sequence>
+<summary>Biobanking Congress</summary>
+<url uri="https://bloomingtonlifesciences.com/event/biobanking-congress/" />
+</vevent>
+<vevent>
+<uid>ai1ec-983@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.youngstartup.com/west2014/overview.php</contact>
+<description>Indiana Companies are Welcome to Attend or Apply to Present
+(Special Registration Discount for IHIF Members)
+___________________________________
+ 
+Come meet, interact and network with more than 500 VCs, Corporate VCs, angel investors, investment bankers and CEOs of early stage and emerging growth companies at the prestigious Venture Summit | West™ being held on February 11th-12th, 2014 at the Computer History Museum in Mountain View, CA.
+ 
+Whether you’re an investor seeking new deals or a startup seeking capital and exposure, Venture Summit West™ presented by youngStartup Ventures – is one event you won’t want to miss.
+ 
+A highly productive full-day venture conference, Venture Summit Westis dedicated to showcasing VCs, Corporate VCs and angel investors committed to funding early stage and emerging companies.
+ 
+This exclusive summit will feature a distinguished line up of more than 40 Investors on interactive panels; presentations by more than 50 Top Innovators seeking funding, and high-level networking opportunities.
+ 
+The Indiana Health Industry Forum has made special arrangements for our network to receive a special discount of 10% off the “early bird” rates.
+ 
+To Register now and receive the special discount as well as take advantage of the “early bird” savings, use the link below and enter discount code “ihif” by January 9th. Visit here.</description>
+<dtstart value="DATE">20140212</dtstart>
+<dtend value="DATE">20140213</dtend>
+<location>Computer History Museum, Mountain View, CA</location>
+<sequence>0</sequence>
+<summary>Venture Summit West</summary>
+<url uri="https://bloomingtonlifesciences.com/event/venture-summit-west/" />
+</vevent>
+<vevent>
+<uid>ai1ec-741@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Kristin Jones - IHIF; 317-524-4770; info@ihif.org; http://www.ihif.org/pages/annualmeeting</contact>
+<description>
+
+
+Monday, May 5
+
+
+
+
+ Pre-Conference Event
+
+
+ 5:30 – 7:00 pm
+ Opening Event Reception, Exhibition
+
+Featuring student project posters from the McKenzie Center for Innovation and Technology
+
+
+ 7:00 – 8:30 pm
+ VIP Dinner – Invitation Only
+(attendance limited to IHIF Board members, speakers, and event sponsors)
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+Tuesday, May 6 
+
+
+
+ 7:45 – 8:15 am
+ Registration
+
+
+ 8:15 – 8:45 am
+ Welcome and IHIF Business Update
+
+
+ 8:45 – 9:45 am
+ Panel Discussion Featuring Former and Founding IHIF Board Members
+
+
+ 9:45 – 10:30 am
+ Breakout Session 1
+
+Attendees may select from topics in: Healthcare, Medical Device, Pharma/Biotech, or Digital Health
+
+
+ 10:30 – 10:45 am
+ Break
+
+
+ 10:45 – noon
+ Breakout Session 2
+Attendees may select from topics in: Healthcare, Medical Device, Pharma/Biotech, or Digital Health
+
+
+ Noon – 1:30pm
+ Visit Sponsor Exhibit Area
+Luncheon with Keynote Presentation
+
+
+ 1:30 – 1:45
+ Break
+
+
+ 1:45 – 3:00 pm
+ Breakout Session 3
+Attendees may select from topics in: Healthcare, Medical Device, Pharma/Biotech, or Digital Health
+
+
+ 3:00 – 3:15
+ Conclusion
+
+
+</description>
+<dtstart value="DATE">20140505</dtstart>
+<dtend value="DATE">20140507</dtend>
+<location>The Conrad Hotel, Indianapolis @ 50 West Washington Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>IHIF 2014 Annual Meeting</summary>
+<url uri="https://bloomingtonlifesciences.com/event/ihif-2014-annual-meeting/" />
+</vevent>
+<vevent>
+<uid>ai1ec-231@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Center for the Business of Life Sciences; http://kelley.iu.edu/CBLS/conferences/page16548.html</contact>
+<description></description>
+<dtstart value="DATE">20140509</dtstart>
+<dtend value="DATE">20140510</dtend>
+<sequence>0</sequence>
+<summary>Informatics/”Big Data” Uses and Challenges in Life Sciences</summary>
+<url uri="https://bloomingtonlifesciences.com/event/informaticsbig-data-uses-and-challenges-in-life-sciences/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1140@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>IHIF is pleased to announce its sponsorship and invite you to attend New York’s largest Annual Venture Summit
+ 
+Special discount.  Use promo code “ihifvip” and receive 10% off the current rate.  (Details on applying to present below).
+
+The 2014
+New York
+Venture Summit 
+
+June 16-17, 2014 | Digital Sandbox | New York City
+
+Where Innovation Meets Capital
+
+Friends,
+
+Come meet, interact and network with more than 500 VCs, Corporate VCs, angel investors, investment bankers and CEOs of early stage and emerging growth companies at the prestigious New York Venture Summit being held on June 16th-17th, 2014 at Digital Sandbox in New York City.
+
+Whether you’re a startup seeking capital and exposure, or an investor seeking new deals, The New  York Venture Summit™ presented by youngStartup Ventures – is one event you won’t want to miss.
+
+A highly productive venture conference, the New York Venture Summit is dedicated to showcasing VCs, Corporate VCs and angel investors committed to funding early stage and emerging companies.
+
+This exclusive summit will feature a distinguished line up of more than 40 Investors on interactive panels; presentations by more than 50 Top Innovators seeking funding, and high-level networking opportunities.
+
+Partial list of VCs confirmed to speak include:
+
+
+Grant Allen, Senior Vice President, ABB Technology Ventures
+Gil Beyda, Managing Partner, Genacast Ventures
+Eric Bielke, Senior Investment Associate, Siemens Venture Capital
+Greg Bohlen, Managing General Partner, Union Grove Venture Partners
+Stanley Buchesky, Founder &amp; Managing Partner, The EdTech Fund
+Dan Burstein, Managing Partner, Millennium Technology Value Partners
+Carter Caldwell, Principal, Cross Atlantic Capital Partners
+Mary Lincoln Campbell, Managing Director, EDF Ventures
+Tiffany Clay, Vice President, TPG Capital
+Andrew Cleland, Managing Director, Comcast Ventures
+Rajeev Dadoo, Partner, SR One
+Eliot Durbin, General Partner, Boldstart Ventures
+Rami Elkhatib, General Partner, Acero Capital
+Ming Fang, Senior Associate, Safeguard Scientifics
+Stan Fung, Managing Director, FarSight Ventures
+Lisa Granick, Vice President, Fletcher Spaght Ventures
+Oliver Guinness, Co-Founder &amp; Managing Director, Clearpoint Ventures
+Matthew Hanson, Partner, GSV Asset Management
+Henrik Holland, Venture Principal, Shell Technology Ventures
+Adrian Horotan, Principal, Elm Street Ventures
+Tetsuro Iwata, Senior Manager, MP Healthcare Venture Management
+Sachin Jade, Partner, Klifer Capital
+Roman Kikta, Managing Partner, Mobility Ventures
+Dave Kirkpatrick, Founder &amp; Managing Director, SJF Ventures
+George Krautzel, Managing Partner, MissionOG
+Spencer Lazar, Principal, General Catalyst
+Glen Lewy, Senior Managing Director, Hudson Ventures
+Alexander Lloyd, Founder &amp; Managing Partner, Accelerator Ventures
+Jim LoGerfo, General Partner, Earthrise Capital
+Jiong Ma, Partner, Braemar Energy Ventures
+Laura Oliphant, Investment Manager, Intel Capital
+Alessandro Piol, Co-Founder &amp; Partner, AlphaPrime Ventures
+Ann Partlow, Founder, Partner, Earthrise Capital
+Suraj Rajwani, Partner, DoubleRock
+Kathleen Regan, Venture Partner, Radius Ventures
+Aymerik Renard, Director, Corporate Business Development, Sandisk Ventures
+Lisa Rhoads, Managing Director, Easton Capital Investment Group
+Saul Richter, Founder &amp; Managing Partner, Rittenhouse Ventures
+Robert Rosenberg, Managing Member, Fast Forward Ventures
+Stacey Seltzer, Principal, Aisling Capital
+Jim Sledzik, Partner &amp; President, Energy Ventures
+Alex Suh, Founding Managing Director, California Technology Ventures
+Sebastian Titz, Manager, New Ventures, 3M Ventures
+Brent Traidman, Partner, Fenox Venture Capital
+Sonali Vijayavargiya, Founder and Managing Director, Augment Ventures
+Kirk Washington, Co-Founder &amp; General Partner, Yaletown Venture Partners
+Darshana Zaveri, Partner, Catalyst Health Ventures
+Alex Zisson, Partner, Thomas, McNerney &amp; Partners
+
+
+IHIF has made special arrangement for our network to receive a special discount of 10% off the “early bird” rates.
+
+To Register now and receive the special discount as well as take advantage of the “Early bird” discount rate, use the link below and enter discount code “isnvip” by TONIGHT at midnight!
+http://www.youngstartup.com/newyork2014/overview.php
+
+In addition to providing access to leading Investors, the conference will feature more than 50 pre-screened venture backed and emerging companies seeking capital, and hardcore networking.
+
+This conference will be attended by the best people in the industry. Please register early to avoid disappointment.
+
+
+CALL FOR TOP INNOVATORS!
+Get Noticed &gt; Get Funded &gt; Grow Faster
+
+A select group of more than 50 Top Innovators  will be chosen to present their breakthrough investment opportunities to an exclusive audience of Venture Capitalists, Private Investors, Investment Bankers, Corporate Investors, and Strategic Partners.
+
+Apply to Present:
+To be considered for one of the Top Innovator slots e-mail iwant2present@youngstartup.com for an application.
+
+Nominate a Startup:
+To nominate your portfolio company or client send an email with contact details and any relevant information to
+
+Questions about presenting? email us at iwant2present@youngstartup.com
+
+If you have any questions/suggestions about the program or would like to inquire about our sponsorship opportunities please email joe (at) youngstartup.com
+
+REGISTER NOW and Save!!
+
+
+To RSVP by phone, to inquire about group rates or for more information call youngStartup Ventures at 212-202-1002
+
+FEES: “Early bird” registration savings expire TONIGHT, Wednesday. May 21st.  Use code “ihifvip” and receive an extra 10% off.
+Entrepreneurs: Regular: $395 | At the Door: $790
+Investors: Regular: $495 | At the Door: $990)
+Service Providers: Regular: $695 | At the Door: $1,390)
+Tickets: http://www.youngstartup.com/newyork2014/overview.php.</description>
+<dtstart value="DATE">20140616</dtstart>
+<dtend value="DATE">20140618</dtend>
+<location>Digital Sandbox @ New York, NY, USA</location>
+<sequence>0</sequence>
+<summary>The New York Venture Summit</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-new-york-venture-summit/" />
+<x-cost>Use promo code &quot;ihifvip&quot; and receive 10% off the current rate.</x-cost>
+<x-tickets-url>http://www.youngstartup.com/newyork2014/overview.php</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1525@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/conference/register/68</contact>
+<description>Please join the Regenerative Medicine Working Group in collaboration with the Indiana Center for Vascular Biology and Medicine, Indiana CTSI, IURTC, Biomet, Cook Regentec, Pearl Pathways, and the Indiana Health Industry Forum for a two day symposium:
+“Regulatory Pathways for Regenerative Medicine: Cell and Biological Therapeutics”
+Didactic Sessions and Abstracts / Posters: Tuesday, May 19, 2015
+Individual Appointments for Regulatory Consultation: (pre-reservation required): Wednesday, May 20, 2015
+
+Attendees are invited to submit abstracts for a poster session which will be held concurrently and after dinner.  Abstracts may be both BASIC and TRANSLATIONAL, and abstract / poster awardees will be selected in each category.  Award levels will range from $250-1,000.   Please submit your abstracts by e-mailing Michele Schlegelmilch at mdschleg@iu.edu.
+ Abstracts should be limited to one page, in 12 point Arial font, and may include figures and tables.  Sources for research support should be included on the last line of the abstract.  Deadline for abstract submission is Friday, May 8.  Abstracts will not be accepted after May 8.
+
+
+Information on the dimension of the poster will be provided upon acceptance of the abstract.
+Location
+The Athenaeum
+401 E. Michigan Street
+Indianapolis, IN 46202</description>
+<dtstart value="DATE">20150519</dtstart>
+<dtend value="DATE">20150521</dtend>
+<geo>+39.773873;-86.165386</geo>
+<location>The Anthenaeum @ 401 West Michigan Street, Indianapolis, IN 46202, USA</location>
+<sequence>0</sequence>
+<summary>Indiana Regenerative Medicine Symposium</summary>
+<url uri="https://bloomingtonlifesciences.com/event/indiana-regenerative-medicine-symposium/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1572@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>iucds@indiana.edu; http://www.chem.indiana.edu/cds/?page=home</contact>
+<description>The IU CDS aims to provide our chemistry graduate students and post-docs with insights into available career paths as well as opportunities to establish contacts with potential employers. The day-long, graduate student led event will facilitate dialogue between successful PhD-holding professionals, potential employers and students to generate excitement and alleviate confusion in the search for a path after graduate school.
+The event will include:
+
+A keynote presentation by Joe Palca (from National Public Radio).
+Student poster presentations, allowing for industrial recruiters to make contact with employee candidates.
+A panel discussion featuring a variety of professional PhD holders.
+A networking social and Recruitment Fair that will transition into an informal social allowing for graduate students to interact with speakers, recruiters and faculty.
+
+The following day will be used to arrange on-campus interviews with recruiters from companies attending the CDS. Students will also have the opportunity to submit a CV for consideration by companies in attendance.</description>
+<dtstart value="DATE">20150805</dtstart>
+<dtend value="DATE">20150806</dtend>
+<geo>+39.167456;-86.523565</geo>
+<location>IU Memorial Union - Alumni Hall/Solarium @ Indiana Memorial Union Building, 900 East 7th Street, Bloomington, IN 47405, USA</location>
+<sequence>0</sequence>
+<summary>Career Development Symposium</summary>
+<url uri="https://bloomingtonlifesciences.com/event/career-development-symposium/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1679@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.bio.org/events/conferences/bio-ceo-general-registration</contact>
+<description>
+
+About the BIO CEO &amp; Investor Conference
+
+
+
+
+ February 8-9, 2016 | The Waldorf Astoria New York
+Now in its eighteenth year, the BIO CEO &amp; Investor Conference is the largest investor conference focused on established and emerging publicly traded and select private biotech companies.
+
+
+
+Why Investors Attend
+
+Hear from and meet one-on-one with management from the top biotechnology companies.
+Evaluate fresh investment opportunities including compatible, complementary and competitive companies.
+Attend candid panel discussions with leading clinical experts and company experts on the latest therapies and technologies in development.
+Get a ‘big picture’ overview of the industry and the issues affecting investments now and in the future.
+
+Why Companies Attend
+
+Present company story to an audience of target investors.
+Meet one-on-one with new and current investors, analysts, investment bankers and other potential corporate partners.
+Hear candid panel discussions and keynotes by veteran investment and company executives.
+Network with peers, investors and potential partners attending the conference.
+Get the pulse on the current and proposed investment trends in biotechnology.
+
+***Indiana Health Industry Forum members get 20% off registration!***Learn more at http://www.ihif.org/.
+
+
+
+
+</description>
+<dtstart value="DATE">20160208</dtstart>
+<dtend value="DATE">20160210</dtend>
+<location>The Waldorf Astoria New York</location>
+<sequence>0</sequence>
+<summary>BIO CEO &amp; Investor Conference</summary>
+<url uri="https://bloomingtonlifesciences.com/event/bio-ceo-investor-conference/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1584@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://kelley.iu.edu/CBLS</contact>
+<description>Cost pressures and the provisions of reform laws are driving change in the healthcare value chain. How
+fast and effectively is “fee for service” giving way to outcomes and capitated agreements focusing
+on wellness and prevention? What will be the impact on innovative new products and intellectual
+property? “Major players” will discuss the disruption from a variety of angles.</description>
+<dtstart value="DATE">20160219</dtstart>
+<dtend value="DATE">20160220</dtend>
+<geo>+39.770906;-86.160992</geo>
+<location>OneAmerica Tower @ 1 American Square, Indianapolis, IN 46282, USA</location>
+<sequence>0</sequence>
+<summary>The Continuing Disruption of Healthcare and Life Sciences Business Models</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-continuing-disruption-of-healthcare-and-life-sciences-business-models/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1806@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>Thursday, March 31, 2016, from 9:00 am – 6:00 pm
+Indiana Memorial Union, Frangipani Room
+Biddle Hotel and Conference Center
+900 E. Seventh Street
+Bloomington, IN 47405
+ 
+Speakers and presenters include: 
+Michael Hiles, Vice President for Research and Development, &amp; Chief Scientific Officer, Cook Biotech Incorporated
+Maria J. Blanco, Director, Discovery Chemistry Research &amp; Technologies, Eli Lilly &amp; Company
+Winners of the first JCITR Translational Research Pilot Grant Program Awards – Hannah Block, Matt Bochman, Amit Hagar, Andrea Hohman, and Cheng Kao
+IU faculty member and Assembly Biosciences Co-Founder, Adam Zlotnick
+ 
+Poster presentation session: 
+Cutting-edge research on the IU Bloomington campus that has potential to lead to commercial applications.  Presenters will have the opportunity to receive feedback on their work through discussions with attendees from both the Bloomington campus and regional industry partners.
+ 
+Register now!  http://jcitr.indiana.edu/events.shtml
+The conference is offered free of charge to IUB faculty members and industry partners. 
+(Registration is capped at 100 due to room limitations).
+Tickets: http://jceb.indiana.edu/events.shtml.</description>
+<dtstart value="DATE">20160331</dtstart>
+<dtend value="DATE">20160401</dtend>
+<geo>+39.167772;-86.522478</geo>
+<location>Biddle Hotel and Conference Center @ 900 E 7th St, Bloomington, IN 47405, USA</location>
+<sequence>0</sequence>
+<summary>Second Annual IUB Innovation Conference &amp; Reception</summary>
+<url uri="https://bloomingtonlifesciences.com/event/second-annual-iub-innovation-conference-reception/" />
+<x-cost-type>external</x-cost-type>
+<x-tickets-url>http://jceb.indiana.edu/events.shtml</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1809@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>info@ihif.org</contact>
+<description>The Indiana Health Industry Forum invites you to join us for the 2016 Annual Meeting for members of the state’s health science business community to be held May 9-10.   Open to IHIF members and members of the business community, we welcome you to join us and build your business network with industry leaders from across the state and around the country.
+Monday – May 9th
+Location: The Alexander Hotel – A Dolce Property
+
+5:00 – 7:00 pm – Gala Reception (The Gallery)
+Featuring: Networking, MCIT Biomedical Student Research Poster Display, Vendor info tables
+
+7:30 – 9:00 – VIP Dinner (Ralston Board Room, 6th Floor)
+This congenial dinner offers networking for IHIF board members, speakers, and event sponsors, all with an unmatched view of the downtown Indianapolis skyline.
+
+Tuesday – May 10th
+Location: Eli Lilly Conference Center, Lilly Corporate Campus
+8:30 am – 3:30 pm
+
+The meeting portion of the event offers a little something for everyone in our diverse sector.  Highlights include: release of the IHIF Annual Report, Kick-Off of Roadmap 2020 (the next Strategic Plan), MOMENTUM Recap,  Keynote Presentation by Michael Weingarten, National Cancer Institute,  Indiana’s Contribution to the Cancer Moonshot (Panel), Legislator of the Year Awards, and Value of Medicines and Devices Discussion.</description>
+<dtstart value="DATE">20160509</dtstart>
+<dtend value="DATE">20160511</dtend>
+<geo>+39.762102;-86.154587</geo>
+<location>The Alexander Hotel @ 333 S Delaware St, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>The Indiana Health Industry Forum 2016 Annual Meeting</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-indiana-health-industry-forum-2016-annual-meeting/" />
+<x-cost-type>free</x-cost-type>
+</vevent>
+<vevent>
+<uid>ai1ec-1585@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://kelley.iu.edu/CBLS</contact>
+<description>Among technology advances, continued cost pressures and patient preferences, more patient visits
+and treatments are moving out of traditional hospital settings. How are companies, providers and
+payers seeing this and responding? A range of stakeholders will share their perspectives.</description>
+<dtstart value="DATE">20160513</dtstart>
+<dtend value="DATE">20160514</dtend>
+<geo>+39.172898;-86.598316</geo>
+<location>Cook Group World Headquarters @ 750 Daniels Way, Bloomington, IN 47404, USA</location>
+<sequence>0</sequence>
+<summary>The Shift from In-patient to Alternate Care Settings</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-shift-from-in-patient-to-alternate-care-settings/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1852@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>JoBeth Cox-Zimmerman ; zimmerman@biocrossroads.com</contact>
+<description></description>
+<dtstart value="DATE">20161004</dtstart>
+<dtend value="DATE">20161006</dtend>
+<sequence>0</sequence>
+<summary>The Indiana Life Sciences Summit</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-indiana-life-sciences-summit/" />
+<x-cost-type>free</x-cost-type>
+</vevent>
+<vevent>
+<uid>ai1ec-148@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Katie Birge; http://bloomingtontech.com/</contact>
+<description>Join area tech companies and organizations for this free-to-attend event! RSVP by filling out this web form: http://bit.ly/16Cbwl0</description>
+<dtstart tzid="America/Indiana/Indianapolis">20131105T180000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20131106T000000</dtend>
+<location>Bloomington Convention Center</location>
+<sequence>0</sequence>
+<summary>Bloomington Technology Partnership Career and Internship Fair</summary>
+<url uri="https://bloomingtonlifesciences.com/event/bloomington-technology-partnership-career-and-internship-fair/" />
+<x-cost>Free</x-cost>
+</vevent>
+<vevent>
+<uid>ai1ec-229@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Adam Affaurt; 812.482.3227; http://www.mep.purdue.edu/events/default.aspx?category=lean&amp;id=18#lean</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20131204T130000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20131204T210000</dtend>
+<location>Old National Bank @ 210 East Kirkwood Avenue, Bloomington, IN 47408, USA</location>
+<sequence>0</sequence>
+<summary>5S System – The Visual Workplace</summary>
+<url uri="https://bloomingtonlifesciences.com/event/229/" />
+</vevent>
+<vevent>
+<uid>ai1ec-739@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/conference/register/48</contact>
+<description>Alzheimer’s: Up Close &amp; Personal
+
+
+Come hear the psychosocial aspects of aging and Alzheimer’s disease and the clinical and research advancements regarding Alzheimer’s from Mary Guerriero Austrom, Ph.D., director of the education core at the Indiana Alzheimer Disease Center at the IU School of Medicine. Dr. Guerriero’s works as a professor in the IU School of Medicine’s Department of Psychiatry includes developing non-pharmacological interventions for Alzheimer’s and dementia patients, and ways to improve quality of life of their caregivers.
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20131217T163000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20131217T180000</dtend>
+<location>Barnes &amp; Thornburg LLP offices in Indianapolis</location>
+<sequence>0</sequence>
+<summary>Alzheimer’s: Up Close &amp; Personal</summary>
+<url uri="https://bloomingtonlifesciences.com/event/alzheimers-up-close-personal/" />
+</vevent>
+<vevent>
+<uid>ai1ec-740@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/calendar?month=1&amp;year=2014</contact>
+<description>Indiana CTSI Grant Renewal: A New Era Begins!
+The Indiana Clinical and Translational Sciences Institute (CTSI) is a statewide collaboration of Indiana University, Purdue University, and the University of Notre Dame, as well as public and private partnerships, which facilitates the translation of scientific discoveries in the lab into clinical trials and new patient treatments in Indiana and beyond. Established in 2008, the Indiana CTSI is supported by a $25 million Clinical and Translational Science Award from the National Center for Advancing Translational Sciences (NCATS) of the National Institutions of Health, supplemented by nearly $60 million from the state, the three member universities, and public and private partnerships. The Indiana CTSI is a member of a national network of 61 CTSA-funded organizations across the United States.
+In October, CTSI announced it had received approval of its grant renewal application from NIH and received nearly $30 million to contribute its mission accelerating research discoveries across Indiana and beyond. Please join us for a conversation with Dr. Anantha Shekhar, director of the Indiana CTSI and associate dean for translational sciences at the IU School of Medicine as he talks about what the grant renewal means for Indiana and CTSI’s partners as well as what changes and updates were made to keep the institute competitive.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140121T163000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140121T180000</dtend>
+<location>Barnes &amp; Thornburg LLP @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Life Science Lunch</summary>
+<url uri="https://bloomingtonlifesciences.com/event/740/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1044@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/conference/register/58</contact>
+<description>With Featured Speaker Rep. Ed Clere
+Chair, House Public Health Committee
+PANEL DISCUSSION:
+Indiana Health Industry Forum
+Indiana Medical Device Manufacturers Council
+Office of Small Business and Entrepreneurship
+Eli Lilly and Company
+PhRMA
+PLEASE REGISTER HERE TO ATTEND THE LIFE SCIENCES BRIEFING
+Program Sponsored by: IHIF, Hoosiers Work for Health, and the Indiana Medical Device Manufacturers’ Council (IMDMC)</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140129T133000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140129T143000</dtend>
+<location>Vincennes Room, Hilton Indianapolis Downtown  @ 120 West Market Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Indiana Life Sciences Breakfast/Industry Briefing</summary>
+<url uri="https://bloomingtonlifesciences.com/event/indiana-life-sciences-breakfastindustry-briefing/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1061@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>IHIF</contact>
+<description>Voices of Influence – Leading Women in Life Sciences
+Leadership roles in the life sciences require skill sets adept at managing both complex issues and brilliant people with diverse needs.  Please join us as we hear from three executives who share their experiences in successfully bringing together and managing teams to move their companies and organizations forward.  From healthcare delivery to accelerating innovation, management consulting to marketing, learn how this group of outstanding women leaders confront their challenges and leads from the top.
+Speakers:
+Jean Scallon
+CEO
+ Bloomington Meadows Hospital
+Terri Pascarelli
+Vice President, Client Development
+YourEncore, Inc.
+Additional Panelist to be announced
+Tickets: http://www.ihif.org/conference/register/48.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140218T163000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140218T180000</dtend>
+<location>Barnes &amp; Thornburg LLP @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Leading Women in Life Sciences</summary>
+<url uri="https://bloomingtonlifesciences.com/event/leading-women-in-life-sciences/" />
+<x-tickets-url>http://www.ihif.org/conference/register/48</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-230@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Center for the Business of Life Sciences; http://kelley.iu.edu/CBLS/conferences/page16548.html</contact>
+<description>As China continues its strong economic development, large numbers of its population for the first time will receive access to advanced healthcare.  Can the Chinese government learn from healthcare insurance systems around the world?  How much of this will be supported by their domestic medical products firms?  Will there be opportunities for international firms as well?
+ 
+Join the Indiana Life Sciences Collaboration Conference to discuss:
+– current opportunities in China
+– developing and expanding US and Chinese Business Relationships
+– cultural and regulatory lessons learned from entering the Chinese
+market
+ 
+Among conference speakers and panelists are executives from AdvaMed, BioStorage Technologies, Cook Medical, Faegre Baker &amp; Daniels LLP, Medtronic, Rubicon Strategy Group and Zimmer.
+Tickets: http://kelley.iu.edu/CBLS/conferences/page41290.html.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140221T140000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140221T201500</dtend>
+<location>Cook Medical World Headquarters @ 750 Daniels Way, Bloomington, IN 47404, USA</location>
+<sequence>0</sequence>
+<summary>Overview of Chinese Healthcare and Medical Products Industry</summary>
+<url uri="https://bloomingtonlifesciences.com/event/overview-of-chinese-healthcare-and-medical-products-industry/" />
+<x-tickets-url>http://kelley.iu.edu/CBLS/conferences/page41290.html</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1072@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Healthcare Businesswomen's Association; 317-677-6487; hbaindyprograms@yahoo.com; https://netforum.avectra.com/eweb/DynamicPage.aspx?Site=HBA&amp;WebCode=EventDetail&amp;evt_key=840b2bde-0580-46ee-80dd-357a0f6ec3e4</contact>
+<description>Event title: Executive Presence – Do you HAVE it?
+Event date:  March 6, 2014
+Day of week: Thursday
+Start time: 11:00 AM
+End time: 1:30 PM
+Time zone: EST
+ 
+Event Details
+These days, some of the most promising leaders never make it to an executive level. It’s not their knowledge, ability, and/or expertise that holds them back, but rather, their lack of Executive Presence.
+When grooming employees for management and making promotion decisions, today’s employers are looking for that special “IT Factor.” What is it? Do you already have it? If not, how can you get?
+Join Starla West, Certified Image Strategist, for an information-packed session where she’ll…
+• define Executive Presence and explain how it differs from Personal Branding,
+• deconstruct the components of Executive Presence, and
+• explain how to develop, nurture, and utilize these vital components to advance your career.
+Starla West – a certified image strategist – is the Founder and President of Starla West International – a professional image and reputation management firm dedicated to helping individuals and entire businesses create images that position them for greater success.
+Today, SWI serves individuals and organizations across the Midwest and beyond helping them maximize their true potential by leveraging the power of appearance, behavior and communication skills. Rooted in the understanding that image is priceless for both individuals and entire companies, Starla is a precious resource for those who aspire to a higher level of success.
+ 
+Learning Objectives
+1.  Define Executive Presence and understand how it differs from personal branding.
+2.  How to deconstruct the components of Executive Presence.
+3.  Learn how to advance your career by developing, nurturing and utilizing Executive Presence.
+4.  Meet some amazing women in the HBA Indiana Chapter!
+ 
+Agenda
+11:00 AM – 11:30 AM       Registration &amp; Networking
+11:30 AM – 12:00 PM       Lunch
+12:00 PM – 12:15 PM       Opening Remarks
+12:15 PM – 1:00 PM         Presentation
+1:00 PM – 1:30 PM           Q&amp;A/Closing Remarks
+Register here.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140306T160000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140306T183000</dtend>
+<location>Bloomington Meadows Hospital @ 3600 North Prow Road, Bloomington, IN 47404, USA</location>
+<sequence>0</sequence>
+<summary>Executive Presence – Do You Have It?</summary>
+<url uri="https://bloomingtonlifesciences.com/event/executive-presence-do-you-have-it/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1105@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Indiana Academy of Science; 317-974-0827; http://www.indianaacademyofscience.org/Events-Meetings/Event/12.aspx</contact>
+<description>
+An Exceptional Opportunity to learn from Indiana’s Scientists and Nationally recognized Guest Speakers
+Join Indiana’s Scientists, Science Educators, and Graduate and Undergraduate Science Students as they share some of this country’s latest developments in scientific research, recognize peers at the forefront of this work, and welcome nationally recognized guest speakers. With an expected attendance of hundreds, and hundreds of research papers and posters presented by Indiana scientists and aspiring scientists, Workshops and ‘hot topic’ discussions, you don’t want to miss this once a year meeting.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140315T120000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140315T220000</dtend>
+<location>JW Marriott Indianapolis @ 10 South West Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>129th Annual Academy Meeting</summary>
+<url uri="https://bloomingtonlifesciences.com/event/129th-annual-academy-meeting/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1103@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Indiana Health Industry Forum (IHIF); http://www.ihif.org/conference/register/48</contact>
+<description>The World is Your Market: Going Global from Indiana
+
+BioCrossroads recently announced that Indiana ranks second in worldwide exports. That number is significant to Indiana’s role in the global economy and speaks to the state’s expertise in distribution and logistics. This month’s panel will further explore the story behind those export numbers and give them context to Indiana’s international engagement. Please join us as we discuss Indiana as a gateway to the world, explore the role of international partnerships and relationships, and touch on markets that make sense for Indiana life science firms.
+Speakers:
+Chris Matney
+Air Services Director
+ Indianapolis International Airport
+Chris Felts
+Partner
+Barnes &amp; Thornburg LLP
+ Kristin Jones
+President and CEO
+Indiana Health Industry Forum
+More Information
+The Indiana Health Industry Forum and Barnes &amp; Thornburg present a monthly seminar series on critical issues in life science. Each month, at lunch, a policymaker or a panel in the field of life science will be available to answer questions concerning the major challenges and opportunities in the life science industry. We hope you will join us.
+There is no charge to attend, but please register so we know how many lunches to order. Please see registration page for details. Some of the questions will be submitted to the speaker in advance. You are invited to suggest questions you would like us to consider for submission.
+ 
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140318T153000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140318T170000</dtend>
+<location>Barnes &amp; Thornburg LLP offices in Indianapolis @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Life Sciences Lunch</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-sciences-lunch/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1128@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Indiana Health Industry Forum (IHIF); 317-524-4770; info@ihif.org; http://www.ihif.org/pages/lifescience</contact>
+<description>STEM Education – Creative, Fun, and Engaging
+ 
+STEM education is a serious topic but one that can be addressed in ways that engage students at all levels and encourage thoughtful, creative, and challenging approaches to math, science, and engineering topics.  We are pleased to present a broad panel of participants who can talk about some of more creative partnerships, programs, and approaches schools and teachers across Indiana are using to capture students’ imaginations and draw them into the future of STEM careers.
+ 
+Speakers:
+Robert Yost
+Executive Director, Celebrate Science of Indiana
+Claire Fiddian-Green
+Special Assistant to the Governor for Education Innovation
+Kelly Bozoian
+Biomedical Science, Project Lead the Way
+McKenzie Center for Innovation and Technology
+ 
+About the Series
+The Indiana Health Industry Forum and Barnes &amp; Thornburg LLP partner to present a monthly seminar series on critical issues in life sciences. Each month, at lunch, a policymaker or a panel in the field of life science will be available to answer questions concerning the major challenges and opportunities in the life science industry. We hope you will join us.  The program is video-broadcast from Indianapolis to locations around the state and country.
+There is no charge to attend. Please see registration page for details.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140415T153000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140415T170000</dtend>
+<location>Barnes &amp; Thornburg LLP offices in Indianapolis @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Life Science Lunch – STEM Education</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-science-lunch-stem-education/" />
+<x-cost>Free</x-cost>
+</vevent>
+<vevent>
+<uid>ai1ec-1106@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Indianapolis Business Journal</contact>
+<description>
+
+
+Questions:
+
+
+
+Q
+
+
+How are Indiana Life Sciences companies helped by and threatened by Obamacare?
+
+
+
+
+Q
+
+
+What’s the biggest barrier to launching more life science start-ups in Indiana?
+
+
+
+
+Q
+
+
+How has the increased activity of angel investors changed the landscape for growing life sciences companies in Indiana?
+
+
+
+The answers to these and other questions will be discussed.
+
+
+
+Tickets: http://www.ibj.com/ibj/event?eventId=194.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140424T114500</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140424T134500</dtend>
+<location>The Marriott Downtown Indianapolis</location>
+<sequence>0</sequence>
+<summary>IBJ Power Breakfast Series</summary>
+<url uri="https://bloomingtonlifesciences.com/event/ibj-power-breakfast-series/" />
+<x-cost>$35-$45</x-cost>
+<x-tickets-url>http://www.ibj.com/ibj/event?eventId=194</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1121@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>BioBriefing is a one-day, fast-paced course giving a high-level overview of the key scientific concepts required to understand basic biotechnology applications. Using industry-specific examples, participants will discuss biologic drugs, personalized medicine, and drug discovery &amp; development. Gain an understanding of the fundamental terms and concepts needed to navigate the rapidly changing biotechnology industry.
+BioBriefing Agenda
+Date: May 5, 2014
+Time: 9:00am – 4:30pm
+Pricing: $640 | $525 (IHIF Members)
+Location:
+Conrad Hotel Indianapolis
+50 West Washington St
+Indianapolis, IN 46204
+Can’t Make the Date?
+Additional dates and offerings:
+BioImmersion April 30-May 2 in Chicago, IL
+Refund Policy:
+All purchases are final and will not be refunded. However, if you cannot attend you may send someone from your organization in your place by notifying Heather Bergan at Bergan@BiotechPrimer.com no later than one week before the start date of the class.
+Tickets: http://biotechprimer.com/offsite/biobriefing/item/168.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140505T130000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140505T203000</dtend>
+<location>Conrad Hotel Indianapolis @ 50 East Washington Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>BioBriefing: Biotech for the Non-Scientist</summary>
+<url uri="https://bloomingtonlifesciences.com/event/1121/" />
+<x-cost>$640 or $525 for IHIF Members</x-cost>
+<x-tickets-url>http://biotechprimer.com/offsite/biobriefing/item/168</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1136@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/conference/register/48</contact>
+<description>At the Indiana Health Industry Forum Annual Meeting held earlier this month in Indianapolis, IHIF President Kristin Jones offered a short update on the progress around the Statewide Strategic Plan. The plan, which focuses on Capital Formation, Research &amp; Technology Commercialization, Business Development, Education, and Public Policy, is an industry-driven guidance document that dictates much of the Forum’s daily activities. Please join us as we take a deeper look at the progress that has been made, the challenges that remain, and what can realistically be accomplished in the next two and a half years.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140520T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140520T130000</dtend>
+<sequence>0</sequence>
+<summary>Update on Indiana’s Statewide Strategic Plan for the Health Science Sector</summary>
+<url uri="https://bloomingtonlifesciences.com/event/update-on-indianas-statewide-strategic-plan-for-the-health-science-sector/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1261@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Indiana Health Industry Forum (IHIF); http://www.ihif.org/conference/register/48</contact>
+<description>On June 17, the FDA released two guidance documents focused on the use of social media by members of regulated industry, including one on how companies can use the social media platform Twitter and other space-limited platforms. The issuance of guidance on social media was required by the Food and Drug Administration Safety and Innovation Act (FDASIA), Section 1121 of which calls for FDA to, by August 2014, “issue guidance that describes FDA policy regarding the promotion, using the Internet (including social media), of medical products that are regulated by [the FDA].”.
+ 
+The Indiana Health Industry Forum and Barnes &amp; Thornburg present a monthly seminar series on critical issues in life science. Each month, at lunch, a policymaker or a panel in the field of life science will be available to answer questions concerning the major challenges and opportunities in the life science industry. We hope you will join us.
+ 
+There is no charge to attend, but please register so we know how many lunches to order. Please see registration page for details. Some of the questions will be submitted to the speaker in advance. You are invited to suggest questions you would like us to consider for submission.
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20140819T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140819T130000</dtend>
+<geo>+39.766754;-86.15766</geo>
+<location>Barnes &amp; Thornburg LLP offices in Indianapolis @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Social Media and Life Sciences</summary>
+<url uri="https://bloomingtonlifesciences.com/event/social-media-and-life-sciences/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1253@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Marilyn Skirvin; 812-335-7346; mskirvin@comparebloomington.us</contact>
+<description>Speakers
+Carol Mihalik | Securities Commissioner, Securities Division, Indiana Secretary of State
+Kelly Griese | Investor Education Coordinator, Securities Division, Indiana Secretary of State
+Kevin Halloran | Partner, Bunger &amp; Robertson and Chair, BEDC
+ 
+Indiana’s new rules allow the social media fundraising tool of crowdfunding to be applied to local entrepreneurs. As of July 1, 2014, Hoosier entrepreneurs can raise up to $2 million using the online investment tool. Secretary of State Connie Lawson and her team worked tirelessly on these new rules, and will pre-sent on how local entrepreneurs and businesses can take advantage of the new source of funding. Please join us to learn about the exciting new implications of this change.
+ 
+To RSVP, please email mskirvin@comparebloomington.us or call 812-335-7346.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140821T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140821T193000</dtend>
+<geo>+39.171659;-86.501633</geo>
+<location>Indiana University Cyberinfrastructure Building (CIB) @ 2709 10th Street, Indiana University, University Middle School, Bloomington, IN 47408, USA</location>
+<sequence>0</sequence>
+<summary>New Indiana Crowdfunding Rules</summary>
+<url uri="https://bloomingtonlifesciences.com/event/new-indiana-crowdfunding-rules/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1270@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description>SPEAKER:
+Peggy Welch
+Former Executive Director,
+Indiana Medical Device Manufacturers Council
+Biotechnology Seminar Series Thursdays, Fall 2014
+Thursday, September 11th Simon Hall 001 5:30 PM
+ 
+Support for seminar series provided by:
+BioStorage Industries Cook Medical, Inc
+IU Research &amp; Technology Corporation
+Co-sponsored by the IU Biotechnology Club</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140911T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140911T183000</dtend>
+<location>Indiana University Simon Hall 001</location>
+<sequence>0</sequence>
+<summary>The Status of Indiana’s Medical Device Industry</summary>
+<url uri="https://bloomingtonlifesciences.com/event/1270/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1258@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>IU Kelley School of Business Center for the Business of Life Sciences; http://kelley.iu.edu/CBLS/conferences/page16548.html</contact>
+<description>Overview
+Regulatory bodies continue to modify and create new procedures for approving products and managing quality compliance. At the same time, reimbursement considerations are becoming more and more critical.  How do these affect the path new products must go through for first launch? What about new types of products and novel technologies?  How are strengthened quality requirements affecting operations – both domestically and overseas?  Experienced industry professionals will share their perspectives as to where they feel things are going.
+ 
+Agenda
+
+
+
+8:00 – 9:00am
+Registration and Breakfast
+
+
+9:00 – 9:15am
+Welcome and Introduction
+
+
+9:15 – 10:15am
+Keynote Presentation
+
+
+10:15 – 10:30am
+Break
+
+
+10:30am – 12:00pm
+Panel
+
+
+12:00 – 1:30pm
+Luncheon Keynote
+
+
+ 
+Networking
+
+
+1:30 – 3:00pm
+Afternoon Panel
+
+
+3:00 – 3:15pm
+Wrap-up
+
+
+
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20140912T080000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140912T151500</dtend>
+<geo>+39.77231;-86.167463</geo>
+<location>IU Robert H. McKinney School of Law @ 530 West New York Street, Indiana University-Purdue University Indianapolis, Indianapolis, IN 46202, USA</location>
+<sequence>0</sequence>
+<summary>An Update on the FDA and Global Regulatory Bodies</summary>
+<url uri="https://bloomingtonlifesciences.com/event/an-update-on-the-fda-and-global-regulatory-bodies/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1263@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Alison Smith; alelsmit@indiana.edu</contact>
+<description>We are pleased to announce a new student-centered event we are hosting the week of September 8th through September 12th called the Career Fair Survival Guide.  This event is actually a series of workshops to help students prepare for success at our big career fair events, culminating with the Mock Career Fair on Friday, September 12, 2014, from 1:00 pm to 3:30 pm in State Room East, in the Indiana Memorial Union.
+We are really excited about this event, and we know that it will provide a great deal of value to our students, as it will help them be much better prepared to have a successful experience at the Fall Career and Internship Fair on September 16, 2014.  We want to make the Mock Career Fair as realistic for students as possible, therefore we are asking for participation from our most active employers for this event.
+The goal for this event is to have students come to the event as if it were a real career fair, dressed for success, with resumes in-hand, ready to impress our employers.  After each student approaches the employer with his or her “elevator pitch,” we would like for the employers to provide some basic feedback for the students, and give advice as to how each student might improve their performance for the Fall Career and Internship Fair event on September 16th.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140912T130000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140912T153000</dtend>
+<location>State Room East, Indiana Memorial Union, Indiana University</location>
+<sequence>0</sequence>
+<summary>Career Fair Survival Guide: Mock Career Fair</summary>
+<url uri="https://bloomingtonlifesciences.com/event/career-fair-survival-guide-mock-career-fair/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1271@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/pages/lifescience</contact>
+<description>With all of the emphasis on EMR’s and data privacy issues in healthcare delivery, it can be easy to forget that patients are the source of all that information.  Whether you are engaged in healthcare delivery or in the development of tools that interface with patient populations, how technology is applied to an interactive situation can dramatically affect the relationship between patients and providers and in some cases, even the effectiveness of treatment.  Please join us as our panel explores what it takes to successfully use healthcare IT from the patient perspective.
+
+Speakers
+Emily D. Tisdale
+Founder &amp; Principal Consultant,
+Recourse Resource Consulting
+Blythe Logan
+Director of Business Development,
+CoreTech Revolution
+Jean Willey Scallon, MA FACHE
+Chief Executive Officer
+Bloomington Meadows Hospital
+
+The Indiana Health Industry Forum and Barnes &amp; Thornburg LLP partner to present a monthly seminar series on critical issues in life science. Each month, at lunch, a policymaker or a panel in the field of life science will be available to answer questions concerning the major challenges and opportunities in the life science industry. We hope you will join us.
+ 
+There is no charge to attend, but please register so we know how many lunches to order. Please see registration page for details.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20140916T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20140916T123000</dtend>
+<geo>+39.766754;-86.15766</geo>
+<location>Barnes &amp; Thornburg office @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Using Health IT to Encourage a Patient Focus</summary>
+<url uri="https://bloomingtonlifesciences.com/event/using-health-it-to-encourage-a-patient-focus/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1275@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>Attention business and science students from IUB and IUPUI campuses!  Join prospective and current CBLS Student Associates passionate about the business of life sciences and learn more about the Business of Life Sciences Certificate program at IU.
+This reception is sponsored by the Bloomington Life Sciences Partnership.  Students will also have the opportunity to learn more about the life science companies in the Bloomington area and network with representatives from local companies.
+Hors d’oeuvres and beverages will be served.
+To attend, please contact Kelli Conder, lifesc@indiana.edu to RSVP.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20141009T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20141009T193000</dtend>
+<location>Kelley Graduate Building, 3059</location>
+<sequence>0</sequence>
+<summary>Fall Business of Life Sciences Student Recruitment Reception</summary>
+<url uri="https://bloomingtonlifesciences.com/event/fall-business-of-life-sciences-student-recruitment-reception/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1272@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Dana Palazzo; 812-340-9058; dpalazzo@comparebloomington.us</contact>
+<description>Featuring:
+Fred H. Cate 
+Distinguished Professor and C. Ben Dutton Professor of Law
+Director | Institute for Information Policy Research
+Director | Center for Law, Ethics &amp; Applied Research in Health Information
+
+2014 has been dominated by widespread security breaches that have compromised data concerning hundreds of millions of individuals and businesses. The life sciences have not only been the setting for a large number of these breaches, but also face special challenges in the volume, variety, scope, accessibility, and sensitivity of information necessary to treat patients and innovate new therapies. In few aspects of our economy or our lives are data more essential or more at risk. This session will address the changing face of cybersecurity threats, the special challenges the life sciences face, and key steps for protecting data responsibly.
+
+Reception Immediately Following the Program
+ 
+Please rsvp by October 15th by reply email or at 812-335-7346.
+ 
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20141023T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20141023T193000</dtend>
+<geo>+39.164392;-86.535544</geo>
+<location>Bloomington-Monroe County Convention Center @ 302 South College Avenue, Bloomington, IN 47403, USA</location>
+<sequence>0</sequence>
+<summary>Cybersecurity Challenges in the Life Sciences</summary>
+<url uri="https://bloomingtonlifesciences.com/event/annual-summit/" />
+</vevent>
+<vevent>
+<uid>ai1ec-228@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>IU Kelley School of Business Center for the Business of Life Sciences; http://kelley.iu.edu/CBLS/conferences/page44579.html</contact>
+<description>Overview
+As healthcare providers continue to aggregate, especially in larger markets, what is most likely to be seen?  What will be the projected effects on pricing and quality of care?  How will payers and finished goods manufacturers respond?  Sorting through these competing and complementary priorities will be the focus of this conference.
+ 
+Agenda
+
+
+
+8:00 – 9:00am
+Registration and Breakfast
+
+
+9:00 – 9:15am
+Welcome and Introduction
+
+
+9:15 – 10:15am
+Keynote Presentation
+
+
+10:15 – 10:30am
+Break
+
+
+10:30am – 12:00pm
+Panel
+
+
+12:00 – 1:30pm
+Luncheon Keynote
+
+
+
+Networking
+
+
+1:30 – 3:00pm
+Afternoon Panel
+
+
+3:00 – 3:15pm
+Wrap-up
+
+
+
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20141121T080000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20141121T151500</dtend>
+<geo>+39.167667;-86.5933</geo>
+<location>IU Robert H. McKinney School of LawThe Indiana Center for the Life Sciences @ 501 Profile Parkway, Bloomington, IN 47404, USA</location>
+<sequence>0</sequence>
+<summary>A New Healthcare Delivery Model: Implications of the Continuing Consolidation of Providers</summary>
+<url uri="https://bloomingtonlifesciences.com/event/228/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1276@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Emily Sholtis; 812-336-6381; esholtis@chamberbloomington.org</contact>
+<description>The Life Sciences Career Fair allows nearly 200 high school students from Monroe County to meet representatives from area businesses and life science professions and learn about careers in the sciences. Past exhibitors include Cook Medical, Cook Pharmica, Baxter Pharmaceuticals, Boston Scientific, BioConvergence, and Bloomington Hospital, as well as pharmacists, optometrists, a forensic detective, and IU researchers. Due to the success of last year’s fair, we are expanding the event to include more exhibitors from a wider variety of career fields.
+ 
+Exhibitors are needed from 8:00 AM until 12:00 PM. Light breakfast foods, coffee/refreshments, and snacks will be provided to all exhibitors at this year’s fair.
+ 
+We ask that exhibitors have at least 1-2 representatives present for the entire time. Exhibitors are encouraged to display anything that conveys the jobs and careers associated with their company. These could include, but are not limited to, colorful and interactive displays, product samples, models of body parts, tools, videos, photographs, a laptop with an interactive website or program.
+ 
+Registration is free and entitles your company to:
+An exhibit space with an 8 foot table and chairs
+Free WiFi access at the fair
+Free breakfast and refreshments
+Listing in event promotional materials and online announcements</description>
+<dtstart tzid="America/Indiana/Indianapolis">20141121T080000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20141121T120000</dtend>
+<geo>+39.167667;-86.5933</geo>
+<location>Indiana Center for the Life Sciences at Ivy Tech Community College @ 501 Profile Parkway, Bloomington, IN 47404, USA</location>
+<sequence>0</sequence>
+<summary>The Franklin Initiative Life Sciences Career Fair</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-franklin-initiative-life-sciences-career-fair/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1340@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/conference/register/48</contact>
+<description>Please join us for a conversation with U.S. Representative Erik Paulsen, who will discuss the interplay between the life science industry and the U.S. federal government. Rep. Paulsen is co-chair of the bipartisan Congressional Medical Technology Caucus and a strong advocate for the life science industries. Topics to be discussed will include:
+
+FDA: 501(k) program and MenB vaccine
+Intellectual property: patent reform, patent eligibility of DNA, trade secret legislation, and patent troll legislation
+Taxes: medical device tax and corporate inversions
+
+The Indiana Health Industry Forum and Barnes &amp; Thornburg present a monthly seminar series on critical issues in life science. Each month, at lunch, a policymaker or a panel in the field of life science will be available to answer questions concerning the major challenges and opportunities in the life science industry. We hope you will join us.
+There is no charge to attend, but please register so we know how many lunches to order. Please see registration page for details. Some of the questions will be submitted to the speaker in advance. You are invited to suggest questions you would like us to consider for submission.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20141216T233000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20141216T130000</dtend>
+<location>Barnes &amp; Thornburg LLP</location>
+<sequence>0</sequence>
+<summary>The Federal Government and the Life Science Industries II</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-federal-government-and-the-life-science-industries-ii/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1259@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>IU Kelley School of Business Center for the Business of Life Sciences; http://kelley.iu.edu/CBLS/conferences/page44580.html</contact>
+<description>Overview
+The development and widespread use of “smart phones” in the marketplace has major implications.  What is the impact of wearable technology on healthcare?  Will it be self-diagnosis or physician driven?  What about its use in clinical trials?  Industry executives and observers will offer their thoughts as to how much evaluation, monitoring and diagnosis can and should be in the palm of one’s hand.
+ 
+Agenda
+
+
+
+8:00 – 9:00am
+Registration and Breakfast
+
+
+9:00 – 9:15am
+Welcome and Introduction
+
+
+9:15 – 10:15am
+Keynote Presentation
+
+
+10:15 – 10:30am
+Break
+
+
+10:30am – 12:00pm
+Panel
+
+
+12:00 – 1:30pm
+Luncheon Keynote
+
+
+ 
+Networking
+
+
+1:30 – 3:00pm
+Afternoon Panel
+
+
+3:00 – 3:15pm
+Wrap-up
+
+
+
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20150120T080000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150120T151500</dtend>
+<geo>+39.781656;-86.164952</geo>
+<location>IU School of Medicine, Fairbanks Hall @ 340 West 10th Street, Indiana University-Purdue University Indianapolis, Indianapolis, IN 46202, USA</location>
+<sequence>0</sequence>
+<summary>Mobile Healthcare: Where Does New IT Intersect with Healthcare?</summary>
+<url uri="https://bloomingtonlifesciences.com/event/mobile-healthcare-where-does-new-it-intersect-with-healthcare/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1361@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/pages/lifescience</contact>
+<description>
+
+
+“Maximizing Intellectual Property for Minimal Costs”
+
+
+
+Your company’s intellectual property can frequently become one of your most valuable assets. But at what cost? For both large and small companies, capturing your intellectual property or protecting your IP position may often be perceived as cost-prohibitive.
+Please join us on January 20 to learn the various ways to identify and protect your IP, maximize the value of your IP, and minimize the risks and costs associated with avoiding treading on another’s IP. You will learn, among other things, how to put in place the best policies and practices, what types of agreements to use, the value of regular “IP audits,” and creative uses of insurance to cost-effectively protect your IP position.
+
+
+
+
+Deborah Pollack-Milgate
+Partner
+Barnes &amp; Thornburg LLP
+ 
+
+
+
+SpeakersTodd Vare
+Partner
+Barnes &amp; Thornburg, LLP
+
+
+Steve Appel
+Vice President, Corporate Development
+Gregory &amp; Appel Insurance
+
+
+Steven Johns
+President and Founder
+Confluence Pharmaceuticals
+
+
+
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20150120T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150120T123000</dtend>
+<geo>+39.766627;-86.157742</geo>
+<location>Barnes &amp; Thornburg Offices @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Maximizing Intellectual Property for Minimal Costs</summary>
+<url uri="https://bloomingtonlifesciences.com/event/maximizing-intellectual-property-for-minimal-costs/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1351@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Lindsey Hojnowski; 812-856-1864; lhojnows@indiana.edu</contact>
+<description>2015 Winter Part- time Jobs Fair
+Wednesday, January 28, 2015, 2-4 p.m.
+Frangipani Room, Indiana Memorial Union
+We are pleased to invite you to attend the 2015 Winter Part-time Jobs Fair. Students will be searching for
+employment on-campus and/or in Bloomington for the spring semester. This fair will have one session with
+both “work-study” opportunities and “non work-study” opportunities.
+REGISTRATION:
+The event will be held in the Frangipani Room which is located on campus on the Mezzanine level in the Indiana
+Memorial Union (IMU). To assist all our employers, we have enclosed a map of the IMU.
+Submit your FREE online registration by visiting myJobs at http://cdc.indiana.edu/employers/hire/index.html
+(instructions are attached).
+Registrants will receive an eight-foot long table with tablecloth for displaying materials plus two
+discounted parking coupons. You are welcome to bring table displays, but we cannot accommodate
+oversized displays or other items that sit in the aisles where students need to walk.
+REGISTRATION DEADLINE: Sunday, January 25, 2015
+We look forward to seeing you in January!</description>
+<dtstart tzid="America/Indiana/Indianapolis">20150128T140000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150128T160000</dtend>
+<location>Frangipani Room, Indiana Memorial Union</location>
+<sequence>0</sequence>
+<summary>Winter Part-Time Jobs Fair</summary>
+<url uri="https://bloomingtonlifesciences.com/event/winter-part-time-jobs-fair/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1436@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>IHIF; http://www.ihif.org/conference/register/48</contact>
+<description>Beyond its role in advancing health and medicine, biotechnology applied to industrial applications is changing the future of the planet. Whether through the development of renewable biofuels and specialty chemicals or the production of micronutrients, proteins, and oils in algae, industrial biotechnology is being successfully applied to a myriad of applications. Please join us as we learn more about the role of industrial biotechnology, how companies here are contributing to one of the most rapidly growing research areas, and how investors are looking at the sector’s potential.
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Tuesday, February 17, 2015
+Registration
+11:30 a.m. – 12:00 p.m. (Eastern)
+10:30 a.m. – 11:00 a.m. (Central)
+Formal Presentation
+12:00 p.m. – 1:00 p.m. (Eastern)
+11:00 a.m. – 12:00 p.m. (Central)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dr. Joshua Heyen, Founder, Xylogenics, Inc.
+Mike Neibler, Vice President Business Development, Algaeon, Inc.
+Moderated by:
+Bill Wales, Partner, Barnes &amp; Thornburg LLP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Live Presentation @ Barnes &amp; Thornburg LLP
+11 S. Meridian Street
+Indianapolis IN 46204-3535
+Video Conference @ Barnes &amp; Thornburg LLP
+One N. Wacker Drive, Suite 4400
+Chicago IL 60606-2833
+Video Conference @ Purdue Technology Center of Northwest Indiana
+9800 Connecticut Drive
+Crown Point IN 46307
+Video Conference @ Purdue Technology Center
+3000 Technology Avenue, Suite N2210
+New Albany IN 47150
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Indiana Health Industry Forum and Barnes &amp; Thornburg present a monthly seminar series on critical issues in life science. Each month, at lunch, a policymaker or a panel in the field of life science will be available to answer questions concerning the major challenges and opportunities in the life science industry. We hope you will join us.
+There is no charge to attend, but please register so we know how many lunches to order. Please see registration page for details. Some of the questions will be submitted to the speaker in advance. You are invited to suggest questions you would like us to consider for submission.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tuesday, March 17, 2015
+11:30 am- 1:00 pm (Eastern)
+
+
+
+
+
+
+
+
+
+
+
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20150217T233000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150217T234500</dtend>
+<sequence>0</sequence>
+<summary>Industrial Biotechnology: Food, Fuel, and Funding</summary>
+<url uri="https://bloomingtonlifesciences.com/event/industrial-biotechnology-food-fuel-and-funding/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1437@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://kelley.iu.edu/CBLS/conferences/page44580.html?utm_source=Keynotes Forecast the Potential for Mobile Healthcare&amp;utm_campaign=Mobile Healthcare&amp;utm_medium=email</contact>
+<description>
+Overview
+
+The development and widespread use of “smart phones” in the marketplace has major implications.  What is the impact of wearable technology on healthcare?  Will it be self-diagnosis or physician driven?  What about its use in clinical trials?  Industry executives and observers will offer their thoughts as to how much evaluation, monitoring and diagnosis can and should be in the palm of one’s hand.
+
+Agenda
+
+
+
+
+
+
+
+8:00 – 9:00am
+Registration and Breakfast
+
+
+
+9:00 – 9:15am
+Welcome and Introduction – Neal Roach, Partner, Taft Stettinius &amp; Hollister LLP
+
+
+
+9:15 – 10:15am
+Keynote Presentation – The Potential for Mobile Health
+Chris Bergstrom, Chief Strategy Officer, WellDoc, Inc.
+
+
+10:15 – 10:30am
+Break
+
+
+
+10:30am – 12:00pm
+Panel – Start-Ups/New Companies on the Cutting Edge
+Moderator: Eric Agdeppa, Executive Director, Innovation, Hill-Rom
+Panel Members:
+Surendar Magar, PhD, President and CEO, HMicro
+Michael O’Brien, President, Clinical Trials Division, AMC Health
+David Wortman, Chairman, CEO and Co-Founder, Diagnotes, Inc.
+Don Aquilano, Managing Director, Allos Ventures
+Jeff Lautenbach, Chief Revenue Officer, hc1.com
+
+
+12:00 – 1:30pm
+Luncheon Keynote – Behind the Cool of mHealth
+Introduction: George Telthorst, Director, Center for the Business of Life Sciences, IU Kelley School of Business
+Horst Merkle, President and Chairman, Continua, and Director Information Management Systems, Diabetes Care, Roche Diagnostics Corp.
+
+
+
+Networking
+
+
+
+1:30 – 3:00pm
+Afternoon Panel – Mobile HC “Intrapreneurship” at More Established Firms
+Moderator: Brent Atwood, Vice President of Global Sales, BioStorage Technologies
+
+Panel Members:
+Scott Baxter, Vice President of Diabetes Management &amp; Platform Solutions, Roche Diagnostics, Inc.
+Bill Hanlon, PhD, Vice President, Head of Global Regulatory Affairs, Covance
+Dakota Dunne, Director of Connectivity Solutions, Hill-Rom
+Randy Sessler, VP Strategic Planning &amp; Business Development, Zimmer Holdings, Inc.
+
+
+3:00 – 3:15pm
+Wrap-up
+George Telthorst, Director, Center for the Business of Life Sciences
+
+
+
+
+
+
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20150220T090000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150220T151500</dtend>
+<geo>+39.775843;-86.173781</geo>
+<location>Indiana University-Purdue University Indianapolis, 875 West North Street, Indianapolis, IN 46202, USA</location>
+<sequence>0</sequence>
+<summary>Mobile Healthcare: Where Does New IT Intersect with Healthcare?</summary>
+<url uri="https://bloomingtonlifesciences.com/event/mobile-healthcare-where-does-new-it-intersect-with-healthcare-2/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1422@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Mo Issa; nissa94@gmail.com; http://ascs.indiana.edu</contact>
+<description>The Arts and Sciences Career Services will host Science Connect: Discover the Possibilities on Tuesday, February 24 in Tree Suites – Indiana Memorial Union from 6:00-8:00pm. At the event, students will connect with professionals in a variety of fields and learn about future science career options.
+During Science Connect: Discover the Possibilities students can choose between five different topics. The session topics include:
+Job and Internship Search – Listen and ask questions to two of the Career Development Center/Arts and Sciences Career Services’ trained advisors about the best practices for finding a job or internship in the science field.
+Student Forum – Speak to science students about their experiences in college and how they were able to find and be successful in their opportunities.
+Professionals’ Perspective – Meet professionals with interesting careers from Cook Medical, Sintact Medical Systems and Roche Diagnostics. Discover the diverse array of jobs available in the sciences and learn about the steps to take to find a rewarding career.
+Women in Science – Meet female scientists from top companies and hear about their experiences working in science-related industries, including Eli Lilly and BioConvergence.
+Focusing on your Personal Vision – Learn how to develop an individualized, personal plan by settings priorities and learning how to reach goals during college.
+For more information on Science Connect: Discover the Possibilities contact Alison Smith by email at alelsmit@indiana.edu.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20150224T180000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150224T200000</dtend>
+<location>Tree Suites, Indiana Memorial Union</location>
+<sequence>0</sequence>
+<summary>Science Connect: Discover the Possibilities</summary>
+<url uri="https://bloomingtonlifesciences.com/event/science-connect/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1438@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150226T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150226T183000</dtend>
+<sequence>0</sequence>
+<summary>Biotech Seminar Series: Life on the Job</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-on-the-job/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1439@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150312T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150312T183000</dtend>
+<sequence>0</sequence>
+<summary>Biotech Seminar Series: Erik Woods, President and Chief Executive Officer, Cook General Biotech</summary>
+<url uri="https://bloomingtonlifesciences.com/event/erik-woods-president-and-chief-executive-officer-cook-general-biotech/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1467@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>
+ 
+
+The Indiana Health Industry Forum and Barnes &amp; Thornburg LLP partner to present a monthly seminar series on critical issues in life science. Each month, at lunch, a policymaker or a panel in the field of life science will be available to answer questions concerning the major challenges and opportunities in the life science industry. We hope you will join us.
+ 
+There is no charge to attend, but please register so we know how many lunches to order. Please see registration page for details.
+ 
+“Crossing a New Frontier: 3D Printing and Biotechnology”
+
+The use of 3D printing is revolutionizing healthcare on many levels and presenting a new set of engineering challenges which will unlock the full potential of the technology.  Recent advances have enabled 3D printing of biocompatible materials, cells and supporting components into complex 3D functional living tissues. It can be applied to regenerative medicine to address the need for tissues and organs suitable for transplantation and the orthopedic industry is using the technology to create custom replacement joints and prosthetics.  Please join us as we learn more about 3D printing technology, it’s applications, and hear how it is being used today to advance cardiopulmonary research.
+
+
+Speakers
+Dr. Stuart Williams
+Director, Bioficial Organs Program
+University of Louisville
+
+Andy Steen
+Interim President and CEO
+Metacyte Business Lab, LLC
+
+Kim Brand
+Founder and President
+3D Parts Manufacturing, LLC
+
+Moderator
+Todd Vare
+Partner
+Barnes &amp; Thornburg LLP
+
+For More Information and to Register
+ 
+
+The program is video broadcast to a number of Barnes &amp; Thornburg offices and participating locations across the state and country. The primary location is the Barnes &amp; Thornburg office at 11 S. Meridian Street in downtown Indianapolis. </description>
+<dtstart tzid="America/Indiana/Indianapolis">20150317T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150317T130000</dtend>
+<geo>+39.766627;-86.157742</geo>
+<location>Barnes &amp; Thornburg Office @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Life Science Lunch</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-science-lunch/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1450@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/pages/lifescience</contact>
+<description>Panelists
+Andrew Steen
+Interim President and CEO
+MetaCyte Business Lab LLC
+
+ 
+Dr. Stuart Williams
+Director – Bioficial Organs Program
+University of Louisville
+ 
+The use of 3D printing is revolutionizing healthcare on many levels and presenting a new set of engineering challenges which will unlock the full potential of the technology.  Recent advances have enabled 3D printing of biocompatible materials, cells and supporting components into complex 3D functional living tissues. It can be applied to regenerative medicine to address the need for tissues and organs suitable for transplantation and the orthopedic industry is using the technology to create custom replacement joints and prosthetics.  Please join us as we learn more about 3D printing technology, it’s applications, and hear how it is being used today to advance cardiopulmonary research.
+
+The program is video broadcast to a number of Barnes &amp; Thornburg offices and participating locations across the state and country.  The primary location is the Barnes &amp; Thornburg office at 11 S. Meridian Street in downtown Indianapolis.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20150317T233000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150317T130000</dtend>
+<geo>+39.766627;-86.157742</geo>
+<location>Barnes &amp; Thornburg office @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Crossing a New Frontier: 3D Printing and Biotechnology</summary>
+<url uri="https://bloomingtonlifesciences.com/event/crossing-a-new-frontier-3d-printing-and-biotechnology/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1440@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150326T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150326T183000</dtend>
+<location>Simon Hall 001</location>
+<sequence>0</sequence>
+<summary>Biotech Seminar Series: Keith Davis, Director, IU Johnson Center for Entrepreneurship</summary>
+<url uri="https://bloomingtonlifesciences.com/event/keith-davis-director-iu-johnson-center-for-entrepreneurship/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1441@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150402T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150402T183000</dtend>
+<location>Simon Hall 001</location>
+<sequence>0</sequence>
+<summary>Biotech Seminar Series: Taraka Dale, Los Alamos National Labs</summary>
+<url uri="https://bloomingtonlifesciences.com/event/taraka-dale-los-alamos-national-labs/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1442@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150409T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150409T183000</dtend>
+<location>Simon Hall 001</location>
+<sequence>0</sequence>
+<summary>Biotech Seminar Series: Rob Sarisky, Chief Business Officer, FORMA Therapeutics</summary>
+<url uri="https://bloomingtonlifesciences.com/event/biotech-seminar-series/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1443@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150416T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150416T183000</dtend>
+<location>Simon Hall 001</location>
+<sequence>0</sequence>
+<summary>Biotech Seminar Series: John Ryals, President, Chief Executive Officer, Chairman of the Board, Metabolon Inc.</summary>
+<url uri="https://bloomingtonlifesciences.com/event/biotech-seminar-series-john-ryals-president-chief-executive-officer-chairman-of-the-board-metabolon-inc/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1493@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.ihif.org/conference/register/48</contact>
+<description>Bio-automation is a leading trend in the life science industry, and it is no longer just robotics for liquid handling.  Using both hardware and software solutions, Bio-automation is tackling more sophisticated tasks replacing humans with smart technologies to speed drug research, improve clinical diagnostic data  for the treatment of patients, increase quality and accuracy of outcomes and decisions.  Bio-automation technology is being deployed across the industry with impressive results.  Please join us as we hear from a variety of companies on how they are impacting life sciences.
+Speakers:
+Randy Julian
+CEO 
+Indigo BioSystems
+Mike Ashley
+Chief Engineer for Automation
+Bekman Coulter
+Justin Wiseman
+CEO
+Prosolia, Inc.
+Tim DeFrench
+CEO
+The RND Group 
+Moderated by:
+Todd Vare, Partner, Barnes &amp; Thornburg LLP
+ 
+Live Presentation @ Barnes &amp; Thornburg LLP
+11 S. Meridian Street
+Indianapolis IN 46204-3535
+
+Video Conference @ Barnes &amp; Thornburg LLP
+One N. Wacker Drive, Suite 4400
+Chicago IL 60606-2833
+
+Video Conference @ Purdue Technology Center of Northwest Indiana
+9800 Connecticut Drive
+Crown Point IN 46307
+  
+Video Conference @ Purdue Technology Center
+3000 Technology Avenue, Suite N2210
+New Albany IN 47150
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20150421T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150421T130000</dtend>
+<geo>+39.766627;-86.157742</geo>
+<location>Live Presentation @ Barnes &amp; Thornburg LLP @ 11 South Meridian Street, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Bio-automation: Smart Technologies for Scientific Tasks</summary>
+<url uri="https://bloomingtonlifesciences.com/event/bio-automation-smart-technologies-for-scientific-tasks/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1444@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://www.indiana.edu/~mcbdept/biotech/seminar.shtml</contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150423T173000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150423T183000</dtend>
+<location>Simon Hall 001</location>
+<sequence>0</sequence>
+<summary>Biotech Seminar Series: Nicholas Berry  Senior Medical Science Liaison, Janssen Pharmaceuticals</summary>
+<url uri="https://bloomingtonlifesciences.com/event/biotech-seminar-series-nicholas-berry-senior-medical-science-liaison-janssen-pharmaceuticals/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1472@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Johnson Center for Entrepreneurship in Biotechnology; (812) 855-3133;  jceb@indiana.edu; http://jceb.indiana.edu/</contact>
+<description>First Annual IUB Innovation Conference and Reception
+Friday, April 24, 2015, from 12:30 – 6:30 pm
+Indiana Memorial Union, Frangipani Room
+Biddle Hotel and Conference Center
+900 E. Seventh Street
+Bloomington, IN 47405
+ 
+Speakers &amp; Topics:
+ 
+“State of Indiana SBIR/STTR Programs”
+“Overview of the SBIR/STTR Program, IUPUI”
+Kristen Parmelee
+President, Parmelee Consulting Group, Inc.
+ 
+“State of Indiana SBIR/STTR Programs”
+Lisa Hoverman, Ph.D.
+SBIR/STTR Program Specialist, Indiana PTAC, Office of Small Business &amp; Entrepreneurship
+ 
+“Spin-up Program at IURTC”
+Joe Trebley, Ph.D.
+Head of Startup Support and Promotion, Indiana University Research &amp; Technology Corporation
+ 
+“Working with IU Spin-up to Start a Small Business”
+Yvonne Lai, Ph.D.
+Senior Scientist, Department of Psychological and Brain Sciences, Hohmann Laboratory, and Navigator, Indiana Clinical Translational Sciences Institute
+ 
+“The Indiana Ecosystem for Life Science Entrepreneurism”
+Jay McGill, Ph.D.
+Senior Director, LRL Operations – Science and Technology Partnerships, Lilly Research Laboratories, Eli Lilly and Company
+ 
+“Angel Investing”
+Guest speaker TBA
+ 
+“Antibody-based Prevention and Therapy for Infectious Diseases”
+Kevin Whaley, Ph.D.
+CEO, Mapp Biopharmaceutical, Inc.
+Register at http://jceb.indiana.edu/opportunities.shtml.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20150424T123000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150424T183000</dtend>
+<geo>+39.167737;-86.522485</geo>
+<location>Indiana Memorial Union, Frangipani Room @ Indiana University, 900 East 7th Street, Bloomington, IN 47405, USA</location>
+<sequence>0</sequence>
+<summary>Innovation Conference</summary>
+<url uri="https://bloomingtonlifesciences.com/event/innovation-conference/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1449@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150506T200000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150507T170000</dtend>
+<sequence>0</sequence>
+<summary>IHIF Annual Meeting</summary>
+<url uri="https://bloomingtonlifesciences.com/event/ihif-annual-meeting/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1260@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>IU Kelley School of Business Center for the Business of Life Sciences; http://kelley.iu.edu/CBLS/conferences/page44581.html</contact>
+<description>Overview
+More responsibility for healthcare continues to shift to consumers. The relationship with providers is becoming less prescriptive and more of a partnership. Are both sides ready for such a shift? What do medical products companies see as the effects and how will they respond?
+ 
+Agenda
+
+
+
+8:00 – 9:00am
+Registration and Breakfast
+
+
+9:00 – 9:15am
+Welcome and Introduction
+
+
+9:15 – 10:15am
+Keynote Presentation
+
+
+10:15 – 10:30am
+Break
+
+
+10:30am – 12:00pm
+Panel
+
+
+12:00 – 1:30pm
+Luncheon Keynote
+
+
+
+Networking
+
+
+1:30 – 3:00pm
+Afternoon Panel
+
+
+3:00 – 3:15pm
+Wrap-up
+
+
+
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20150508T080000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150508T151500</dtend>
+<geo>+40.463452;-86.942011</geo>
+<location>MED Institute, a Cook Group Company Purdue Research Park @ 1 Geddes Way, West Lafayette, IN 47906, USA</location>
+<sequence>0</sequence>
+<summary>The Changing Role of the Consumer in Healthcare</summary>
+<url uri="https://bloomingtonlifesciences.com/event/the-changing-role-of-the-consumer-in-healthcare/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1423@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description></description>
+<dtstart tzid="America/Indiana/Indianapolis">20150615T080000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20150618T170000</dtend>
+<geo>+39.953932;-75.158877</geo>
+<location>Pennsylvania Convention Center @ 1101 Arch Street, Philadelphia, PA 19107, USA</location>
+<sequence>0</sequence>
+<summary>2015 BIO International Convention</summary>
+<url uri="https://bloomingtonlifesciences.com/event/2015-bio-international-convention/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1582@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Dana Palazzo; 812-335-7346; dpalazzo@comparebloomington.us</contact>
+<description>Speakers:
+Susan Easton, Plant Manager, Baxter BioPharma Solutions
+John Morris, CEO, Morris Innovative
+Dan Peterson, VP Industry &amp; Gov Affairs, Cook Group, Inc.
+
+Featuring:
+Ivy Tech/ICLS Update from Dr. Sengyong Lee</description>
+<dtstart tzid="America/Indiana/Indianapolis">20151027T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20151027T130000</dtend>
+<geo>+39.167667;-86.5933</geo>
+<location>Indiana Center for the Life Sciences @ 501 Profile Parkway, Bloomington, IN 47404, USA</location>
+<sequence>0</sequence>
+<summary>Annual Summit – State of the Industry in Bloomington</summary>
+<url uri="https://bloomingtonlifesciences.com/event/annual-summit-state-of-the-industry-in-bloomington/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1636@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Indiana University Kelley School of Business; http://kelley.iu.edu/CBLS/conferences/page46924.html</contact>
+<description>
+
+
+
+
+8:00 – 9:00am
+Registration and Breakfast
+
+
+
+9:00 – 9:15am
+Welcome and Introduction
+Donna Bowling-Scott, Director Medical Education, Zimmer Biomet
+
+
+
+
+9:15 – 10:15am
+Keynote Presentation – Personalized Medicine: Where We’ve Been and Where It Could Go
+Pablo V Gejman, MD, Vice Pres Genomic Research &amp; Dr LW Sauer Chair, Research  Director Genome Health Initiative &amp; Center Psychiatric Genetics, NorthShore University Health System, Professor Psychiatry, Pritzker School of Medicine, University of Chicago
+
+
+10:15 – 10:30am
+Break
+
+
+
+10:30am – 12:00pm
+Morning Panel – Legal/Ethical/Regulatory Considerations
+
+Moderator: Thomas Turi, Vice President Science and Technology, Covance
+Panel Members:
+Norm Rabin, Director Solutions Delivery, Maetrics, LLC
+Matthew D. Lawless, Attorney, Taft Stettinius &amp; Hollister LLP
+Josh Perry, Associate Professor, Kelley School of Business
+Len Lichtenfeld, MD, MACP,Deputy Chief Medical Officer, American Cancer Society
+
+
+12:00 – 1:30pm
+Luncheon Keynote 
+Introduction: Andrew Montgomery, Customer Engagement Solution Specialist, Microsoft
+Ian McCaffery, PhD, Head, Companion Diagnostics, Oncology Biomarker Development, Genentech
+Networking
+
+
+1:30 – 3:00pm
+Afternoon Panel – The Business of Personalized and Precision Medicine
+Moderator: Neal Roach, Attorney, Taft Stettinius &amp; Hollister, LLP
+Panel Members:
+Geoff Otto, PhD, Senior Director of Molecular and Sequencing, Foundation Medicine
+Bryan Schneider, MD, IU Health
+Ryan Schoenefeld, Director of Signature Technology, Zimmer Biomet Orthopedics
+Mark Engel, Vice President Product Development and Marketing, Appistry
+
+
+3:00 – 3:15pm
+Wrap-up
+George Telthorst, Director, Center for the Business of Life Sciences, IU Kelley School of Business
+
+
+
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20151120T080000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20151120T151500</dtend>
+<sequence>0</sequence>
+<summary>Personalized and Precision Medicine</summary>
+<url uri="https://bloomingtonlifesciences.com/event/personalized-and-precision-medicine-2/" />
+</vevent>
+<vevent>
+<uid>ai1ec-1680@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Barnes &amp; Thornburg LLP; (317) 231-7312; cbrown@btlaw.com; http://marketing.btlaw.com/life_science_lunch_alzheimers_2016/MainForm.aspx?ID=1fc9088b-ffd1-4c94-9d42-ffffe31f8005</contact>
+<description>
+
+
+Life Sciences Lunch
+Alzheimer’s Disease, From Cause to Cure
+
+
+
+
+
+
+
+For January, we would love to have you join us as we discuss the formation of Alzheimer’s Association Small Company Consortium (AASCC) and other work being done by the Alzheimer’s Association to engage with early stage companies and researchers.
+
+
+
+ 
+
+
+
+
+PANELISTS
+
+
+
+
+
+James Hendrix, Ph.D., Director, Global Science Initiatives, Alzheimer’s Association
+
+
+
+
+
+Andy Cothrel, Chief Executive Officer, Redox Reactive Reagents (3R)
+
+
+
+
+MODERATOR
+
+
+
+
+
+Kepten Carmichael, Partner, Barnes &amp; Thornburg LLP
+
+
+
+
+
+
+
+
+
+Tickets: http://marketing.btlaw.com/life_science_lunch_alzheimers_2016/MainForm.aspx?ID=1fc9088b-ffd1-4c94-9d42-ffffe31f8005.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160119T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160119T130000</dtend>
+<geo>+39.224767;-99.305144</geo>
+<location>Barnes &amp; Thornburg LLP @ S Meridian St, Plainville, KS 67663, USA</location>
+<sequence>0</sequence>
+<summary>Life Sciences Lunch – Alzheimer’s Disease, From Cause to Cure</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-sciences-lunch-alzheimers-disease-from-cause-to-cure/" />
+<x-tickets-url>http://marketing.btlaw.com/life_science_lunch_alzheimers_2016/MainForm.aspx?ID=1fc9088b-ffd1-4c94-9d42-ffffe31f8005</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1752@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>
+
+
+The conduct of clinical research requires effective working relationships between the study sites that execute clinical trials and the sponsors that design the trials and provide product for testing. With much riding on study outcomes, understanding what happens behind the scenes may help you design more effective trials. This month’s discussion will explore some of the bigger technical challenges to running a clinical research site, including:
+
+Types of clinical trials, sponsors and study sites
+Staffing/workforce requirements, needs, and challenges
+Managing study site and sponsor expectations
+Role of an IRB
+Subject recruitment, screening, informed consent and enrollment
+Managing costs
+
+
+
+
+
+
+
+
+
+
+PANELISTS
+
+
+
+
+Diana Caldwell, President and Founder, Pearl Pathways
+
+
+
+
+Jenna Sallee, Executive Director, Orthopedic Research Foundation, Inc.
+
+
+
+
+Dr. Scott Denne, Director, CTSI Clinical Research Center at IUPUI
+
+
+
+
+MODERATOR
+
+
+
+
+Deborah Pollack-Milgate, Partner, Barnes &amp; Thornburg LLP
+
+
+
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160216T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160216T130000</dtend>
+<geo>+39.766641;-86.157726</geo>
+<location>11 S Meridian St, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Life Sciences Lunch: Clinical Trials From a Study Site Perspective</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-sciences-lunch-clinical-trials-from-a-study-site-perspective/" />
+<x-cost-type>free</x-cost-type>
+</vevent>
+<vevent>
+<uid>ai1ec-1804@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>Integrated Solutions to the Growing Epidemic: Pain Management, Addition, and Mental Health
+ 
+
+
+
+
+
+Join Us on April 15, 2016!
+Join us for a one-day education packed conference.  You will hear from both local and national experts on topics relevant to providing exceptional patient care using the latest, most innovative tools.  See how these efforts include your entire organization from front desk employees, nurses, care managers, mid-level providers, physicians, pharmacists, C-Suite professionals, and others.
+
+
+
+
+
+Our Agenda this year:
+
+Keynote: Recognition and Treatment of Mental Illness and Substance Abuse Disorder
+Mike Denton, M.S., LCAC, LMFT, Clinical Director, Tara Treatment CenterHealthLINC Technology Upgrade 2016
+Jason Buckner, Vice President of Operations, HealthBridge (The Health Collaborative)
+Integrated Care: Demonstrating Value
+Maren Sheese, LCSW, LCAC, Project Director, Home Health Indiana (HHIN)/Centerstone
+OASIS: Resources for Young Adults
+Jackie Daniels, OASIS Director, Indiana University
+Addressing Mental Health Needs of Kids through Community Partnerships
+Julie Kathman, MSN, RN, CNS-BC, CPN, Executive Director Women and Children Services, Indiana University Health Bloomington
+Afternoon Keynote: Responsible Pain Management Strategies
+Jim Ryser, MA, LMHC, LCAC  Program Manager of Chronic Pain and Chemical  Dependency Programs, IU Health Methodist Hospital
+INSPECT:  Maximizing Benefits from Key Data Sources
+Michael Brady, Director, INSPECT (Indiana’s Prescription Drug Monitoring Program)
+Managing Employees with Unique Needs
+Nicole T. Williams MBA, PCMH CCE, OTC, High Performance Network Manager &amp; Denise Fields, Pharmacist, Cummins
+
+
+
+
+
+
+Registration Include:  Admittance to Full-Day of Conference Activities, Barista Bar Service in the Morning, Lunch, Access to Vendors, Networking Opportunities, Entry in Door Prize Drawings, and so much more!
+
+
+
+
+
+
+6  Hours of Nursing CEUs Available
+Don’t Delay…..Register Today!
+Tickets: http://healthlinc.org/.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160415T070000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160415T160000</dtend>
+<geo>+39.164397;-86.535532</geo>
+<location>Bloomington/Monroe County Convention Center @ 302 S College Ave, Bloomington, IN 47403, USA</location>
+<sequence>0</sequence>
+<summary>10th Annual HealthLINC Conference</summary>
+<url uri="https://bloomingtonlifesciences.com/event/10th-annual-healthlinc-conference/" />
+<x-cost-type>external</x-cost-type>
+<x-tickets-url>http://healthlinc.org/</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1824@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>(317) 686-0991; info@ihif.org; http://www.ihif.org/pages/lifescience</contact>
+<description>In a regulated industry, marketing your product or company has always been critical.   Knowing what you can or should say and when you can say it can have a tremendous impact on attracting investors and informing your intended audience.  Marketing also means figuring out how to engage your customers, employees, and constituents in meaningful and valuable ways.  Add international and cultural considerations to that mix and it becomes even more tricky to manage.   Please join us for a lively discussion around marketing and social media practices (with an international twist!) that will offer good advice for any life science company. Speakers include: Emily D. Tisdale, Founder and Principal Consultant – Recourse Resource Consulting and Una Hartzell, Operations Manager – Luna Language Services
+ 
+ </description>
+<dtstart tzid="America/Indiana/Indianapolis">20160419T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160419T130000</dtend>
+<geo>+39.766641;-86.157726</geo>
+<location>Barnes &amp; Thornburg  @ 11 S Meridian St, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Life Science Lunch: Mastering Life Science Social Media and Marketing</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-science-lunch-mastering-life-science-social-media-and-marketing/" />
+<x-cost-type>free</x-cost-type>
+</vevent>
+<vevent>
+<uid>ai1ec-1906@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>http://marketing.btlaw.com/in_life_sciences_lunch_june2016/MainForm.aspx?ID=1fc9088b-ffd1-4c94-9d42-ffffe31f8005</contact>
+<description>
+
+
+Life Sciences Lunch
+FDA Guidance: An Abundance of Information in 2016
+
+
+
+
+
+
+
+The U.S. Food and Drug Administration has released a number of guidance documents this year, with more on the way. Please join us as we discuss some of the biggest changes, how companies should incorporate this information into their regulatory strategies, and how to reconsider your recall strategy in order to keep up.
+
+
+
+
+
+
+
+
+PANELISTS
+
+
+
+
+M. Benhur Benjamin M.S. RAC, Senior Compliance Advisor, Safis Solutions, LLC
+
+
+
+
+Lynn Tyler, Partner, Barnes &amp; Thornburg LLP
+
+
+
+
+MODERATOR
+
+
+
+
+Deborah Pollack-Milgate, Partner, Barnes &amp; Thornburg LLP
+
+
+
+</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160621T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160621T130000</dtend>
+<geo>+39.766641;-86.157726</geo>
+<location>Barnes &amp; Thornburg LLP  @ 11 S Meridian St, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>FDA Guidance: An Abundance of Information in 2016</summary>
+<url uri="https://bloomingtonlifesciences.com/event/fda-guidance-an-abundance-of-information-in-2016/" />
+<x-cost-type>free</x-cost-type>
+</vevent>
+<vevent>
+<uid>ai1ec-1889@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact></contact>
+<description>GCC2016 is the 7th annual gathering
+of the Galaxy community
+The conference will include keynotes, accepted talks, poster sessions, birds-of-a-feather meetups, exhibitors, and plenty of networking opportunities. There will also be three days of pre-conference activities, including hackathons and training. If you work in data-intensive biomedical research, there is no better place than GCC2016 to present your work and to learn from others.
+Keynote speaker: Yoav Gilad
+The keynote speaker will be Dr. Yoav Gilad, a professor of human genetics at the University of Chicago. Dr. Gilad will speak on genomic variation and the impact of regulatory variation from RNA to protein. The Gilad Lab works to understand the genetic architecture of gene regulation and how differences in gene regulation affect complex phenotypes, including human diseases, using large gene regulatory datasets from primates.
+Dr. Gilad earned a Ph.D. in molecular genetics from the Weizmann Institute of Science in Israel, and completed an EMBO postdoctoral fellowship training at Yale University.
+Schedule: http://gcc16.sched.org/
+Tickets: https://gcc2016.iu.edu/.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160625T090000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160629T190000</dtend>
+<location>Multiple Locations on IU Campus</location>
+<sequence>0</sequence>
+<summary>Galaxy Community Conference</summary>
+<url uri="https://bloomingtonlifesciences.com/event/galaxy-community-conference/" />
+<x-cost-type>external</x-cost-type>
+<x-tickets-url>https://gcc2016.iu.edu/</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1989@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Courtney Brown; (317) 231-7312; cbrown@btlaw.com; http://marketing.btlaw.com/in_life_sciences_lunch_august2016/MainForm.aspx?ID=1fc9088b-ffd1-4c94-9d42-ffffe31f8005</contact>
+<description>Insights on Following the Path From Concept to Implementation
+You have a great idea that will revolutionize healthcare. Now what? The path from concept to implementation presents a variety of challenges for entrepreneurs. Learn from technology leaders responsible for incorporating new digital health technology in their businesses before you start. What challenges do they face? What common mistakes do startup teams make? Why do considerations for legacy systems and complex workflows make launching new products in healthcare substantially different? How can you better meet the needs of these decision makers and be successful? How do you land a meeting?
+
+PANELISTS
+Gerry Bailey, Managing Director, iLAB North America
+Rob Gottlieb, President &amp; CEO, TeleMed 2020, Inc.
+ 
+MODERATOR
+Doriann Cain, Associate, Barnes &amp; Thornburg LLP
+ 
+Questions?
+Contact Courtney Brown at cbrown@btlaw.com or (317) 231-7312.
+Tickets: http://marketing.btlaw.com/in_life_sciences_lunch_august2016/MainForm.aspx?ID=1fc9088b-ffd1-4c94-9d42-ffffe31f8005.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160816T113000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160816T130000</dtend>
+<geo>+39.766641;-86.157726</geo>
+<location>Barnes &amp; Thornburg LLP @ 11 S Meridian St, Indianapolis, IN 46204, USA</location>
+<sequence>0</sequence>
+<summary>Life Science Lunch: The Healthcare Digital Revolution</summary>
+<url uri="https://bloomingtonlifesciences.com/event/life-science-lunch-the-healthcare-digital-revolution/" />
+<x-cost-type>external</x-cost-type>
+<x-tickets-url>http://marketing.btlaw.com/in_life_sciences_lunch_august2016/MainForm.aspx?ID=1fc9088b-ffd1-4c94-9d42-ffffe31f8005</x-tickets-url>
+</vevent>
+<vevent>
+<uid>ai1ec-1981@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>Heath; ha_roush@hotmail.com; http://makevention.org/</contact>
+<description>Makevention is a celebration of the do-it-yourself spirit with loads of local and regional makers sharing their love for making. Makers are crafters, inventors, tinkerers, builders, designers, gadgeteers, artists, engineers, scientists, and everything in between. Makevention 2016 will be held at the Bloomington Convention on August 27th from 10am to 4pm in Bloomington, Indiana. And we would love it if you would put up a flyer or two.
+This year we are pleased to announce Bloominglabs is partnering with the Monroe County Public Library to help us host the event. MCPL has been a central part of the maker community in Bloomington for several years. We are excited to see what new things will come about at this year’s event.
+Exhibitors applications are coming in and we’ll be announcing the Makevention lineup soon. In the meantime, a few highlights for this year:
+
+There will be an art exhibit of Trashion Refashion outfits from the past 9 years as a run up for 10th anniversary of the popular fund raising event for the Center for Sustainable Living.
+The life-sized foosball game will be making a return. Check out our 30 foot by 15 foot arena and form teams of 6 to go head-to-head with other Makevention attendees.
+The Shire of Mynydd Seren from the Society of Creative Anachronisms will be back!
+Bloominglabs, Discardia, Wonderlabs, Soapy Soap and the MILL will all be there with making activities.
+
+If you are interested in exhibiting, please register on the Exhibitors page. Sponsorships are also available.
+And remember, if you’re making things yourself, do it with us at Makevention!</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160827T100000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160827T160000</dtend>
+<geo>+39.164397;-86.535532</geo>
+<location>Monroe Convention Center @ 302 S College Ave, Bloomington, IN 47403, USA</location>
+<sequence>0</sequence>
+<summary>Makevention 2016</summary>
+<url uri="https://bloomingtonlifesciences.com/event/makevention-2016/" />
+<x-cost-type>free</x-cost-type>
+</vevent>
+<vevent>
+<uid>ai1ec-2022@bloomingtonlifesciences.com</uid>
+<dtstamp>20160909T030258Z</dtstamp>
+<categories></categories>
+<contact>617-600-0668; resi@lifesciencenation.com; http://www.resiconference.com/</contact>
+<description>The first Redefining Early Stage Investments (RESI) Conference took place on September 16, 2013, and three years later, following highly successful events in San Francisco, Houston and Toronto, RESI will return to Boston for the 10th RESI Conference. Life Science Nation (LSN) will be hosting the RESI Boston conference in collaboration with Johnson &amp; Johnson Innovation, JLABS onSeptember 13th, 2016.
+ 
+RESI Boston is a venue for entrepreneurs to meet with 10 categories of investors that LSN tracks including: Family Offices, Corporate Venture Funds, Angel Groups, Venture Philanthropy, Venture Capital and more. Through the RESI Partnering system, fundraising executives can have up to 16 scheduled meetings as well as many more ad-hoc meetings with diverse life science investors who fit their company’s technology sector, indication and stage of development.
+Tickets: https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebjtc6w651db8109&amp;oseq=&amp;c=&amp;ch=.</description>
+<dtstart tzid="America/Indiana/Indianapolis">20160913T070000</dtstart>
+<dtend tzid="America/Indiana/Indianapolis">20160913T200000</dtend>
+<geo>+42.360082;-71.05888</geo>
+<location>Boston, MA, USA</location>
+<sequence>0</sequence>
+<summary>Redefining Early Stage Investments Conference</summary>
+<url uri="https://bloomingtonlifesciences.com/event/resi-2016/" />
+<x-cost-type>external</x-cost-type>
+<x-tickets-url>https://events.r20.constantcontact.com/register/eventReg?oeidk=a07ebjtc6w651db8109&amp;oseq=&amp;c=&amp;ch=</x-tickets-url>
+</vevent>
+</vcalendar>
