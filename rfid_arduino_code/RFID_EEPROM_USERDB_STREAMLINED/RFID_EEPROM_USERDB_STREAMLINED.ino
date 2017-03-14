@@ -82,8 +82,8 @@ We are not using it.
 /* Static user List - Implemented as an array for testing and access override
 */
 #define DEBUG 2                         // Set to 2 for display of raw tag numbers in log files, 1 for only denied, 0 for never.
-#define sdc   0x589924                  // Name and badge number in HEX. We are not using checksums or site ID, just the whole
-#define dosman   0x13D137D                  // output string from the reader.
+#define sdc   0xFFFFFF                  // Name and badge number in HEX. We are not using checksums or site ID, just the whole
+#define dosman   0xFFFFFF                  // output string from the reader.
 const long  superUserList[] = {
 	dosman,sdc
 }
